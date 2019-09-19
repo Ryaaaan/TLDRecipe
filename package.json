@@ -1,0 +1,20 @@
+{
+  "name": "TLDRecipe",
+  "description": "A cool website of recipes",
+  "files": [
+    "README.md"
+  ],
+  "version": "0.0.1",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ryaaaan/TLDRecipe"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "simple-jekyll-search": "^1.7.2"
+  }
+}

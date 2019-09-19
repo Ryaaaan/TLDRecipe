@@ -1,0 +1,134 @@
+---
+layout: default
+---
+
+{% comment %}
+<section id="about" class="about-wocket">
+ {% include home_about_wocket.html %}
+</section>
+{% endcomment %}
+
+
+<section id="master-list" class="master-list">
+
+  <div class="wrapper">
+
+    <div class="content-container list-head-container">
+
+      <h2 class="post-list-heading">
+        {{ page.listHeader }}
+      </h2>
+
+      <div class="filter-container">
+
+        <div class="toggles" id="toggle-list">
+          <span id="alpha-toggle" class="active-filter">alpha</span>
+          <span id="new-toggle">latest</span>
+
+          {% for tag in site.tags %}
+
+            <span id="{{tag[0] | replace: " ", "-" }}-toggle">{{ tag[0] }}</span>
+
+          {% endfor %}
+
+        </div>
+        <div class="highlight"></div>
+      </div>
+
+      {%- if page.listCopy -%}
+        <p>
+          {{ page.listCopy }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    {%- if site.posts.size > 0 -%}
+
+
+    <div class="content-container">
+
+      <ul class="post-list alpha-toggle-list active-list">
+        {% assign recipeList = site.posts | sort:'title' %}
+
+        {%- for recipe in recipeList -%}
+        <li data-favorite="{{ recipe.favorite }}" class="">
+          <a class="post-link" href="{{ recipe.permalink | relative_url }}">
+            {{ recipe.title | escape }}
+          </a>
+          <span class="favorite-flag">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+            <g>
+            	<path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+            		c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+            		c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+            		c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+            </g>
+            </svg>
+          </span>
+        </li>
+        {%- endfor -%}
+      </ul>
+
+      <ul class="post-list new-toggle-list">
+        {% assign recipeList = site.posts | sort:'date' %}
+
+        {%- for recipe in recipeList -%}
+        <li data-favorite="{{ recipe.favorite }}" class="">
+          <a class="post-link" href="{{ recipe.permalink | relative_url }}">
+            {{ recipe.title | escape }}
+          </a>
+          <span class="favorite-flag">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+            <g>
+            	<path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+            		c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+            		c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+            		c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+            </g>
+            </svg>
+          </span>
+        </li>
+        {%- endfor -%}
+      </ul>
+
+      <!-- {% comment %} List all posts associated to their tag {% endcomment %} -->
+      {% for tag in site.tags %}
+        <ul class="post-list {{tag[0] | replace: " ", "-" }}-toggle-list">
+          {% for post in tag[1] %}
+          <li data-favorite="{{ post.favorite }}" class="">
+            <a class="post-link" href="{{ post.permalink | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+            <span class="favorite-flag">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              	 viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+              <g>
+              	<path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+              		c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+              		c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+              		c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+              </g>
+              </svg>
+            </span>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+
+
+
+      {%- else -%}
+      <div class="content-container margin-bottom">
+        <p>
+          Hm, weird. Something isn't right, try refreshing.
+        </p>
+      </div>
+      {%- endif -%}
+
+    </div>
+
+  </div>
+
+</section>

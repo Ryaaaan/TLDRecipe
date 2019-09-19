@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" >
+
+  {%- include head.html -%}
+
+  <body class="recipe-book" data-favorite="{{ page.favorite }}">
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8V39RV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    {%- include header.html -%}
+
+    <div class="show-nav">
+
+    </div>
+
+    <!-- HTML elements for search -->
+    <div class="search-modal">
+      <ul class="search-results post-list" id="results-container">
+        <h3>search by tag or keyword — eg. keto, chicken, thai, meal prep, pizza, bacon, paleo, weed... you get the idea.</h3>
+      </ul>
+    </div>
+
+
+
+
+    <main class="page-content" aria-label="Content" id="recipe-head">
+      {{ content }}
+      <p class="footnote" id="footnote"></p>
+    </main>
+    <div class="notification-mask"></div>
+
+
+    {%- include footer.html -%}
+  </body>
+
+</html>

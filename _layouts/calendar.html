@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+<div class="wrapper">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+
+  {%- if site.posts.size > 0 -%}
+    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
+    <ul class="post-list">
+
+      {%- for post in site.posts reversed -%}
+
+      {% comment %} Assign Start / End Dates / Time Variables {% endcomment %}
+
+      {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+      {%- assign date_format_no_year = site.minima.date_format | default: "%b %-d" -%}
+      {%- assign time_format = site.minima.date_format | default: "%l:%M%p" -%}
+      {%- assign year_format = site.minima.date_format | default: "%Y" -%}
+
+      {%- assign start_date = post.eventStart | date: date_format -%}
+      {%- assign end_date = post.eventEnd | date: date_format -%}
+      {%- assign start_time = post.eventStart | date: time_format -%}
+      {%- assign end_time = post.eventEnd | date: time_format -%}
+      {%- assign start_year = post.eventStart | date: year_format -%}
+      {%- assign end_year = post.eventEnd | date: year_format -%}
+
+      {% comment %} Date Formatting Logic {% endcomment %}
+
+      {%- if start_year != end_year -%}
+        {%- assign start_date_formatted = post.eventStart | date: date_format -%}
+        {%- assign end_date_formatted = post.eventEnd | date: date_format -%}
+      {% else %}
+        {%- assign start_date_formatted = post.eventStart | date: date_format_no_year -%}
+        {%- assign end_date_formatted = post.eventEnd | date: date_format -%}
+      {%- endif -%}
+
+      <li>
+
+        <h4 class="post-date">{{ start_date_formatted }}</h4>
+
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <h3>
+              {{ post.title | escape }}
+          </h3>
+
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+
+          <span class="post-time">
+            {%- if start_time != end_time -%}
+              <h5>{{ start_time }} — {{ end_time }}</h5>
+            {% else %}
+              <h5>{{ start_time }}</h5>
+            {%- endif -%}
+          </span>
+
+          <div class="double-arrow">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 42.3 32.3" style="enable-background:new 0 0 42.3 32.3;" xml:space="preserve">
+            <g>
+            	<polygon class="st0" points="8.4,30.6 2.8,24.9 11,16.7 2.8,8.4 8.4,2.8 22.3,16.7 	"/>
+            	<polygon class="st0" points="26.4,30.6 20.8,24.9 29,16.7 20.8,8.4 26.4,2.8 40.3,16.7 	"/>
+            </g>
+            </svg>
+          </div>
+        </a>
+
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+</div>

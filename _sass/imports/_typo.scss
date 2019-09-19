@@ -1,0 +1,410 @@
+//
+// Global Styles
+//
+* {
+  font-family: "Fira Sans", sans-serif;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*::-moz-selection {
+  background: $black;
+  color: $white;
+}
+*::selection {
+  background: $black;
+  color: $white;
+}
+p,
+p b,
+span b {
+  font-size: 16px;
+}
+i,
+em {
+  font-family: "Fira Sans", sans-serif;
+  font-style: italic;
+}
+b,
+strong {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+}
+ul {
+  padding: 0;
+}
+h1 {
+  font-size: 54px;
+  line-height: 52px;
+  font-weight: 900;
+  color: $red;
+  text-transform: lowercase;
+  display: inline;
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  @media (min-width: 720px) {
+    font-size: 68px;
+    line-height: 62px;
+    // padding: 0px;
+  }
+  @media (min-width: 1200px) {
+    // font-size: 68px;
+  }
+}
+h2 {
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0 0 10px;
+  line-height: 44px;
+  text-align: center;
+  text-transform: lowercase;
+
+  @media (min-width: 720px) {
+    font-size: 32px;
+    margin: 20px auto 0;
+  }
+  @media (min-width: 1080px) {
+    // font-size: 36px;
+    // line-height: 72px;
+  }
+}
+.recipe-content h2 {
+  text-align: left;
+}
+h3 {
+  font-size: 16px;
+  margin: 10px 0 0;
+  font-weight: 500;
+
+  @media (min-width: 720px) {
+    // font-size: 42px;
+  }
+  @media (min-width: 1080px) {
+    // font-size: 48px;
+  }
+}
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+a {
+  // text-decoration: none;
+  // color: $black;
+
+  @include transition(all 175ms ease-in-out);
+}
+a:hover {
+  color: $red;
+}
+li {
+  list-style: none;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  color: $black;
+}
+section p,
+.modal p {
+  line-height: 30px;
+  margin: 20px 0;
+}
+.button {
+  color: $black;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.button:hover {
+  color: $black;
+}
+.line-button {
+  color: $yellow;
+}
+.line-button:hover {
+  color: $black;
+}
+
+
+//
+// Navigation Styles
+//
+.site-title {
+  text-decoration: none;
+}
+.site-title span {
+  font-weight: 800;
+  color: $yellow;
+  text-transform: uppercase;
+  font-size: 22.75px;
+  line-height: 21px;
+}
+.site-title span:last-child {
+  font-size: 18px;
+}
+.site-nav a {
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 600;
+}
+.open-nav .site-nav a {
+  color: $black;
+  padding: 10px 0;
+}
+.site-nav a.events-link {
+  text-decoration: none;
+  margin: 0;
+  background: $yellow;
+  color: $black;
+  padding: 7px 14px;
+  border-radius: 3px;
+
+  @media (min-width: 720px) {
+    margin: 0 0 0 20px;
+  }
+}
+.open-nav .site-nav a.events-link {
+  padding: 10px 0;
+}
+.site-nav a.events-link:hover {
+  background: $red;
+  color: $white;
+}
+.open-nav .site-nav a.events-link:hover {
+  background: $yellow;
+  color: $black;
+}
+
+
+
+//
+// Homepage Styles
+//
+
+
+
+
+.menu-option p {
+  position: absolute;
+  bottom: 15px;
+  padding: 2px 13px;
+  font-weight: 700;
+  font-size: 14px;
+  background: $yellow;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+
+  @media (min-width: 520px) {
+    bottom: 50px;
+    font-size: 18px;
+    padding: 6px 18px;
+  }
+  @media (min-width: 720px) {
+    bottom: 25px;
+    font-size: 20px;
+    padding: 2px 13px;
+  }
+  @media (min-width: 1080px) {
+    font-size: 22px;
+  }
+  @media (min-width: 1200px) {
+    bottom: 50px;
+    padding: 6px 18px;
+  }
+}
+
+
+//
+// Master List
+//
+.master-list h2 {
+  font-size: 52px;
+
+  @media (min-width: 720px) {
+    font-size: 62px;
+  }
+  @media (min-width: 1080px) {
+
+  }
+}
+.filter-container span {
+  font-size: 22px;
+  font-weight: 600;
+  color: $medgrey;
+
+  @include transition(color 150ms ease-in-out);
+}
+.filter-container span:hover,
+.filter-container span.active-filter {
+  color: $black;
+}
+.post-list a {
+  text-decoration: none;
+  font-size: 28px;
+  text-transform: lowercase;
+  width: 100%;
+
+  @include transition(all 75ms ease-in-out);
+
+  @media (min-width: 720px) {
+    font-size: 32px;
+  }
+}
+.post-list a:focus {
+  color: $black;
+  // border: none;
+  // width: 102%;
+  // margin-left: -3%;
+  // box-shadow: 0px 2px 10px $rgbaBlack-25;
+  // outline: none;
+}
+.post-list li:hover a {
+  color: $black;
+}
+.post-list li {
+  list-style: none;
+}
+.post-link p {
+  margin: 0 0 25px;
+
+  @include transition(all 175ms ease-in-out);
+}
+.post-list h3 {
+  padding: 20px 0;
+  margin: 0;
+
+  @media (min-width: 720px) {
+    line-height: 46px;
+  }
+
+  @include transition(all 175ms ease-in-out);
+}
+.post-list h4,
+.post-list h5 {
+  background: $yellow;
+  display: inline-block;
+  padding: 10px 20px;
+  color: $black;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  @include transition(all 175ms ease-in-out);
+}
+.post-list h4 {
+  margin: 0;
+}
+.post-list h5 {
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 0px;
+}
+a.post-link:hover h3,
+.post-list a:focus {
+  // font-weight: 400;
+}
+
+
+//
+// Notification Styles
+//
+.notification-banner h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+//
+// Post Styles
+//
+
+.nutrition-container span,
+.nutrition-container strong {
+  font-weight: 200;
+  color: $black;
+}
+.nutrition-container strong {
+  font-weight: 200;
+  padding-top: 12px;
+}
+.macro-container span {
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: 600;
+  color: $red;
+}
+.copy-button {
+  color: $white;
+}
+.recipe-content li {
+  // font-size: 500;
+}
+.recipe-content li.toggled {
+  // font-size: 500;
+  color: $darkgrey;
+  font-style: italic;
+  text-decoration: line-through;
+}
+.date-time * {
+  color: $black;
+}
+.date-time h3 {
+  margin: 0;
+  line-height: 36px;
+
+  @media (min-width: 720px) {
+    font-size: 30px;
+  }
+  @media (min-width: 1080px) {
+    font-size: 30px;
+  }
+}
+
+
+
+
+
+//
+// Footer Styles
+//
+footer * {
+  color: $black;
+}
+.social-container p {
+  margin: 20px auto;
+  text-align: center;
+
+  @media (min-width: 720px) {
+    max-width: 50%;
+  }
+  @media (min-width: 1080px) {
+  }
+  @media (min-width: 1200px) {
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

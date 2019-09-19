@@ -1,0 +1,21 @@
+{% comment %}
+<!-- Loop through scripts -->
+  {% assign script_files = site.static_files | where: "script", true %}
+  {% for myscript in script_files %}
+      <script type="text/javascript" src="{{ myscript.path }}"></script>
+  {% endfor %}
+{% endcomment %}
+
+<script type="text/javascript" src="/scripts/jquery_3.3.1.min.js"></script>
+<script type="text/javascript" src="/scripts/twemoji.min.js"></script>
+<script type="text/javascript" src="/scripts/main.js"></script>
+
+<!-- Simple Search Functionality — Thanks to: Christian Fei — Give the man (or woman) some love ———> https://github.com/christian-fei/Simple-Jekyll-Search -->
+<script type="text/javascript" src="/scripts/search-library.min.js"></script>
+<script type="text/javascript">
+  var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json'
+  })
+</script>
