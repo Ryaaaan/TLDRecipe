@@ -1,63 +1,63 @@
 $(document).ready(function(){
-  kitchen.animateChef();
-  kitchen.initHighlighter();
-  kitchen.hideCopyButton();
-  kitchen.generateEmoji();
-  kitchen.updateDOMFavorites();
+  tldr.animateChef();
+  tldr.initHighlighter();
+  tldr.hideCopyButton();
+  tldr.generateEmoji();
+  tldr.updateDOMFavorites();
 
   if (iOSDevice) {
-    kitchen.iosPlayerControls();
+    tldr.iosPlayerControls();
   }
 });
 $(document).on('scroll', function(){
-  kitchen.hideCopyButton();
+  tldr.hideCopyButton();
 });
 $(window).on('resize', function(){
   $('body').removeClass('open-nav');
-  kitchen.activeFilterFinder();
-  kitchen.animateChef();
+  tldr.activeFilterFinder();
+  tldr.animateChef();
 });
 
 
 // Establish Global Namespace + Variables
-window.copyPastaKitchen = window.copyPastaKitchen || {}
-var kitchen = window.copyPastaKitchen;
+window.tldrecipe = window.tldrecipe || {}
+var tldr = window.tldrecipe;
 
 // Detect iOS
 var iOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 // Navigation
 $('.mobile-trigger').on('click touch', function(){
-  kitchen.openMobileNav();
+  tldr.openMobileNav();
 });
 
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {
-  kitchen.toggleList(this);
-  // kitchen.hapticFeedback()
+  tldr.toggleList(this);
+  // tldr.hapticFeedback()
 });
 
 // Trigger Copy Functionality
-kitchen.copyItems = document.getElementById('copyShit');
+tldr.copyItems = document.getElementById('copyShit');
 $('.copy-button').on('click touch', function(){
 
   if (iOSDevice) {
-    kitchen.iosCopyToClipboard(kitchen.copyItems);
+    tldr.iosCopyToClipboard(tldr.copyItems);
   } else {
-    kitchen.normalCopyToClipboard(kitchen.copyItems);
+    tldr.normalCopyToClipboard(tldr.copyItems);
   }
 });
 
 $(".close-button-trigger").on("click touch", function() {
-  kitchen.killNotification();
+  tldr.killNotification();
 });
 
 $(".search-toggle").on("click touch", function() {
-  kitchen.toggleSearch();
+  tldr.toggleSearch();
 });
 
 
-kitchen.openMobileNav = function() {
+tldr.openMobileNav = function() {
   var isOpen = $('body').hasClass('open-nav');
 
   if (isOpen) {
@@ -67,7 +67,7 @@ kitchen.openMobileNav = function() {
   }
 }
 
-kitchen.toggleSearch = function() {
+tldr.toggleSearch = function() {
   var isOpen = $('html').hasClass('searching');
 
   if (isOpen) {
@@ -86,7 +86,7 @@ kitchen.toggleSearch = function() {
 
 
 
-kitchen.animateChef = function() {
+tldr.animateChef = function() {
   var teleported = $('header').hasClass('slide-down');
   // console.log(isOpen)
 
@@ -108,33 +108,33 @@ kitchen.animateChef = function() {
 //
 var notificationTimeout;
 
-kitchen.popNotification = function() {
-  kitchen.killNotification();
+tldr.popNotification = function() {
+  tldr.killNotification();
   $('html').addClass('open-notification');
 
   // Set timeOut
   notificationTimeout = setTimeout(function(){ $('html').removeClass('open-notification');}, 2500);
 }
-kitchen.killNotification = function() {
-  kitchen.killNotificationTimeout();
+tldr.killNotification = function() {
+  tldr.killNotificationTimeout();
   $('html').removeClass('open-notification');
 }
-kitchen.killNotificationTimeout = function() {
+tldr.killNotificationTimeout = function() {
   clearTimeout(notificationTimeout);
 }
 
 //
 // Recipe Functionality
 //
-kitchen.toggleList = function(item) {
+tldr.toggleList = function(item) {
   $(item).toggleClass('toggled');
 }
 
 $('.show-nav').on('click touch', function(){
-  kitchen.showNav();
+  tldr.showNav();
 });
 
-kitchen.showNav = function() {
+tldr.showNav = function() {
   var body = document.getElementsByClassName('recipe-book')[0];
   var isOpen = body.classList.contains('open-book');
 
@@ -154,19 +154,19 @@ kitchen.showNav = function() {
 var vid = document.getElementById("recipe-video");
 
 $('.play-btn').on('click touch', function(){
-  kitchen.playVideo();
+  tldr.playVideo();
 });
 $('.replay-btn').on('click touch', function(){
-  kitchen.replayVideo();
+  tldr.replayVideo();
 });
 $('.back-btn').on('click touch', function(){
-  kitchen.skipBack();
+  tldr.skipBack();
 });
 $('.fwd-btn').on('click touch', function(){
-  kitchen.skipFwd();
+  tldr.skipFwd();
 });
 
-kitchen.iosPlayerControls = function() {
+tldr.iosPlayerControls = function() {
   var recipePage = window.location.href.includes('recipes');
   var videoPage = document.getElementsByClassName("video-holster")
 
@@ -175,7 +175,7 @@ kitchen.iosPlayerControls = function() {
   }
 }
 
-kitchen.playVideo = function() {
+tldr.playVideo = function() {
   var controller = document.getElementById('video-controller');
   var playTime = controller.classList.contains('play-video');
 
@@ -191,32 +191,32 @@ kitchen.playVideo = function() {
     controller.classList.add('play-video');
   }
 }
-kitchen.pauseVideo = function() {
+tldr.pauseVideo = function() {
   vid.pause();
 }
-kitchen.replayVideo = function() {
+tldr.replayVideo = function() {
   vid.load();
   vid.play();
 }
-kitchen.skipBack = function() {
+tldr.skipBack = function() {
   var vidCurrentTime = vid.currentTime;
   vid.currentTime = vidCurrentTime - 5;
 }
-kitchen.skipFwd = function() {
+tldr.skipFwd = function() {
   var vidCurrentTime = vid.currentTime;
   vid.currentTime = vidCurrentTime + 5;
 }
 
 
-kitchen.normalCopyToClipboard = function(el) {
+tldr.normalCopyToClipboard = function(el) {
   el.select();
   document.execCommand('copy');
 
-  kitchen.popNotification()
-  kitchen.hideKeyboard();
+  tldr.popNotification()
+  tldr.hideKeyboard();
 }
 
-kitchen.iosCopyToClipboard = function(el) {
+tldr.iosCopyToClipboard = function(el) {
   var oldContentEditable = el.contentEditable,
       oldReadOnly = el.readOnly,
       range = document.createRange();
@@ -236,19 +236,19 @@ kitchen.iosCopyToClipboard = function(el) {
 
   document.execCommand('copy');
 
-  kitchen.popNotification();
-  kitchen.hideKeyboard();
+  tldr.popNotification();
+  tldr.hideKeyboard();
 }
 
 // Hide keyboard when selecting copy
-kitchen.hideKeyboard = function() {
+tldr.hideKeyboard = function() {
   document.activeElement.blur();
-  $(kitchen.copyItems).blur();
+  $(tldr.copyItems).blur();
   document.documentElement.scrollTop = document.documentElement.scrollTop;
 };
 
 
-kitchen.hideCopyButton = function() {
+tldr.hideCopyButton = function() {
 
   if($(window).scrollTop() + $(window).height() >= $(document).height() - 125) {
     $(".copy-button").removeClass("hide-it");
@@ -262,7 +262,7 @@ kitchen.hideCopyButton = function() {
 }
 
 
-kitchen.generateEmoji = function() {
+tldr.generateEmoji = function() {
   // Wiki Reference for supported emojis https://en.wikipedia.org/wiki/Emoji
   // Preview twemoji for source and samples https://github.com/twitter/twemoji/blob/master/src/test/preview.html
 
@@ -290,31 +290,31 @@ kitchen.generateEmoji = function() {
 
 $('.toggles span').mouseenter(function(){
   // Set Highlighter to Hovered Filter
-  kitchen.positionHighlighter(this);
+  tldr.positionHighlighter(this);
 });
 $('.toggles span').mouseleave(function(){
   // Reset Highlighter to Active Filter
-  kitchen.activeFilterFinder();
+  tldr.activeFilterFinder();
 });
 
 $('.toggles span').on('click touch', function(){
-  kitchen.filterMasterList(this);
+  tldr.filterMasterList(this);
 });
 
 
-kitchen.initHighlighter = function() {
+tldr.initHighlighter = function() {
   var foundFilters = $('.filter-container').length;
   if (foundFilters) {
     // add a slight delay to ensure items
     // have loaded on the page
     setTimeout(function(){
       $('.highlight').css('display', 'block');
-      kitchen.positionHighlighter(document.getElementById('alpha-toggle'));
+      tldr.positionHighlighter(document.getElementById('alpha-toggle'));
     }, 100);
   }
 }
 
-kitchen.filterMasterList = function(filter) {
+tldr.filterMasterList = function(filter) {
   var relatedList = "." + filter.id + "-list";
   var isActive = $(relatedList).hasClass('active-list');
 
@@ -322,11 +322,11 @@ kitchen.filterMasterList = function(filter) {
     $('.post-list').removeClass('active-list');
     $(relatedList).addClass('active-list');
 
-    kitchen.toggleActiveFilter(filter);
+    tldr.toggleActiveFilter(filter);
   }
 }
 
-kitchen.toggleActiveFilter = function(toggled) {
+tldr.toggleActiveFilter = function(toggled) {
   var isActive = $(toggled).hasClass('active-filter');
 
   if (!isActive) {
@@ -334,18 +334,18 @@ kitchen.toggleActiveFilter = function(toggled) {
     $(toggled).addClass('active-filter');
   }
 
-  kitchen.activeFilterFinder();
+  tldr.activeFilterFinder();
 }
 
-kitchen.activeFilterFinder = function() {
+tldr.activeFilterFinder = function() {
   var foundFilters = $('.filter-container').length;
   if (foundFilters) {
     var activeFilter = document.getElementsByClassName('active-filter')[0];
-    kitchen.positionHighlighter(activeFilter);
+    tldr.positionHighlighter(activeFilter);
   }
 }
 
-kitchen.positionHighlighter = function(hovered) {
+tldr.positionHighlighter = function(hovered) {
   // Get Body Left Position (should always be 0)
   var bodyPositionLeft = document.body.getBoundingClientRect().left;
   // Get Body Top Position (should always be 0)
@@ -376,113 +376,83 @@ kitchen.positionHighlighter = function(hovered) {
 
 
 //
-// Cookies for Dinner
+// Storing some data
 //
 $('.favorite-flag').on('click touch', function(){
   var recipe = this.parentNode;
-  kitchen.checkFavCookie(recipe);
+  var listName = 'favorites'
+  tldr.checkLocalStorage(recipe, listName);
+
   // Dont click through to link
-  event.preventDefault();
+  // event.preventDefault();
 });
 
 
+tldr.checkLocalStorage = function(clickedRecipe, listName) {
+  var checkList = localStorage.getItem(listName);
 
-kitchen.setCookie = function(cookieName, cookieVal, cookieExpDays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (cookieExpDays*24*60*60*1000));
-  var expires = "expires="+ d.toUTCString();
-  document.cookie = cookieName + "=" + cookieVal + ";" + expires + ";path=/";
-}
-
-kitchen.getCookie = function(cookieName) {
-  var name = cookieName + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-
-kitchen.checkFavCookie = function(clickedFavorite) {
-  // Set Cookie Vars
-  var cookieName = 'favorites'
-  var hasCookie = kitchen.getCookie(cookieName);
-  var fav = clickedFavorite.dataset.favorite;
-  var cookieExpDays = 3650;
-
-  if (hasCookie != "") {
-   // has cookie
-   kitchen.updateFavoriteCookie(cookieName, fav);
-   kitchen.updateDOMFavorites();
+  if (checkList === null) {
+   // no data on this thing - lets set one
+   tldr.setLocalStorage(clickedRecipe, listName);
   } else {
-    // set cookie
-    kitchen.setCookie(cookieName, fav, cookieExpDays);
-    kitchen.updateDOMFavorites();
+    // update existing data
+    tldr.updateLocalStorage(clickedRecipe, listName);
   }
 }
 
-kitchen.updateFavoriteCookie = function(cookieName, clickedFavorite) {
-  // Set Cookie Vars
-  var cookieExpDays = 3650;
-  var currentFavorites = kitchen.getCookie(cookieName);
-  var splitFavorites = currentFavorites.split('|');
-  var alreadyFavorited = splitFavorites.includes(clickedFavorite);
-  var cookieVal = '';
+tldr.setLocalStorage = function(clickedRecipe, listName) {
+  // define clicked favorite
+  var fav = clickedRecipe.dataset.favorite;
+  // init favorite list
+  localStorage.setItem(listName, fav);
+  tldr.updateDOMFavorites();
+}
 
-  if (!alreadyFavorited) {
-    // Add clicked favorite to array in cookie
-    splitFavorites.push(clickedFavorite);
-    cookieVal = splitFavorites.join('|');
+tldr.updateLocalStorage = function(clickedRecipe, listName) {
+  var fav = clickedRecipe.dataset.favorite;
+  var currentList = localStorage.getItem(listName);
+
+  // look for duplicates
+  var splitFavorites = currentList.split(',');
+  var hasFavorite = splitFavorites.includes(fav);
+
+  // if already favorited
+  if (hasFavorite) {
+    // find index of favorite and remove it
+    var index = splitFavorites.indexOf(fav);
+    splitFavorites.splice(index, 1);
+    // update list after favorite removal
+    localStorage.setItem(listName, splitFavorites);
+    tldr.updateDOMFavorites();
   } else {
-    // Remove cliked favorite from array in cookie
-    var alreadyFavoritedIndex = splitFavorites.indexOf(clickedFavorite);
-    if (alreadyFavoritedIndex > -1) {
-      splitFavorites.splice(alreadyFavoritedIndex, 1);
-    }
-    cookieVal = splitFavorites.join('|');
+    // set favorite
+    localStorage.setItem(listName, (currentList + ',') + fav);
+    tldr.updateDOMFavorites();
   }
-
-  kitchen.setCookie(cookieName, cookieVal, cookieExpDays);
 }
 
-
-kitchen.updateDOMFavorites = function() {
+// show favorites on front-end
+tldr.updateDOMFavorites = function(listName) {
+  var listName = 'favorites'
   // Set Cookie Vars
-  var cookieName = 'favorites'
-  var hasCookie = kitchen.getCookie(cookieName);
+  var currentList = localStorage.getItem(listName);
+  var splitFavorites = currentList.split(',');
 
-  if (hasCookie != "") {
+  // Resest all favorites on DOM
+  var allPossibleFavs = document.querySelectorAll("[data-favorite]");
+  for (var x = 0; x < allPossibleFavs.length; x++) {
+    allPossibleFavs[x].classList.remove('favorite');
+  }
 
-    // Resest all favorites on DOM
-    var allPossibleFavs = document.querySelectorAll("[data-favorite]");
-    for (var x = 0; x < allPossibleFavs.length; x++) {
-      allPossibleFavs[x].classList.remove('favorite');
-    }
-
-    // loop through all matching data-favorites
-    var splitFavorites = hasCookie.split('|');
-    for (var i = 0; i < splitFavorites.length; i++) {
-       var favHTML = document.querySelectorAll("[data-favorite=" + splitFavorites[i] + "]");
-       // sometimes theres more than one DOM element matching
-       for (var f = 0; f < favHTML.length; f++) {
-         favHTML[f].classList.add('favorite');
-       }
+  // loop through all matching data-favorites
+  for (var i = 0; i < splitFavorites.length; i++) {
+     var favHTML = document.querySelectorAll("[data-favorite=" + splitFavorites[i] + "]");
+     // sometimes theres more than one DOM element matching
+     for (var f = 0; f < favHTML.length; f++) {
+       favHTML[f].classList.add('favorite');
      }
-
-  } else {
-    // console.log('no favorites');
-  }
+   }
 }
-
-
 
 
 
