@@ -3,7 +3,7 @@ $(document).ready(function(){
   tldr.initHighlighter();
   tldr.hideCopyButton();
   tldr.generateEmoji();
-  tldr.updateDOMFavorites();
+  tldr.updateDOMFavoriteList();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();
@@ -389,9 +389,9 @@ $('.favorite-flag').on('click touch', function(){
 
 
 tldr.checkLocalStorage = function(clickedRecipe, listName) {
-  var checkList = localStorage.getItem(listName);
+  var checkList = JSON.parse(localStorage.getItem(listName));
 
-  if (checkList === null) {
+  if (checkList == null) {
    // no data on this thing - lets set one
    tldr.setLocalStorage(clickedRecipe, listName);
   } else {
@@ -401,57 +401,62 @@ tldr.checkLocalStorage = function(clickedRecipe, listName) {
 }
 
 tldr.setLocalStorage = function(clickedRecipe, listName) {
-  // define clicked favorite
+  // define clicked favorite and list
+  var favList = []
   var fav = clickedRecipe.dataset.favorite;
+  favList.push(fav);
   // init favorite list
-  localStorage.setItem(listName, fav);
-  tldr.updateDOMFavorites();
+  localStorage.setItem(listName, JSON.stringify(favList));
+  tldr.updateDOMFavoriteList();
 }
 
 tldr.updateLocalStorage = function(clickedRecipe, listName) {
   var fav = clickedRecipe.dataset.favorite;
-  var currentList = localStorage.getItem(listName);
+  var currentList = JSON.parse(localStorage.getItem(listName));
 
   // look for duplicates
-  var splitFavorites = currentList.split(',');
-  var hasFavorite = splitFavorites.includes(fav);
+  // var splitFavorites = currentList.split(',');
+  var hasFavorite = currentList.includes(fav);
 
   // if already favorited
   if (hasFavorite) {
     // find index of favorite and remove it
-    var index = splitFavorites.indexOf(fav);
-    splitFavorites.splice(index, 1);
+    var index = currentList.indexOf(fav);
+    currentList.splice(index, 1);
     // update list after favorite removal
-    localStorage.setItem(listName, splitFavorites);
-    tldr.updateDOMFavorites();
+    localStorage.setItem(listName, JSON.stringify(currentList));
+    tldr.updateDOMFavoriteList();
   } else {
     // set favorite
-    localStorage.setItem(listName, (currentList + ',') + fav);
-    tldr.updateDOMFavorites();
+    currentList.push(fav)
+    localStorage.setItem(listName, JSON.stringify(currentList));
+    tldr.updateDOMFavoriteList();
   }
 }
 
 // show favorites on front-end
-tldr.updateDOMFavorites = function(listName) {
+tldr.updateDOMFavoriteList = function(listName) {
   var listName = 'favorites'
   // Set Cookie Vars
-  var currentList = localStorage.getItem(listName);
-  var splitFavorites = currentList.split(',');
+  var currentList = JSON.parse(localStorage.getItem(listName));
 
-  // Resest all favorites on DOM
-  var allPossibleFavs = document.querySelectorAll("[data-favorite]");
-  for (var x = 0; x < allPossibleFavs.length; x++) {
-    allPossibleFavs[x].classList.remove('favorite');
+  // if data has been defined
+  if (currentList != null) {
+    // Resest all favorites on DOM
+    var allPossibleFavs = document.querySelectorAll("[data-favorite]");
+    for (var x = 0; x < allPossibleFavs.length; x++) {
+      allPossibleFavs[x].classList.remove('favorite');
+    }
+
+    for (var i = 0; i < currentList.length; i++) {
+       var favHTML = document.querySelectorAll("[data-favorite=" + currentList[i] + "]");
+       // sometimes theres more than one DOM element matching
+       for (var f = 0; f < favHTML.length; f++) {
+         favHTML[f].classList.add('favorite');
+       }
+     }
   }
 
-  // loop through all matching data-favorites
-  for (var i = 0; i < splitFavorites.length; i++) {
-     var favHTML = document.querySelectorAll("[data-favorite=" + splitFavorites[i] + "]");
-     // sometimes theres more than one DOM element matching
-     for (var f = 0; f < favHTML.length; f++) {
-       favHTML[f].classList.add('favorite');
-     }
-   }
 }
 
 
