@@ -720,8 +720,9 @@ html {
   overflow-x: hidden;
   height: 100%; }
 
-html.searching-mobile {
-  overflow-y: hidden; }
+.searching-mobile body {
+  overflow-y: hidden;
+  height: 100%; }
 
 body {
   margin: 0;
