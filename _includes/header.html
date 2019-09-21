@@ -1,124 +1,108 @@
 <header class="site-header" role="banner">
 
 
-  <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
 
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}" name="{{ site.title | escape }}">
+  <a class="site-title" rel="author" href="{{ "/" | relative_url }}" name="{{ site.title | escape }}">
 
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      	 viewBox="0 0 19 26" style="enable-background:new 0 0 19 26;" xml:space="preserve">
-      <style type="text/css">
-      	.chef0{fill:#FFFFFF;}
-      	.chef1{fill:#EEEEEE;}
-      	.chef2{fill:#FFEA00;}
-      	.chef3{fill:#FFB300;}
-      	.chef4{fill:#E0E0E0;}
-      	.chef5{fill:#FF1744;}
-      </style>
-      <g>
-      	<polygon class="chef0" points="17,17 17,16 16,16 16,15 3,15 3,16 2,16 2,17 0,17 0,26 2,26 17,26 19,26 19,17 	"/>
-      	<polygon class="chef0" points="15,1 15,0 12,0 12,1 11,1 11,0 8,0 8,1 7,1 7,0 4,0 4,1 3,1 3,3 4,3 4,4 5,4 5,8 14,8 14,4 15,4 15,3
-      		16,3 16,1 	"/>
-      	<g>
-      		<polygon class="chef1" points="14,15 3,15 3,16 2,16 2,17 1,17 0,17 0,26 1,26 1,18 3,18 3,17 5,17 5,16 6,16 6,18 13,18 13,16
-      			14,16 		"/>
-      		<rect x="14" y="21" class="chef1" width="1" height="5"/>
-      		<rect x="4" y="21" class="chef1" width="1" height="5"/>
-      		<rect x="7" y="20" class="chef1" width="1" height="1"/>
-      		<rect x="7" y="22" class="chef1" width="1" height="1"/>
-      		<rect x="7" y="24" class="chef1" width="1" height="1"/>
-      		<polygon class="chef1" points="4,4 5,4 5,8 7,8 7,4 6,4 6,3 5,3 5,1 6,1 6,0 4,0 4,1 3,1 3,3 4,3 		"/>
-      		<rect x="8" y="5" class="chef1" width="1" height="3"/>
-      		<rect x="10" y="5" class="chef1" width="1" height="3"/>
-      		<rect x="12" y="5" class="chef1" width="1" height="3"/>
-      	</g>
-      	<polygon class="chef2" points="14,9 14,8 5,8 5,9 4,9 4,11 5,11 5,15 6,15 6,16 13,16 13,15 14,15 14,11 15,11 15,9 	"/>
-      	<rect x="9" y="16" class="chef1" width="1" height="10"/>
-      	<g>
-      		<rect x="4" y="10" class="chef3" width="1" height="1"/>
-      		<rect x="14" y="10" class="chef3" width="1" height="1"/>
-      		<rect x="7" y="16" class="chef3" width="5" height="1"/>
-      		<polygon class="chef3" points="8,10 9,10 9,9 10,9 10,10 11,10 11,9 14,9 14,8 5,8 5,9 8,9 		"/>
-      		<rect x="9" y="13" class="chef3" width="1" height="1"/>
-      		<rect x="6" y="13" class="chef3" width="1" height="1"/>
-      		<rect x="12" y="13" class="chef3" width="1" height="1"/>
-      		<rect x="7" y="14" class="chef3" width="2" height="1"/>
-      		<rect x="10" y="14" class="chef3" width="2" height="1"/>
-      	</g>
-      	<g>
-      		<rect x="6" y="12" width="1" height="1"/>
-      		<rect x="6" y="9" width="2" height="1"/>
-      		<rect x="11" y="9" width="2" height="1"/>
-      		<rect x="12" y="12" width="1" height="1"/>
-      		<polygon points="11,12 10,12 9,12 8,12 8,13 7,13 7,14 9,14 9,13 10,13 10,14 12,14 12,13 11,13 		"/>
-      	</g>
-      	<g>
-      		<rect x="15" y="21" class="chef4" width="1" height="5"/>
-      		<rect x="14" y="20" class="chef4" width="1" height="1"/>
-      		<rect x="16" y="20" class="chef4" width="1" height="1"/>
-      		<rect x="2" y="20" class="chef4" width="1" height="1"/>
-      		<rect x="4" y="20" class="chef4" width="1" height="1"/>
-      		<rect x="3" y="21" class="chef4" width="1" height="5"/>
-      		<rect x="6" y="5" class="chef4" width="1" height="3"/>
-      	</g>
-      	<polygon class="chef5" points="10,11 10,9 9,9 9,11 8,11 8,12 9,12 10,12 11,12 11,11 	"/>
-      </g>
-      </svg>
-
-
-    </a>
-
-    {%- if page_paths -%}
-      <nav class="site-nav">
-
-        <div class="trigger">
-          <!-- <a class="page-link" href="#the-menu">Menu</a>
-          <a class="page-link" href="#catering">Catering</a>
-          <a class="page-link" href="#contact">Contact</a>
-          <a class="page-link" href="#tracker">Find the Truck</a>
-          <a class="page-link events-link" href="#upcoming">Upcoming Events</a> -->
-
-          <!-- {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-
-            {%- if my_page.title ==  "Events Calendar" -%}
-              <a class="page-link events-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- else -%}
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- endif -%}
-
-            {%- endif -%}
-          {%- endfor -%} -->
-        </div>
-      </nav>
-    {%- endif -%}
-  </div>
-
-  <input type="text" class="search-input" id="search-input" placeholder="search recipes...">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    	 viewBox="0 0 19 26" style="enable-background:new 0 0 19 26;" xml:space="preserve">
+    <style type="text/css">
+    	.chef0{fill:#FFFFFF;}
+    	.chef1{fill:#EEEEEE;}
+    	.chef2{fill:#FFEA00;}
+    	.chef3{fill:#FFB300;}
+    	.chef4{fill:#E0E0E0;}
+    	.chef5{fill:#FF1744;}
+    </style>
+    <g>
+    	<polygon class="chef0" points="17,17 17,16 16,16 16,15 3,15 3,16 2,16 2,17 0,17 0,26 2,26 17,26 19,26 19,17 	"/>
+    	<polygon class="chef0" points="15,1 15,0 12,0 12,1 11,1 11,0 8,0 8,1 7,1 7,0 4,0 4,1 3,1 3,3 4,3 4,4 5,4 5,8 14,8 14,4 15,4 15,3
+    		16,3 16,1 	"/>
+    	<g>
+    		<polygon class="chef1" points="14,15 3,15 3,16 2,16 2,17 1,17 0,17 0,26 1,26 1,18 3,18 3,17 5,17 5,16 6,16 6,18 13,18 13,16
+    			14,16 		"/>
+    		<rect x="14" y="21" class="chef1" width="1" height="5"/>
+    		<rect x="4" y="21" class="chef1" width="1" height="5"/>
+    		<rect x="7" y="20" class="chef1" width="1" height="1"/>
+    		<rect x="7" y="22" class="chef1" width="1" height="1"/>
+    		<rect x="7" y="24" class="chef1" width="1" height="1"/>
+    		<polygon class="chef1" points="4,4 5,4 5,8 7,8 7,4 6,4 6,3 5,3 5,1 6,1 6,0 4,0 4,1 3,1 3,3 4,3 		"/>
+    		<rect x="8" y="5" class="chef1" width="1" height="3"/>
+    		<rect x="10" y="5" class="chef1" width="1" height="3"/>
+    		<rect x="12" y="5" class="chef1" width="1" height="3"/>
+    	</g>
+    	<polygon class="chef2" points="14,9 14,8 5,8 5,9 4,9 4,11 5,11 5,15 6,15 6,16 13,16 13,15 14,15 14,11 15,11 15,9 	"/>
+    	<rect x="9" y="16" class="chef1" width="1" height="10"/>
+    	<g>
+    		<rect x="4" y="10" class="chef3" width="1" height="1"/>
+    		<rect x="14" y="10" class="chef3" width="1" height="1"/>
+    		<rect x="7" y="16" class="chef3" width="5" height="1"/>
+    		<polygon class="chef3" points="8,10 9,10 9,9 10,9 10,10 11,10 11,9 14,9 14,8 5,8 5,9 8,9 		"/>
+    		<rect x="9" y="13" class="chef3" width="1" height="1"/>
+    		<rect x="6" y="13" class="chef3" width="1" height="1"/>
+    		<rect x="12" y="13" class="chef3" width="1" height="1"/>
+    		<rect x="7" y="14" class="chef3" width="2" height="1"/>
+    		<rect x="10" y="14" class="chef3" width="2" height="1"/>
+    	</g>
+    	<g>
+    		<rect x="6" y="12" width="1" height="1"/>
+    		<rect x="6" y="9" width="2" height="1"/>
+    		<rect x="11" y="9" width="2" height="1"/>
+    		<rect x="12" y="12" width="1" height="1"/>
+    		<polygon points="11,12 10,12 9,12 8,12 8,13 7,13 7,14 9,14 9,13 10,13 10,14 12,14 12,13 11,13 		"/>
+    	</g>
+    	<g>
+    		<rect x="15" y="21" class="chef4" width="1" height="5"/>
+    		<rect x="14" y="20" class="chef4" width="1" height="1"/>
+    		<rect x="16" y="20" class="chef4" width="1" height="1"/>
+    		<rect x="2" y="20" class="chef4" width="1" height="1"/>
+    		<rect x="4" y="20" class="chef4" width="1" height="1"/>
+    		<rect x="3" y="21" class="chef4" width="1" height="5"/>
+    		<rect x="6" y="5" class="chef4" width="1" height="3"/>
+    	</g>
+    	<polygon class="chef5" points="10,11 10,9 9,9 9,11 8,11 8,12 9,12 10,12 11,12 11,11 	"/>
+    </g>
+    </svg>
 
 
-  <div class="search-toggle search-icon">
-    <div class="close-container">
+  </a>
+
+
+  <div class="nav-button-container">
+    <!-- <div class="nm-toggle">
       <span></span>
-      <span></span>
+    </div> -->
+
+    <div class="search-toggle search-icon">
+      <input type="text" class="search-input" id="search-input" placeholder="search recipes...">
+      <div class="close-container">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="menu-toggle">
+      <div class="toggle-container">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </div>
 
-  <div class="nm-toggle">
-    <span></span>
-  </div>
+  {%- if page_paths -%}
+    <nav class="site-nav">
+      <ul>
 
-  <!-- <div class="mobile-trigger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div> -->
+      </ul>
+    </nav>
+  {%- endif -%}
+
 
   <!-- pre-load some font-styles -->
-  <span style="visibility: hidden;" class="font-helper">
+  <span style="visibility: hidden; position: absolute; pointer-events: none;" class="font-helper">
     <b>http://www.tldrecipe.co</b>
     <i>http://www.tldrecipe.co</i>
   </span>

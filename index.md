@@ -5,7 +5,7 @@
 
 # Define layout
 layout: home
-title: TLDReceipe
+title: 
 
 # Master List Section
 listHeader: The Big List
