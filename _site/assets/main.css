@@ -1025,12 +1025,19 @@ nav.site-nav {
     .search-results h3 {
       font-size: 56px; } }
 
+.searching .search-results.post-list,
+.searching-mobile .search-results.post-list {
+  display: flex; }
+  @media (min-width: 720px) {
+    .searching .search-results.post-list,
+    .searching-mobile .search-results.post-list {
+      display: block; } }
+
 .search-results.post-list {
   margin: 0 auto; }
   @media (min-width: 720px) {
     .search-results.post-list {
-      margin: 0px auto 20px auto;
-      display: block; } }
+      margin: 0px auto 20px auto; } }
 
 .search-results.post-list li {
   width: 100%; }
@@ -1250,7 +1257,7 @@ section {
 
 .post-list {
   padding: 0;
-  display: flex;
+  display: none;
   flex-direction: column-reverse;
   flex-wrap: wrap;
   box-sizing: border-box;
