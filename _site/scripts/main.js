@@ -106,9 +106,16 @@ tldr.openMobileNav = function() {
 
 tldr.openSearch = function() {
   var isOpen = $('html').hasClass('searching');
+  var isOpenMobile = $('html').hasClass('searching');
 
-  if (!isOpen) {
-    $('html').addClass('searching');
+  if (!isOpen && !isOpenMobile) {
+
+    if (!iOSDevice) {
+      $('html').addClass('searching');
+    } else {
+      $('html').addClass('searching-mobile');
+    }
+
     setTimeout(function(){
       $('site-title').css('display', 'none');
     }, 175)
@@ -118,9 +125,16 @@ tldr.openSearch = function() {
 }
 tldr.killSearch = function() {
   var isOpen = $('html').hasClass('searching');
+  var isOpenMobile = $('html').hasClass('searching-mobile');
 
-  if (isOpen) {
-    $('html').removeClass('searching');
+  if (isOpen || isOpenMobile) {
+
+    if (!iOSDevice) {
+      $('html').removeClass('searching');
+    } else {
+      $('html').removeClass('searching-mobile');
+    }
+
     $('site-title').css('display', 'block');
     $('.search-toggle').addClass('search-icon');
   }
@@ -213,7 +227,7 @@ tldr.iosPlayerControls = function() {
   var recipePage = window.location.href.includes('recipes');
   var videoPage = document.getElementsByClassName("video-holster")
 
-  if (videoPage) {
+  if (videoPage.length > 0) {
     videoPage[0].classList.add('ios-controls');
   }
 }

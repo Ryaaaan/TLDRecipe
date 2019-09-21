@@ -779,13 +779,17 @@ header.site-header {
       top: 0;
       bottom: inherit; } }
 
+.searching-mobile header.site-header {
+  bottom: 275px; }
+
 .nav-button-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end; }
 
-.searching .nav-button-container {
+.searching .nav-button-container
+.searching-mobile .nav-button-container {
   width: 100%; }
 
 .menu-toggle,
@@ -935,7 +939,8 @@ nav.site-nav {
       top: 75px;
       padding: 20px 30px; } }
 
-.searching .search-modal {
+.searching .search-modal,
+.searching-mobile .search-modal {
   opacity: 1;
   pointer-events: all; }
 
@@ -963,7 +968,8 @@ nav.site-nav {
     .site-header input {
       font-size: 22px; } }
 
-.searching .search-input {
+.searching .search-input,
+.searching-mobile .search-input {
   opacity: 1;
   pointer-events: all;
   height: 45px;
@@ -971,15 +977,18 @@ nav.site-nav {
   margin: 4px 20px 5px 0;
   padding: 10px 20px; }
   @media (min-width: 720px) {
-    .searching .search-input {
+    .searching .search-input,
+    .searching-mobile .search-input {
       padding: 10px 30px; } }
 
-.searching .site-title {
+.searching .site-title,
+.searching-mobile .site-title {
   pointer-events: none;
   transform: translate3d(-100px, 0px, 0px);
   -webkit-transform: translate3d(-100px, 0px, 0px); }
   @media (min-width: 720px) {
-    .searching .site-title {
+    .searching .site-title,
+    .searching-mobile .site-title {
       transform: translate3d(0px, 100px, 0px);
       -webkit-transform: translate3d(0px, 100px, 0px); } }
 
@@ -1047,10 +1056,12 @@ nav.site-nav {
   justify-content: flex-end;
   margin: 0px; }
 
-.searching .search-toggle {
+.searching .search-toggle,
+.searching-mobile .search-toggle {
   width: calc(100% - 65px); }
   @media (min-width: 720px) {
-    .searching .search-toggle {
+    .searching .search-toggle,
+    .searching-mobile .search-toggle {
       width: calc(100% - 135px); } }
 
 .close-container {
@@ -1068,7 +1079,8 @@ nav.site-nav {
   -ms-transition: all 75ms ease-in-out;
   transition: all 75ms ease-in-out; }
 
-.searching .close-container {
+.searching .close-container,
+.searching-mobile .close-container {
   pointer-events: all;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
