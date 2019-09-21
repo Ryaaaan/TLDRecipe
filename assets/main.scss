@@ -15,9 +15,13 @@
 //
 ::-webkit-scrollbar {
   background: $white;
+
+  @include transition(background 150ms ease-in-out);
 }
 ::-webkit-scrollbar-thumb {
   background: $red;
+
+  @include transition(background 150ms ease-in-out);
 }
 
 html {
@@ -33,6 +37,8 @@ body {
   background: $white;
   height: 100%;
   position: relative;
+
+  @include transition(background 150ms ease-in-out);
 
   // @include transition(all 250ms ease-in-out);
   //
@@ -91,6 +97,8 @@ header.site-header {
   height: 85px;
   background: $red;
   overflow: hidden;
+
+  @include transition(background 150ms ease-in-out);
 }
 .site-header .wrapper {
   display: flex;
@@ -339,7 +347,7 @@ nav.site-nav {
   cursor: pointer;
 
   @include rotate(0deg);
-  @include transition(all 175ms ease-in-out);
+  @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
     right: 25px;
@@ -386,12 +394,13 @@ nav.site-nav {
   width: 12px;
 }
 
-
 //
 // General Styles
 //
 main {
   background: $white;
+
+  @include transition(background 150ms ease-in-out);
 }
 main.page-content {
   // height: calc(100% - 85px);
@@ -460,6 +469,8 @@ section {
 .master-list {
   background: $white;
   min-height: calc(100% - 90px);
+
+  @include transition(background 150ms ease-in-out);
 }
 .master-list .wrapper {
 
@@ -559,7 +570,7 @@ section {
   align-items: center;
   justify-content: space-between;
 
-  @include transition(all 125ms ease-in-out);
+  @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
   }
@@ -843,7 +854,7 @@ a.post-link:hover .double-arrow svg {
 
 // Recipe Header
 .post-title {
-  padding: 30px 0px;
+  padding: 30px 0px 0px;
   max-width: 500px;
 
   @media (min-width: 450px) {
@@ -851,7 +862,7 @@ a.post-link:hover .double-arrow svg {
   }
   @media (min-width: 720px) {
     padding: 0;
-    margin: 0 0 40px 0;
+    margin: 0;
   }
 }
 .nutrition-container {
@@ -885,6 +896,8 @@ a.post-link:hover .double-arrow svg {
   margin: 0 auto;
   background: $grey;
   padding: 30px 0 20px;
+
+  @include transition(background 150ms ease-in-out);
 
   @media (min-width: 720px) {
     height: 280px;
@@ -952,6 +965,8 @@ a.post-link:hover .double-arrow svg {
   background: $white;
   padding: 10px 0 80px;
 
+  @include transition(background 150ms ease-in-out);
+
   @media (min-width: 450px) {
     padding: 15px 0 80px;
   }
@@ -973,6 +988,25 @@ a.post-link:hover .double-arrow svg {
     justify-content: space-between;
     padding: 5px 10px;
   }
+}
+
+.favorite-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+.favorite-container .favorite-flag {
+  padding-left: 0;
+}
+.fav-descrition {
+  text-transform: lowercase;
+  font-style: italic;
+  font-size: 14px;
+
+  @include transition(color 150ms ease-in-out);
 }
 
 // Grocery List
@@ -1017,6 +1051,8 @@ ol.instruction-list li.toggled:before {
   box-sizing: border-box;
   display: inline-block;
   background: $grey;
+
+  @include transition(background 150ms ease-in-out);
 }
 .list-toggle span {
   height: 12px;
@@ -1119,7 +1155,7 @@ ol.instruction-list li.toggled:before {
   height: 100%;
   width: 100%;
 
-  @include transition(all 125ms ease-in-out);
+  @include transition(all 150ms ease-in-out);
 }
 .video-btn:hover svg {
   fill: $black;
@@ -1142,11 +1178,11 @@ ol.instruction-list li.toggled:before {
 #play-btn {
   width: 30px;
   height: 30px;
-  background: $white;
+  // background: $white;
   padding: 20px;
 
   // @include rotate(180deg);
-  // @include transition(all 125ms ease-in-out);
+  @include transition(background 150ms ease-in-out);
 }
 #play-btn div {
   display: flex;
@@ -1255,4 +1291,150 @@ footer {
 .social-media-list li {
   margin: 10px;
   display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// Night Mode
+//
+.nm-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 35px;
+  right: 120px;
+}
+.nm-toggle span {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background: black;
+  cursor: pointer;
+}
+
+
+.night-mode::-webkit-scrollbar {
+  background: $black;
+}
+.night-mode::-webkit-scrollbar-thumb {
+  background: $ultrablack;
+}
+
+body.night-mode,
+.night-mode main,
+.night-mode .master-list {
+  background: $black;
+}
+.night-mode header.site-header {
+  background: $ultrablack;
+}
+.night-mode .highlight {
+  background: $aqua;
+}
+.night-mode .search-toggle {
+  background: $ultrablack;
+}
+.night-mode .recipe-content {
+  background: $black;
+}
+.night-mode .coming-soon {
+  background: $medblack;
+}
+.night-mode .list-toggle {
+  background: $ultrablack;
+}
+.night-mode .toggled .list-toggle span {
+  background: $aqua;
+}
+.night-mode .copy-button {
+  background: $aqua;
+  color: $ultrablack;
+}
+
+.night-mode .video-btn svg {
+  fill: $aqua;
+}
+.night-mode .video-btn:hover svg {
+  fill: $white;
+}
+.night-mode #play-btn {
+  // background: $clear;
+}
+.night-mode .play-video #play-btn span:first-child {
+  border-top: 15px solid transparent;
+  border-left: 30px solid $aqua;
+  border-bottom: 15px solid transparent;
+}
+.night-mode .play-video #play-btn span {
+  background: $clear;
+}
+.night-mode #play-btn span {
+  background: $aqua;
+}
+.night-mode .play-video #play-btn:hover span:first-child {
+  border-top: 15px solid transparent;
+  border-left: 30px solid $white;
+  border-bottom: 15px solid transparent;
+}
+.night-mode .play-video #play-btn:hover span {
+  background: $clear;
+}
+.night-mode #play-btn:hover span {
+  background: $white;
+}
+
+
+
+// Typo Changes
+.night-mode h1,
+.night-mode h2,
+.night-mode h3 {
+  color: $aqua;
+}
+.night-mode h3 {
+  color: $white;
+}
+.night-mode .filter-container span {
+  color: $medblack;
+}
+.night-mode .filter-container span.active-filter,
+.night-mode .filter-container span:hover {
+   color: $white;
+}
+.night-mode .post-link {
+  color: $white;
+}
+.night-mode .post-list li:hover {
+  border-bottom: 1px solid $aqua;
+}
+.night-mode .post-list li:hover a {
+  color: $aqua;
+}
+.night-mode .fav-descrition {
+  color: $white;
+}
+.night-mode .nutrition-container span,
+.night-mode .nutrition-container strong {
+  color: $white;
+}
+.night-mode .recipe-content li {
+  color: $white;
+}
+.night-mode ol.instruction-list li:before {
+  color: $aqua;
 }

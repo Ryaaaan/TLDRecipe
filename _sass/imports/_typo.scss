@@ -44,6 +44,8 @@ h1 {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 
+  @include transition(color 150ms ease-in-out);
+
   @media (min-width: 720px) {
     font-size: 68px;
     line-height: 62px;
@@ -61,6 +63,8 @@ h2 {
   text-align: center;
   text-transform: lowercase;
 
+  @include transition(color 150ms ease-in-out);
+
   @media (min-width: 720px) {
     font-size: 32px;
     margin: 20px auto 0;
@@ -77,6 +81,8 @@ h3 {
   font-size: 16px;
   margin: 10px 0 0;
   font-weight: 500;
+
+  @include transition(color 150ms ease-in-out);
 
   @media (min-width: 720px) {
     // font-size: 42px;
@@ -104,6 +110,8 @@ li {
   font-weight: 100;
   font-size: 14px;
   color: $black;
+
+  @include transition(color 150ms ease-in-out);
 }
 section p,
 .modal p {
@@ -224,6 +232,8 @@ section p,
 .master-list h2 {
   font-size: 52px;
 
+  @include transition(color 150ms ease-in-out);
+
   @media (min-width: 720px) {
     font-size: 62px;
   }
@@ -267,6 +277,10 @@ section p,
 }
 .post-list li {
   list-style: none;
+}
+.post-link {
+  color: $black;
+  @include transition(color 175ms ease-in-out);
 }
 .post-link p {
   margin: 0 0 25px;
@@ -324,16 +338,22 @@ a.post-link:hover h3,
 .nutrition-container strong {
   font-weight: 200;
   color: $black;
+
+  @include transition(color 150ms ease-in-out);
 }
 .nutrition-container strong {
   font-weight: 200;
   padding-top: 12px;
+
+  @include transition(color 150ms ease-in-out);
 }
 .macro-container span {
   font-size: 20px;
   line-height: 18px;
   font-weight: 600;
   color: $red;
+
+  @include transition(color 150ms ease-in-out);
 }
 .copy-button {
   color: $white;

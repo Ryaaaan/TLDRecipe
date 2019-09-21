@@ -4,6 +4,7 @@ $(document).ready(function(){
   tldr.hideCopyButton();
   tldr.generateEmoji();
   tldr.updateDOMFavoriteList();
+  tldr.sniffURL();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();
@@ -25,6 +26,37 @@ var tldr = window.tldrecipe;
 
 // Detect iOS
 var iOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+
+// Toggle Night Mode
+$(".nm-toggle").on("click touch", function() {
+  tldr.nightMode();
+});
+
+
+tldr.nightMode = function() {
+  var isDark = document.body.classList.contains('night-mode');
+
+  if (isDark) {
+    document.body.classList.remove('night-mode');
+  } else {
+    document.body.classList.add('night-mode');
+  }
+}
+
+
+tldr.sniffURL = function() {
+  var url = window.location.href;
+  var hasDarkMode = url.includes('darkmode=true');
+  var isDark = document.body.classList.contains('night-mode');
+
+  if (hasDarkMode && !isDark){
+    tldr.nightMode();
+    console.log('ay')
+  }
+}
+
+
 
 // Navigation
 $('.mobile-trigger').on('click touch', function(){
