@@ -770,17 +770,21 @@ header.site-header {
   bottom: 0;
   z-index: 2000;
   box-sizing: border-box;
-  -webkit-transition: background 150ms ease-in-out;
-  -moz-transition: background 150ms ease-in-out;
-  -ms-transition: background 150ms ease-in-out;
-  transition: background 150ms ease-in-out; }
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out; }
   @media (min-width: 720px) {
     header.site-header {
       top: 0;
-      bottom: inherit; } }
+      bottom: inherit;
+      -webkit-transition: background 150ms ease-in-out;
+      -moz-transition: background 150ms ease-in-out;
+      -ms-transition: background 150ms ease-in-out;
+      transition: background 150ms ease-in-out; } }
 
 .searching-mobile header.site-header {
-  bottom: 275px; }
+  bottom: 305px; }
 
 .nav-button-container {
   display: flex;
@@ -938,6 +942,9 @@ nav.site-nav {
       width: calc(100% - 165px);
       top: 75px;
       padding: 20px 30px; } }
+
+.searching-mobile .search-modal {
+  height: calc(100% - 395px); }
 
 .searching .search-modal,
 .searching-mobile .search-modal {

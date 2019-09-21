@@ -111,16 +111,18 @@ header.site-header {
   box-sizing: border-box;
 
 
-  @include transition(background 150ms ease-in-out);
+  @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
     // padding: 0 20px;
     top: 0;
     bottom: inherit;
+
+    @include transition(background 150ms ease-in-out);
   }
 }
 .searching-mobile header.site-header {
-  bottom: 275px;
+  bottom: 305px;
 }
 .nav-button-container {
   display: flex;
@@ -276,6 +278,9 @@ nav.site-nav {
     top: 75px;
     padding: 20px 30px;
   }
+}
+.searching-mobile .search-modal {
+  height: calc(100% - 395px);
 }
 .searching .search-modal,
 .searching-mobile .search-modal {
