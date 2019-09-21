@@ -788,7 +788,7 @@ header.site-header {
       transition: background 150ms ease-in-out; } }
 
 .searching-mobile header.site-header {
-  bottom: 305px; }
+  top: 0; }
 
 .nav-button-container {
   display: flex;
@@ -948,6 +948,7 @@ nav.site-nav {
       padding: 20px 30px; } }
 
 .searching-mobile .search-modal {
+  top: 75px;
   height: calc(100% - 395px); }
 
 .searching .search-modal,
