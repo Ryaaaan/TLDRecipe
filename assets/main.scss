@@ -107,7 +107,7 @@ header.site-header {
   justify-content: flex-end;
 
   position: fixed;
-  bottom: 0;
+  top: 0;
   z-index: 2000;
   box-sizing: border-box;
 
@@ -115,9 +115,6 @@ header.site-header {
   @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
-    // padding: 0 20px;
-    top: 0;
-    bottom: inherit;
 
     @include transition(background 150ms ease-in-out);
   }
@@ -363,16 +360,17 @@ nav.site-nav {
     font-size: 56px;
   }
 }
-.searching .search-results.post-list,
-.searching-mobile .search-results.post-list {
-  display: flex;
-
-  @media (min-width: 720px) {
-    display: block;
-  }
-}
+// .searching .search-results.post-list,
+// .searching-mobile .search-results.post-list {
+//   display: flex;
+//
+//   @media (min-width: 720px) {
+//     display: block;
+//   }
+// }
 .search-results.post-list {
   margin: 0 auto;
+  display: block;
 
   @media (min-width: 720px) {
     margin: 0px auto 20px auto;

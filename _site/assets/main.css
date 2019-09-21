@@ -771,7 +771,7 @@ header.site-header {
   align-items: center;
   justify-content: flex-end;
   position: fixed;
-  bottom: 0;
+  top: 0;
   z-index: 2000;
   box-sizing: border-box;
   -webkit-transition: all 150ms ease-in-out;
@@ -780,8 +780,6 @@ header.site-header {
   transition: all 150ms ease-in-out; }
   @media (min-width: 720px) {
     header.site-header {
-      top: 0;
-      bottom: inherit;
       -webkit-transition: background 150ms ease-in-out;
       -moz-transition: background 150ms ease-in-out;
       -ms-transition: background 150ms ease-in-out;
@@ -1027,16 +1025,9 @@ nav.site-nav {
     .search-results h3 {
       font-size: 56px; } }
 
-.searching .search-results.post-list,
-.searching-mobile .search-results.post-list {
-  display: flex; }
-  @media (min-width: 720px) {
-    .searching .search-results.post-list,
-    .searching-mobile .search-results.post-list {
-      display: block; } }
-
 .search-results.post-list {
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: block; }
   @media (min-width: 720px) {
     .search-results.post-list {
       margin: 0px auto 20px auto; } }
