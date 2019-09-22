@@ -333,6 +333,19 @@ a.post-link:hover h3,
 //
 // Post Styles
 //
+.recipe-page h1 {
+  font-size: 54px;
+  line-height: 52px;
+
+
+  @media (min-width: 860px) {
+    font-size: 68px;
+    line-height: 62px;
+  }
+  @media (min-width: 1200px) {
+  }
+}
+
 
 .nutrition-container span,
 .nutrition-container strong {

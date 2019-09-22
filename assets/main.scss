@@ -59,7 +59,7 @@ body {
   position: relative;
 
   @media (min-width: 720px) {
-    // max-width: 700px;
+    max-width: 700px;
     // padding: 0 20px;
   }
   @media (min-width: 1080px) {
@@ -185,11 +185,12 @@ nav.site-nav {
   }
 }
 .site-title svg {
-  width: 57px;
-  @include rotate(90deg);
+  width: 150px;
+  // @include rotate(90deg);
 
   @media (min-width: 720px) {
-    @include rotate(0deg);
+    // width: 150px;
+    // @include rotate(0deg);
   }
 }
 .site-title {
@@ -198,8 +199,8 @@ nav.site-nav {
   align-items: center;
 
   position: absolute;
-  left: 0;
-  width: 75px;
+  left: 10px;
+  width: 150px;
   margin: 0;
 
   transform: translate3d(0px, 0px, 0px);
@@ -208,8 +209,9 @@ nav.site-nav {
   @include transition(all 125ms ease-in-out);
 
   @media (min-width: 720px) {
-    margin-top: 10px;
-    width: 57px;
+        margin: 0 0 0 10px;
+    // width: 150px;
+    height: 50px;
     transform: translate3d(0px, 0px, 0px);
     -webkit-transform: translate3d(0px, 0px, 0px);
   }
@@ -243,7 +245,8 @@ nav.site-nav {
 // Search Styles
 //
 .search-modal {
-  height: calc(100% - 85px);
+  height: 50%;
+  min-height: 300px;
   width: calc(100% - 30px);
 
   border-radius: 15px;
@@ -252,7 +255,7 @@ nav.site-nav {
   box-sizing: border-box;
 
   position: fixed;
-  top: 10px;
+  top: 80px;
   left: 0;
   right: 0;
 
@@ -299,15 +302,15 @@ nav.site-nav {
   pointer-events: none;
 
   font-family: "Fira Sans", sans-serif;
-  font-weight: 600;
-  font-size: 26px;
+  font-weight: 400;
+  font-size: 20px;
   text-transform: lowercase;
   color: $white;
 
   @include transition(all 125ms ease-in-out);
 
   @media (min-width: 720px) {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 
@@ -329,13 +332,29 @@ nav.site-nav {
 .searching .site-title,
 .searching-mobile .site-title {
   pointer-events: none;
-  transform: translate3d(-100px, 0px, 0px);
-  -webkit-transform: translate3d(-100px, 0px, 0px);
+  transform: translate3d(-175px, 0px, 0px);
+  -webkit-transform: translate3d(-175px, 0px, 0px);
 
   @media (min-width: 720px) {
-    transform: translate3d(0px, 100px, 0px);
-    -webkit-transform: translate3d(0px, 100px, 0px);
+    transform: translate3d(-10px, 0px, 0px);
+    -webkit-transform: translate3d(-10px, 0px, 0px);
   }
+}
+.site-title .tldr0,
+.site-title  .tldr0 {
+  fill: $red;
+
+  @include transition(all 150ms ease-in-out);
+}
+.site-title .tldr1,
+.site-title  .tldr1 {
+  fill: $black;
+
+  @include transition(all 150ms ease-in-out);
+}
+.searching .site-title .tldr1,
+.searching-mobile .site-title  .tldr1 {
+  fill: $white;
 }
 .site-header ::placeholder {
   color: $white;
@@ -350,14 +369,14 @@ nav.site-nav {
   height: 100%;
 }
 .search-results h3 {
-  font-weight: 600;
-  font-size: 32px;
+  font-weight: 400;
+  font-size: 20px;
   line-height: initial;
   padding-top: 0;
   color: $grey;
 
   @media (min-width: 720px) {
-    font-size: 56px;
+    font-size: 32px;
   }
 }
 // .searching .search-results.post-list,
@@ -379,25 +398,32 @@ nav.site-nav {
 .search-results.post-list li {
   width: 100%;
 }
-.search-results.post-list li:first-child {
-  border-bottom: 0px solid $clear;
-
-  @media (min-width: 720px) {
-    border-bottom: 1px solid $grey;
-  }
-}
+// .search-results.post-list li:first-child {
+//   border-bottom: 0px solid $clear;
+//
+//   @media (min-width: 720px) {
+//     border-bottom: 1px solid $grey;
+//   }
+// }
 .search-results.post-list li:last-child {
-  border-bottom: 1px solid $grey;
-
-  @media (min-width: 720px) {
+  // border-bottom: 1px solid $grey;
+  //
+  // @media (min-width: 720px) {
     border-bottom: 0px solid $clear;
-  }
+  // }
 }
 .search-results.post-list a {
   padding: 15px 0;
   text-decoration: none;
   display: block;
   position: relative;
+
+  font-size: 18px;
+
+  @media (min-width: 720px) {
+    font-size: 28px;
+  }
+
 }
 .search-results.post-list a:focus {
   padding-left: 5px;
@@ -444,7 +470,7 @@ nav.site-nav {
 .searching-mobile .close-container {
   pointer-events: all;
 
-  @include rotate(135deg);
+  // @include rotate(135deg);
 }
 .close-container span {
   height: 3px;
@@ -454,13 +480,13 @@ nav.site-nav {
 
   position: relative;
   top: 16px;
-  left: 4px;
+  left: -4px;
 
   @include rotate(90deg);
 }
 .close-container span:last-child {
   top: 13px;
-  left: 4px;
+  left: -4px;
 
   @include rotate(0deg);
 }
@@ -907,8 +933,11 @@ a.post-link:hover .double-arrow svg {
     align-items: flex-start;
     padding: 25px 25px 0;
   }
+  @media (min-width: 860px) {
+    max-width: 800px;
+  }
   @media (min-width: 1200px) {
-    max-width: 860px;
+    max-width: 960px;
   }
 }
 
@@ -917,6 +946,10 @@ a.post-link:hover .double-arrow svg {
   max-width: 100%;
 
   @media (min-width: 720px) {
+    // max-width: 200px;
+    margin: 0 45px 0 0;
+  }
+  @media (min-width: 860px) {
     max-width: 400px;
     margin: 0 45px 0 0;
   }
@@ -984,10 +1017,15 @@ a.post-link:hover .double-arrow svg {
   @include transition(background 150ms ease-in-out);
 
   @media (min-width: 720px) {
-    height: 280px;
+    height: 210px;
     padding: 0;
     margin: 0 45px 0 0;
     position: fixed;
+    max-width: 320px;
+  }
+  @media (min-width: 860px) {
+    height: 280px;
+    margin: 0 45px 0 0;
     max-width: 400px;
   }
   @media (min-width: 1200px) {
@@ -1009,9 +1047,12 @@ a.post-link:hover .double-arrow svg {
 }
 .recipe-details {
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 
   @media (min-width: 720px) {
     padding: 0;
+    width: 100%;
   }
 }
 .recipe-container {
