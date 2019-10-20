@@ -1560,3 +1560,114 @@ body.night-mode,
 .night-mode ol.instruction-list li:before {
   color: $aqua;
 }
+
+
+
+
+
+
+
+
+//
+// Test Stuff
+//
+.test-page{
+
+  // Boilerplate resets
+  header.site-header,
+  .footnote {
+    display: none;
+  }
+  .test-content{
+    height: 100%;
+    width: 100%;
+  }
+  .test-content .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  // Cotnroller UI
+  .window-container {
+    height: 420px;
+    background: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .sky {
+      height: 20%;
+      background: $medgrey;
+    }
+    .ground {
+      height: 80%;
+      background: green;
+    }
+
+    .guy {
+      height: 294px;
+      width: 64px;
+      margin-left: 50px;
+    }
+    .guy svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+
+  .controls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: calc(100% - 420px);
+  }
+
+  .horizontal-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100px;
+
+    .button {
+      width: 50%;
+      margin: 5px;
+
+      border-radius: 10px;
+    }
+    .left-button {
+      background: $red;
+      margin-right: 2.5px;
+    }
+    .right-button {
+      background: $darkblue;
+      margin-left: 2.5px;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -2130,3 +2130,55 @@ body.night-mode,
 
 .night-mode ol.instruction-list li:before {
   color: #1DE9B6; }
+
+.test-page header.site-header,
+.test-page .footnote {
+  display: none; }
+.test-page .test-content {
+  height: 100%;
+  width: 100%; }
+.test-page .test-content .wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%; }
+.test-page .window-container {
+  height: 420px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+  .test-page .window-container .sky {
+    height: 20%;
+    background: #e0e0e0; }
+  .test-page .window-container .ground {
+    height: 80%;
+    background: green; }
+  .test-page .window-container .guy {
+    height: 294px;
+    width: 64px;
+    margin-left: 50px; }
+  .test-page .window-container .guy svg {
+    height: 100%;
+    width: 100%; }
+.test-page .controls-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100% - 420px); }
+.test-page .horizontal-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100px; }
+  .test-page .horizontal-controls .button {
+    width: 50%;
+    margin: 5px;
+    border-radius: 10px; }
+  .test-page .horizontal-controls .left-button {
+    background: #FF1744;
+    margin-right: 2.5px; }
+  .test-page .horizontal-controls .right-button {
+    background: #311B92;
+    margin-left: 2.5px; }
