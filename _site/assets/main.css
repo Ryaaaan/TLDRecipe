@@ -851,6 +851,15 @@ header.site-header {
   -ms-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out; }
 
+.searching-mobile .search-toggle {
+  width: 50px; }
+
+.searching .menu-toggle,
+.searching-mobile .menu-toggle {
+  width: 0px;
+  padding: 0px;
+  overflow: hidden; }
+
 .toggle-container {
   height: 22px;
   width: 30px;
@@ -1016,7 +1025,7 @@ nav.site-nav {
   opacity: 1;
   pointer-events: all;
   height: 45px;
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
   margin: 0;
   padding: 10px 20px;
   box-sizing: border-box;

@@ -167,6 +167,15 @@ header.site-header {
     // top: 15px;
   }
 }
+.searching-mobile .search-toggle {
+  width: 50px;
+}
+.searching .menu-toggle,
+.searching-mobile .menu-toggle {
+  width: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
 .toggle-container {
   height: 22px;
   width: 30px;
@@ -346,7 +355,7 @@ nav.site-nav {
   pointer-events: all;
 
   height: 45px;
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
   margin: 0;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -410,19 +419,9 @@ nav.site-nav {
 .search-results.post-list li {
   width: 100%;
 }
-// .search-results.post-list li:first-child {
-//   border-bottom: 0px solid var(--clear);
-//
-//   @media (min-width: 720px) {
-//     border-bottom: 1px solid var(--grey);
-//   }
-// }
+
 .search-results.post-list li:last-child {
-  // border-bottom: 1px solid var(--grey);
-  //
-  // @media (min-width: 720px) {
-    border-bottom: 0px solid var(--clear);
-  // }
+  border-bottom: 0px solid var(--clear);
 }
 .search-results.post-list a {
   padding: 15px 0;
