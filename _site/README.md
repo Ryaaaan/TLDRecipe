@@ -6,8 +6,11 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 
 
 ### Todo Items:
-- Write real README
-- Minify / Uglify JS Files
+- [ ] Write real README
+- [ ] Add Watch to `gulp.js` on JS file changes (and others?)
+- [ ] Add dark mode cookie
+- [ ] Add custom color picker with `cookies.js` and `var(color)`
+- [x] Add Minify / Uglify JS Functionality
 
 
 ---

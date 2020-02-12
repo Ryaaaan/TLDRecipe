@@ -52,8 +52,20 @@ tldr.sniffURL = function() {
 
   if (hasDarkMode && !isDark){
     tldr.nightMode();
-    console.log('ay')
   }
+}
+
+tldr.nightModeToggle = function() {
+  var isDark = document.body.classList.contains('night-mode');
+  var url = window.location.href
+
+  if (isDark){
+    var newURL = url.replace('?darkmode=true', '');
+  } else {
+    var newURL = url + '?darkmode=true'
+  }
+
+  window.location = newURL
 }
 
 
@@ -80,9 +92,15 @@ $('.copy-button').on('click touch', function(){
   }
 });
 
+
+
+
 $(".close-button-trigger").on("click touch", function() {
   tldr.killNotification();
 });
+
+
+
 
 $(".search-toggle").on("click touch", function() {
   tldr.openSearch();
@@ -93,6 +111,9 @@ $(".search-toggle .close-container").on("click touch", function(e) {
   e.stopPropagation();
 });
 
+$(".overlay-mask").on("click touch", function() {
+  tldr.killSearch();
+});
 
 tldr.openMobileNav = function() {
   var isOpen = $('body').hasClass('open-nav');
@@ -139,6 +160,20 @@ tldr.killSearch = function() {
     $('.search-toggle').addClass('search-icon');
   }
 }
+
+$("#search-input").keyup(function() {
+  var charCount = this.value.length;
+  tldr.isSearchingTrigger(charCount);
+});
+
+tldr.isSearchingTrigger = function(charCount) {
+  if (charCount > 0) {
+    $('html').addClass('typing');
+  } else {
+    $('html').removeClass('typing');
+  }
+}
+
 
 
 // Smooth Scroll Copy Pasta

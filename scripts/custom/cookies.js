@@ -30,6 +30,7 @@ tldr.setLocalStorage = function(clickedRecipe, listName) {
   favList.push(fav);
   // init favorite list
   localStorage.setItem(listName, JSON.stringify(favList));
+  // reflect change on DOM once cookie is set
   tldr.updateDOMFavoriteList();
 }
 

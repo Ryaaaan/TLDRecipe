@@ -88,13 +88,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <span></span>
     </div> -->
 
+    <input type="text" class="search-input" id="search-input" placeholder="search recipes...">
+
     <div class="search-toggle search-icon">
-      <input type="text" class="search-input" id="search-input" placeholder="search recipes...">
       <div class="close-container">
         <span></span>
         <span></span>
       </div>
     </div>
+
+
 
     <div class="menu-toggle">
       <div class="toggle-container">
@@ -117,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- HTML elements for search -->
 <div class="search-modal">
   <ul class="search-results post-list" id="results-container">
-    <h3></h3>
+    <!-- <span>No results...</span> -->
   </ul>
 </div>
 <main class="page-content" aria-label="Content">
@@ -146,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="footnote" id="footnote"></p>
     </main>
 
-    <div class="notification-mask"></div>
+    <div class="overlay-mask"></div>
 
 
 
