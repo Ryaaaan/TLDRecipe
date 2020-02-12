@@ -12,6 +12,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [ ] Test IE (latest)
 - [ ] Add Watch to `gulp.js` on JS file changes (and others?)
 - [ ] Add dark mode cookie
+- [ ] Night Mode subdomain to avoid flickering of cookie load?
 - [ ] Full Nutrition List (beyond MVP)
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
 - [ ] Close Search button click area is funky - needs updated
