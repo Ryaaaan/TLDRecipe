@@ -260,7 +260,7 @@ nav.site-nav {
   height: auto;
   max-height: 300px;
   width: 100%;
-  padding: 20px;
+  padding: 0px 20px;
   margin: auto;
   box-sizing: border-box;
   background: var(--white);
@@ -303,7 +303,7 @@ nav.site-nav {
   border-bottom: 1px solid var(--black);
 }
 .searching-mobile .search-modal {
-  height: calc(100% - 395px);
+  max-height: calc(100% - 395px);
 }
 .searching .search-modal,
 .searching-mobile .search-modal {
@@ -336,9 +336,8 @@ nav.site-nav {
     font-size: 20px;
   }
 }
-.searching .site-header input {
+.searching .search-input {
   width: calc(100% - 130px);
-  border-left: 1px solid var(--black);
 }
 
 .searching .search-input,
@@ -351,6 +350,7 @@ nav.site-nav {
   margin: 0;
   padding: 10px 20px;
   box-sizing: border-box;
+  border-left: 1px solid var(--black);
 
   @media (min-width: 720px) {
     padding: 10px 15px;
@@ -777,6 +777,7 @@ a.post-link:hover .double-arrow svg {
   @include transition(all 300ms ease-in-out);
 }
 .searching .overlay-mask,
+.searching-mobile .overlay-mask,
 .open-notification .overlay-mask {
   opacity: 1;
   pointer-events: all;
