@@ -284,7 +284,7 @@ nav.site-nav {
 // Search Styles
 //
 .search-modal {
-  height: auto;
+  height: 0;
   max-height: 300px;
   width: 100%;
   padding: 0px 20px;
@@ -334,6 +334,7 @@ nav.site-nav {
 }
 .searching .search-modal,
 .searching-mobile .search-modal {
+  height: auto;
   opacity: 1;
   pointer-events: all;
 }
