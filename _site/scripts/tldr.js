@@ -1,10 +1,9 @@
 $(document).ready(function(){
-  // tldr.animateChef();
   tldr.initHighlighter();
   tldr.hideCopyButton();
-  // tldr.generateEmoji();
   tldr.updateDOMFavoriteList();
-  tldr.sniffURL();
+  tldr.updateDOMNightMode();
+  tldr.isNightModeURL();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();
@@ -44,13 +43,23 @@ tldr.nightMode = function() {
   }
 }
 
+// Night Mode Check
+tldr.hasNightModeClass = function() {
+  var hasClass = document.body.classList.contains('night-mode');
 
-tldr.sniffURL = function() {
+  if (hasClass){
+    return true
+  } else {
+    return false
+  }
+}
+
+tldr.isNightModeURL = function() {
+  var hasNightModeClass = tldr.hasNightModeClass();
   var url = window.location.href;
-  var hasDarkMode = url.includes('darkmode=true');
-  var isDark = document.body.classList.contains('night-mode');
+  var hasNightMode = url.includes('nightmode=true');
 
-  if (hasDarkMode && !isDark){
+  if (hasNightMode && !hasNightModeClass){
     tldr.nightMode();
   }
 }
@@ -60,9 +69,9 @@ tldr.nightModeToggle = function() {
   var url = window.location.href
 
   if (isDark){
-    var newURL = url.replace('?darkmode=true', '');
+    var newURL = url.replace('?nightmode=true', '');
   } else {
-    var newURL = url + '?darkmode=true'
+    var newURL = url + '?nightmode=true'
   }
 
   window.location = newURL
@@ -70,10 +79,6 @@ tldr.nightModeToggle = function() {
 
 
 
-// Navigation
-$('.mobile-trigger').on('click touch', function(){
-  tldr.openMobileNav();
-});
 
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {
@@ -104,6 +109,7 @@ $(".close-button-trigger").on("click touch", function() {
 
 $(".search-toggle").on("click touch", function() {
   tldr.openSearch();
+  $('html').removeClass('open-nav');
 });
 
 $(".search-toggle .close-container").on("click touch", function(e) {
@@ -115,13 +121,20 @@ $(".overlay-mask").on("click touch", function() {
   tldr.killSearch();
 });
 
-tldr.openMobileNav = function() {
-  var isOpen = $('body').hasClass('open-nav');
+
+
+// Navigation
+$('.menu-toggle').on('click touch', function(){
+  tldr.openSettings();
+});
+
+tldr.openSettings = function() {
+  var isOpen = $('html').hasClass('open-nav');
 
   if (isOpen) {
-    $('body').removeClass('open-nav');
+    $('html').removeClass('open-nav');
   } else {
-    $('body').addClass('open-nav');
+    $('html').addClass('open-nav');
   }
 }
 
@@ -313,57 +326,85 @@ tldr.positionHighlighter = function(hovered) {
 $('.favorite-flag').on('click touch', function(){
   var recipe = this.parentNode;
   var listName = 'favorites'
-  tldr.checkLocalStorage(recipe, listName);
 
-  // Dont click through to link
-  // event.preventDefault();
+  tldr.checkLocalStorage(recipe, listName);
+});
+
+// Set Night Mode Flag
+$('#nm-trigger').on('click touch', function(){
+  var isDark = tldr.hasNightModeClass();
+  var listName = 'night-mode'
+
+  tldr.checkLocalStorage(isDark, listName);
 });
 
 
-tldr.checkLocalStorage = function(clickedRecipe, listName) {
+tldr.checkLocalStorage = function(newData, listName) {
   var checkList = JSON.parse(localStorage.getItem(listName));
 
   if (checkList == null) {
    // no data on this thing - lets set one
-   tldr.setLocalStorage(clickedRecipe, listName);
+   tldr.setLocalStorage(newData, listName);
   } else {
     // update existing data
-    tldr.updateLocalStorage(clickedRecipe, listName);
+    tldr.updateLocalStorage(newData, listName);
   }
 }
 
-tldr.setLocalStorage = function(clickedRecipe, listName) {
+tldr.setLocalStorage = function(newData, listName) {
   // define clicked favorite and list
-  var favList = []
-  var fav = clickedRecipe.dataset.favorite;
-  favList.push(fav);
-  // init favorite list
-  localStorage.setItem(listName, JSON.stringify(favList));
-  // reflect change on DOM once cookie is set
-  tldr.updateDOMFavoriteList();
+  var dataList = []
+
+  if (listName == 'favorites') {
+    var data = newData.dataset.favorite;
+    dataList.push(data);
+    // init favorite list
+    localStorage.setItem(listName, JSON.stringify(dataList));
+    // reflect change on DOM once cookie is set
+    tldr.updateDOMFavoriteList();
+  }
+
+  if (listName == 'night-mode') {
+    var data = newData;
+    dataList.push(data);
+    // init night-mode list
+    localStorage.setItem(listName, JSON.stringify(dataList));
+    // reflect change on DOM once cookie is set
+    tldr.updateDOMNightMode();
+  }
 }
 
-tldr.updateLocalStorage = function(clickedRecipe, listName) {
-  var fav = clickedRecipe.dataset.favorite;
+tldr.updateLocalStorage = function(newData, listName) {
+  // Current Cookie Data List
   var currentList = JSON.parse(localStorage.getItem(listName));
 
-  // look for duplicates
-  // var splitFavorites = currentList.split(',');
-  var hasFavorite = currentList.includes(fav);
+  if (listName == 'favorites') {
+    // look for duplicates
+    var updatedData = newData.dataset.favorite;
+    var hasData = currentList.includes(updatedData);
 
-  // if already favorited
-  if (hasFavorite) {
-    // find index of favorite and remove it
-    var index = currentList.indexOf(fav);
-    currentList.splice(index, 1);
-    // update list after favorite removal
+    // if already favorited
+    if (hasData) {
+      // find index of favorite and remove it
+      var index = currentList.indexOf(updatedData);
+      currentList.splice(index, 1);
+      // update list after favorite removal
+      localStorage.setItem(listName, JSON.stringify(currentList));
+      tldr.updateDOMFavoriteList();
+    } else {
+      // set favorite
+      currentList.push(updatedData)
+      localStorage.setItem(listName, JSON.stringify(currentList));
+      tldr.updateDOMFavoriteList();
+    }
+  }
+
+  if (listName == 'night-mode') {
+    // set night mode bool
+    currentList = []
+    currentList.push(!newData);
     localStorage.setItem(listName, JSON.stringify(currentList));
-    tldr.updateDOMFavoriteList();
-  } else {
-    // set favorite
-    currentList.push(fav)
-    localStorage.setItem(listName, JSON.stringify(currentList));
-    tldr.updateDOMFavoriteList();
+    tldr.updateDOMNightMode();
   }
 }
 
@@ -388,6 +429,20 @@ tldr.updateDOMFavoriteList = function(listName) {
          favHTML[f].classList.add('favorite');
        }
      }
+  }
+}
+
+// update night mode settings
+tldr.updateDOMNightMode = function(listName) {
+  var listName = 'night-mode'
+  // Set Cookie Vars
+  var currentList = JSON.parse(localStorage.getItem(listName));
+
+  // if data has been defined
+  if (currentList != null && currentList[0] ) {
+    $('body').addClass('night-mode');
+  } else {
+    $('body').removeClass('night-mode');
   }
 }
 

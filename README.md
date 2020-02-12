@@ -9,6 +9,10 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [ ] Write real README
 - [ ] Add Watch to `gulp.js` on JS file changes (and others?)
 - [ ] Add dark mode cookie
+- [ ] A working HTML 5 Video Player (across all devices / platforms)
+- [ ] Close Search button click area is funky - needs updated
+- [ ] Clean up JS (remove jQuery)
+- [ ] Hover interactions for Search / Menu Buttons
 - [ ] Add custom color picker with `cookies.js` and `var(color)`
 - [x] Add Minify / Uglify JS Functionality
 

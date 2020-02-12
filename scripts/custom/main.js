@@ -1,10 +1,9 @@
 $(document).ready(function(){
-  // tldr.animateChef();
   tldr.initHighlighter();
   tldr.hideCopyButton();
-  // tldr.generateEmoji();
   tldr.updateDOMFavoriteList();
-  tldr.sniffURL();
+  tldr.updateDOMNightMode();
+  tldr.isNightModeURL();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();
@@ -44,13 +43,23 @@ tldr.nightMode = function() {
   }
 }
 
+// Night Mode Check
+tldr.hasNightModeClass = function() {
+  var hasClass = document.body.classList.contains('night-mode');
 
-tldr.sniffURL = function() {
+  if (hasClass){
+    return true
+  } else {
+    return false
+  }
+}
+
+tldr.isNightModeURL = function() {
+  var hasNightModeClass = tldr.hasNightModeClass();
   var url = window.location.href;
-  var hasDarkMode = url.includes('darkmode=true');
-  var isDark = document.body.classList.contains('night-mode');
+  var hasNightMode = url.includes('nightmode=true');
 
-  if (hasDarkMode && !isDark){
+  if (hasNightMode && !hasNightModeClass){
     tldr.nightMode();
   }
 }
@@ -60,9 +69,9 @@ tldr.nightModeToggle = function() {
   var url = window.location.href
 
   if (isDark){
-    var newURL = url.replace('?darkmode=true', '');
+    var newURL = url.replace('?nightmode=true', '');
   } else {
-    var newURL = url + '?darkmode=true'
+    var newURL = url + '?nightmode=true'
   }
 
   window.location = newURL
@@ -70,10 +79,6 @@ tldr.nightModeToggle = function() {
 
 
 
-// Navigation
-$('.mobile-trigger').on('click touch', function(){
-  tldr.openMobileNav();
-});
 
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {
@@ -104,6 +109,7 @@ $(".close-button-trigger").on("click touch", function() {
 
 $(".search-toggle").on("click touch", function() {
   tldr.openSearch();
+  $('html').removeClass('open-nav');
 });
 
 $(".search-toggle .close-container").on("click touch", function(e) {
@@ -115,13 +121,20 @@ $(".overlay-mask").on("click touch", function() {
   tldr.killSearch();
 });
 
-tldr.openMobileNav = function() {
-  var isOpen = $('body').hasClass('open-nav');
+
+
+// Navigation
+$('.menu-toggle').on('click touch', function(){
+  tldr.openSettings();
+});
+
+tldr.openSettings = function() {
+  var isOpen = $('html').hasClass('open-nav');
 
   if (isOpen) {
-    $('body').removeClass('open-nav');
+    $('html').removeClass('open-nav');
   } else {
-    $('body').addClass('open-nav');
+    $('html').addClass('open-nav');
   }
 }
 

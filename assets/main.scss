@@ -243,23 +243,41 @@ nav.site-nav {
   margin: 0px 10px;
 }
 
-// Teleporting styles
-.centered-chef .wrapper {
+//
+// Menu / Settings Styles
+//
+.settings-modal {
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  box-sizing: border-box;
+  background: var(--white);
+  border-bottom: 1px solid var(--black);
+
+  position: fixed;
+  top: 45px;
+  left: 0;
+  z-index: 1001;
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
   align-items: center;
+
+  @include transition(all 125ms ease-in-out);
+  // @include box-shadow(0px 2px 5px var(--black-op-25));
+
+  @media (min-width: 720px) {
+    padding: 0px 20px 0px 30px;
+  }
 }
-.teleport-up .site-title  {
-  width: 57px;
-  transform: translate3d(0px, 0px, 0px);
-  -webkit-transform: translate3d(0px, 0px, 0px);
+.open-nav .settings-modal {
+  opacity: 1;
+  pointer-events: all;
 }
-.centered-chef .site-title  {
-  width: 57px;
-  transform: translate3d(0px, 100px, 0px);
-  -webkit-transform: translate3d(0px, 100px, 0px);
-}
-.centered-chef .site-title svg  {
-  @include rotate(0deg);
-}
+
+
 
 
 //
@@ -775,6 +793,7 @@ a.post-link:hover .double-arrow svg {
 
   @include transition(all 300ms ease-in-out);
 }
+.open-nav .overlay-mask,
 .searching .overlay-mask,
 .searching-mobile .overlay-mask,
 .open-notification .overlay-mask {
