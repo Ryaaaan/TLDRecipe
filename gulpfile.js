@@ -33,9 +33,15 @@ gulp.task('compress', function () {
   );
 });
 
+// Watch SCSS
+gulp.task('watch-js', function(cb) {
+  gulp.watch('scripts/custom/*.js', gulp.series(['concat']));
+  gulp.watch('scripts/tldr.js', gulp.series(['compress']));
+  cb();
+});
 
 // Gulp Tasks
-gulp.task('default', gulp.series(['concat', 'compress'], function(cb) {
+gulp.task('default', gulp.series(['concat', 'compress', 'watch-js'], function(cb) {
   // place code for your default task here
   cb();
 }));

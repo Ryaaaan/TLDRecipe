@@ -7,6 +7,9 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 
 ### Todo Items:
 - [ ] Write real README
+- [ ] Test Firefox
+- [ ] Test Safari
+- [ ] Test IE (latest)
 - [ ] Add Watch to `gulp.js` on JS file changes (and others?)
 - [ ] Add dark mode cookie
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
