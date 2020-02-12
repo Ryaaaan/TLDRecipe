@@ -1,21 +1,41 @@
 'use strict';
 
-// Required Stuff
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
+var pipeline = require('readable-stream').pipeline;
+var concat = require('gulp-concat');
 
-// Compile and Watch our SCSS/CSS
-gulp.task('sass', function () {
-  return gulp.src('./scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+gulp.task('concat', function() {
+  return gulp.src([
+    'scripts/custom/main.js',
+    'scripts/custom/notifications.js',
+    'scripts/custom/big-list.js',
+    'scripts/custom/cookies.js',
+    'scripts/custom/video.js',
+    'scripts/custom/recipe.js']
+  )
+    .pipe(concat('tldr.js'))
+    .pipe(gulp.dest('scripts/'));
 });
-gulp.task('sass:watch', function () {
-  gulp.watch('./scss/*.scss', ['sass']);
+
+gulp.task('compress', function () {
+  return pipeline(
+    gulp.src('scripts/tldr.js'),
+    uglify({
+      compress: {
+        // compress options
+      },
+      output: {
+        // output options
+      }
+    }),
+    gulp.dest('scripts/min')
+  );
 });
 
 
 // Gulp Tasks
-gulp.task('default', ['sass', 'sass:watch'], function() {
+gulp.task('default', gulp.series(['concat', 'compress'], function(cb) {
   // place code for your default task here
-});
+  cb();
+}));

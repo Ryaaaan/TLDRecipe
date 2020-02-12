@@ -1,17 +1,19 @@
-{% comment %}
-<!-- Loop through scripts -->
-  {% assign script_files = site.static_files | where: "script", true %}
-  {% for myscript in script_files %}
-      <script type="text/javascript" src="{{ myscript.path }}"></script>
-  {% endfor %}
-{% endcomment %}
+{% comment %} <!-- Production - Minified - Uglified JS --> {% endcomment %}
+{% if jekyll.environment == "production" %}
+  <script type="text/javascript" src="/scripts/libs/jquery_3.3.1.min.js"></script>
+  <script type="text/javascript" src="/scripts/min/tldr.js"></script>
+{% endif %}
 
-<script type="text/javascript" src="/scripts/jquery_3.3.1.min.js"></script>
-<script type="text/javascript" src="/scripts/twemoji.min.js"></script>
-<script type="text/javascript" src="/scripts/main.js"></script>
+{% comment %} <!-- Development --> {% endcomment %}
+{% if jekyll.environment == "development" %}
+  <script type="text/javascript" src="/scripts/libs/jquery_3.3.1.min.js"></script>
+  <script type="text/javascript" src="/scripts/tldr.js"></script>
+{% endif %}
+<!-- {{jekyll.environment}} -->
+
 
 <!-- Simple Search Functionality — Thanks to: Christian Fei — Give the man (or woman) some love ———> https://github.com/christian-fei/Simple-Jekyll-Search -->
-<script type="text/javascript" src="/scripts/search-library.min.js"></script>
+<script type="text/javascript" src="/scripts/libs/search-library.min.js"></script>
 <script type="text/javascript">
   var sjs = SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
