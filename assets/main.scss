@@ -3,6 +3,7 @@
 ---
 // Override Minima Generation with above YAML @import. Do. Not. Delete.
 @import
+  "imports/colors",
   "imports/normalize",
   "imports/import",
   "imports/typo"
@@ -14,12 +15,12 @@
 // Global Styles
 //
 ::-webkit-scrollbar {
-  background: $white;
+  background: var(--white);
 
   @include transition(background 150ms ease-in-out);
 }
 ::-webkit-scrollbar-thumb {
-  background: $red;
+  background: var(--red);
 
   @include transition(background 150ms ease-in-out);
 }
@@ -35,7 +36,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: $white;
+  background: var(--white);
   height: 100%;
   position: relative;
 
@@ -73,22 +74,22 @@ body {
   }
 }
 .button {
-  background: $yellow;
+  background: var(--yellow);
   padding: 12px;
   border-radius: 3px;
   display: block;
 }
 .button:hover {
-  background: $red;
-  color: $white;
+  background: var(--red);
+  color: var(--white);
 }
 .line-button {
-  background: $clear;
-  border: 1px solid $yellow;
+  background: var(--clear);
+  border: 1px solid var(--yellow);
 }
 .line-button:hover {
-  background: $yellow;
-  border: 1px solid $yellow;
+  background: var(--yellow);
+  border: 1px solid var(--yellow);
 }
 
 //
@@ -97,7 +98,7 @@ body {
 header.site-header {
   height: 75px;
   width: 100%;
-  background: $clear;
+  background: var(--clear);
   // overflow: hidden;
   padding: 0 10px;
 
@@ -137,7 +138,7 @@ header.site-header {
   height: 55px;
   width: 55px;
   border-radius: 40px;
-  background: $black;
+  background: var(--black);
   margin: 0px 0px 0px 10px;
 
   display: flex;
@@ -149,7 +150,7 @@ header.site-header {
   cursor: pointer;
 
   @include rotate(0deg);
-  @include box-shadow(0px 2px 5px $rgbaBlack-25);
+  @include box-shadow(0px 2px 5px var(--black-op-25));
   @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
@@ -168,7 +169,7 @@ header.site-header {
 }
 .menu-toggle span {
   display: block;
-  background: $white;
+  background: var(--white);
   height: 3px;
   width: 22px;
   margin: 2px 0;
@@ -259,7 +260,7 @@ nav.site-nav {
   left: 0;
   right: 0;
 
-  background: $white;
+  background: var(--white);
   z-index: 1001;
   opacity: 0;
   pointer-events: none;
@@ -269,7 +270,7 @@ nav.site-nav {
   align-items: center;
 
   @include transition(all 125ms ease-in-out);
-  @include box-shadow(0px 2px 5px $rgbaBlack-25);
+  @include box-shadow(0px 2px 5px var(--black-op-25));
 
   @media (min-width: 720px) {
     height: 50%;
@@ -291,7 +292,7 @@ nav.site-nav {
 }
 .site-header input {
   border: none;
-  background: $clear;
+  background: var(--clear);
   height: 45px;
   width: calc(100% - 60px);
   padding: 0;
@@ -305,7 +306,7 @@ nav.site-nav {
   font-weight: 400;
   font-size: 20px;
   text-transform: lowercase;
-  color: $white;
+  color: var(--white);
 
   @include transition(all 125ms ease-in-out);
 
@@ -342,22 +343,22 @@ nav.site-nav {
 }
 .site-title .tldr0,
 .site-title  .tldr0 {
-  fill: $red;
+  fill: var(--red);
 
   @include transition(all 150ms ease-in-out);
 }
 .site-title .tldr1,
 .site-title  .tldr1 {
-  fill: $black;
+  fill: var(--black);
 
   @include transition(all 150ms ease-in-out);
 }
 .searching .site-title .tldr1,
 .searching-mobile .site-title  .tldr1 {
-  fill: $white;
+  fill: var(--white);
 }
 .site-header ::placeholder {
-  color: $white;
+  color: var(--white);
 }
 .site-header input:focus {
   outline: none;
@@ -373,7 +374,7 @@ nav.site-nav {
   font-size: 20px;
   line-height: initial;
   padding-top: 0;
-  color: $grey;
+  color: var(--grey);
 
   @media (min-width: 720px) {
     font-size: 32px;
@@ -399,17 +400,17 @@ nav.site-nav {
   width: 100%;
 }
 // .search-results.post-list li:first-child {
-//   border-bottom: 0px solid $clear;
+//   border-bottom: 0px solid var(--clear);
 //
 //   @media (min-width: 720px) {
-//     border-bottom: 1px solid $grey;
+//     border-bottom: 1px solid var(--grey);
 //   }
 // }
 .search-results.post-list li:last-child {
-  // border-bottom: 1px solid $grey;
+  // border-bottom: 1px solid var(--grey);
   //
   // @media (min-width: 720px) {
-    border-bottom: 0px solid $clear;
+    border-bottom: 0px solid var(--clear);
   // }
 }
 .search-results.post-list a {
@@ -427,20 +428,20 @@ nav.site-nav {
 }
 .search-results.post-list a:focus {
   padding-left: 5px;
-  border-bottom: 1px solid $red;
+  border-bottom: 1px solid var(--red);
   outline: none;
   width: 100%;
   margin-left: 0;
   box-shadow: none;
 }
 .search-toggle {
-  background: $red;
+  background: var(--red);
   flex-direction: row;
   justify-content: flex-end;
   margin: 0px;
 
   // @include rotate(0deg);
-  // @include box-shadow(0px 2px 5px $rgbaBlack-25);
+  // @include box-shadow(0px 2px 5px var(--black-op-25));
   // @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
@@ -475,7 +476,7 @@ nav.site-nav {
 .close-container span {
   height: 3px;
   width: 26px;
-  background: $white;
+  background: var(--white);
   display: block;
 
   position: relative;
@@ -509,7 +510,7 @@ nav.site-nav {
 // General Styles
 //
 main {
-  background: $white;
+  background: var(--white);
 
   @include transition(background 150ms ease-in-out);
 }
@@ -578,7 +579,7 @@ section {
 // Master List
 //
 .master-list {
-  background: $white;
+  background: var(--white);
   min-height: calc(100% - 90px);
 
   @include transition(background 150ms ease-in-out);
@@ -644,7 +645,7 @@ section {
 .highlight {
   height: 5px;
   // width: 66px;
-  background: $red;
+  background: var(--red);
   position: absolute;
   // top: 32px;
   // left: 39px;
@@ -674,7 +675,7 @@ section {
   display: flex;
 }
 .post-list li {
-  border-bottom: 1px solid $grey;
+  border-bottom: 1px solid var(--grey);
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -692,7 +693,7 @@ section {
 }
 .post-list li:hover {
   padding-left: 5px;
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid var(--black);
   outline: none;
 }
 .favorite-flag {
@@ -712,18 +713,18 @@ section {
 .favorite-flag svg {
   height: 100%;
   width: 100%;
-  fill: $grey;
+  fill: var(--grey);
 
   @include transition(all 125ms ease-in-out);
 }
 .favorite-flag:hover svg {
-  fill: $medgrey;
+  fill: var(--medgrey);
 }
 .favorite .favorite-flag svg {
-  fill: $gold;
+  fill: var(--gold);
 }
 .favorite .favorite-flag:hover svg {
-  fill: $gold_hover;
+  fill: var(--gold)_hover;
 }
 .post-time {
   display: block;
@@ -743,14 +744,14 @@ section {
   bottom: 20px;
 }
 .double-arrow svg {
-  fill: $white;
+  fill: var(--white);
   height: 25px;
   width: 35px;
 
   @include transition(all 175ms ease-in-out);
 }
 a.post-link:hover .double-arrow svg {
-  fill: $red;
+  fill: var(--red);
 }
 
 
@@ -765,7 +766,7 @@ a.post-link:hover .double-arrow svg {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  background: $rgbaBlack-25;
+  background: var(--black-op-25);
   height: 100%;
   width: 100%;
 
@@ -788,7 +789,7 @@ a.post-link:hover .double-arrow svg {
   opacity: 0;
   box-sizing: border-box;
   border-radius: 5px;
-  background: $white;
+  background: var(--white);
   pointer-events: none;
 
   display: flex;
@@ -799,7 +800,7 @@ a.post-link:hover .double-arrow svg {
 
   @include transition(all 300ms ease-in-out);
   @include transition-delay(100ms);
-  @include box-shadow(0px 2px 5px $rgbaBlack-25);
+  @include box-shadow(0px 2px 5px var(--black-op-25));
 
 }
 .open-notification .notification-banner {
@@ -812,7 +813,7 @@ a.post-link:hover .double-arrow svg {
   position: absolute;
   height: 100%;
   width: 60px;
-  background: $clear;
+  background: var(--clear);
   right: 0;
   top: 0;
   cursor: pointer;
@@ -840,7 +841,7 @@ a.post-link:hover .double-arrow svg {
   left: 3px;
   height: 2px;
   width: 14px;
-  background: $black;
+  background: var(--black);
 }
 .close-button span:last-child {
   @include rotate(90deg);
@@ -886,13 +887,13 @@ a.post-link:hover .double-arrow svg {
   position: fixed;
   height: 40px;
   width: 40px;
-  background: $white;
+  background: var(--white);
   top: 20px;
   right: 20px;
   z-index: 1000;
   border-radius: 30px;
 
-  @include box-shadow(0px 2px 4px $rgbaBlack-25);
+  @include box-shadow(0px 2px 4px var(--black-op-25));
   @include transition(all 125ms ease-in-out);
 }
 .open-book .show-nav {
@@ -1011,7 +1012,7 @@ a.post-link:hover .double-arrow svg {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  background: $grey;
+  background: var(--grey);
   padding: 30px 0 20px;
 
   @include transition(background 150ms ease-in-out);
@@ -1074,7 +1075,7 @@ a.post-link:hover .double-arrow svg {
   justify-content: flex-start;
   margin: 25px 0 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid $grey;
+  border-bottom: 1px solid var(--grey);
 }
 .macro-container span {
   padding: 0 30px 0 0;
@@ -1087,7 +1088,7 @@ a.post-link:hover .double-arrow svg {
 }
 .recipe-content {
   // height: 100%;
-  background: $white;
+  background: var(--white);
   padding: 10px 0 80px;
 
   @include transition(background 150ms ease-in-out);
@@ -1100,7 +1101,7 @@ a.post-link:hover .double-arrow svg {
   }
 }
 .date-time {
-  background: $yellow;
+  background: var(--yellow);
   display: flex;
   flex-direction: column;
   padding: 10px 25px;
@@ -1159,7 +1160,7 @@ ol.instruction-list li:before {
   font-size: 17px;
   content: counter(item) ". ";
   counter-increment: item;
-  color: $red;
+  color: var(--red);
 
   position: absolute;
   left: -26px;
@@ -1175,7 +1176,7 @@ ol.instruction-list li.toggled:before {
   padding: 4px;
   box-sizing: border-box;
   display: inline-block;
-  background: $grey;
+  background: var(--grey);
 
   @include transition(background 150ms ease-in-out);
 }
@@ -1187,7 +1188,7 @@ ol.instruction-list li.toggled:before {
 }
 .toggled .list-toggle span {
   opacity: 1;
-  background: $red;
+  background: var(--red);
 
   @include transition(opacity 125ms ease-in-out);
 }
@@ -1204,7 +1205,7 @@ ol.instruction-list li.toggled:before {
   margin-top: 40px;
 }
 .copy-button {
-  background: $red;
+  background: var(--red);
   padding: 20px 10px;
   text-align: center;
   cursor: pointer;
@@ -1215,7 +1216,7 @@ ol.instruction-list li.toggled:before {
   transform: translate3d(0px, 0px, 0px);
   -webkit-transform: translate3d(0px, 0px, 0px);
   @include transition(all 225ms ease-in-out);
-  @include box-shadow(0px 1px 4px $rgbaBlack-25);
+  @include box-shadow(0px 1px 4px var(--black-op-25));
 
   @media (min-width: 720px) {
     // max-width: 110px;
@@ -1246,12 +1247,12 @@ ol.instruction-list li.toggled:before {
   padding: 20px 15px;
   border-radius: 50px;
   font-size: 10px;
-  color: $red;
+  color: var(--red);
   cursor: pointer;
   height: 30px;
   width: 30px;
 
-  // @include box-shadow(0px 1px 3px $rgbaBlack-25);
+  // @include box-shadow(0px 1px 3px var(--black-op-25));
 }
 .ios-controls .video-btn {
   height: 45px;
@@ -1276,14 +1277,14 @@ ol.instruction-list li.toggled:before {
   align-items: center;
 }
 .video-btn svg {
-  fill: $red;
+  fill: var(--red);
   height: 100%;
   width: 100%;
 
   @include transition(all 150ms ease-in-out);
 }
 .video-btn:hover svg {
-  fill: $black;
+  fill: var(--black);
 }
 .back-btn,
 .fwd-btn {
@@ -1303,7 +1304,7 @@ ol.instruction-list li.toggled:before {
 #play-btn {
   width: 30px;
   height: 30px;
-  // background: $white;
+  // background: var(--white);
   padding: 20px;
 
   // @include rotate(180deg);
@@ -1324,12 +1325,12 @@ ol.instruction-list li.toggled:before {
   display: block;
   height: 0;
   width: 0;
-  background: $red;
+  background: var(--red);
 
   @include transition(all 125ms ease-in-out);
 }
 #play-btn:hover span {
-  background: $black;
+  background: var(--black);
 }
 #play-btn span:first-child {
   border: 0px solid transparent;
@@ -1348,36 +1349,36 @@ ol.instruction-list li.toggled:before {
   // @include rotate(0deg);
 }
 .play-video #play-btn span {
-  background: $clear;
+  background: var(--clear);
   height: 0;
   width: 0;
 }
 .play-video #play-btn span:first-child {
   border-top: 15px solid transparent;
-  border-left: 30px solid $red;
+  border-left: 30px solid var(--red);
   border-bottom: 15px solid transparent;
 }
 .ios-controls #play-btn {
   padding: 20px 16px 20px 24px;
 }
 .ios-controls #play-btn span {
-  background: $clear;
+  background: var(--clear);
   height: 0;
   width: 0;
 }
 .ios-controls #play-btn span:first-child {
   border-top: 15px solid transparent;
-  border-left: 30px solid $red;
+  border-left: 30px solid var(--red);
   border-bottom: 15px solid transparent;
 }
 .play-video #play-btn:hover span:first-child {
   border-top: 15px solid transparent;
-  border-left: 30px solid $black;
+  border-left: 30px solid var(--black);
   border-bottom: 15px solid transparent;
 }
 .ios-controls #play-btn:hover span:first-child {
   border-top: 15px solid transparent;
-  border-left: 30px solid $black;
+  border-left: 30px solid var(--black);
   border-bottom: 15px solid transparent;
 }
 .play-video #play-btn span:last-child {
@@ -1397,7 +1398,7 @@ form {
 // Footer Styles
 //
 footer {
-  background: $black;
+  background: var(--black);
   margin: 0;
   padding: 20px;
 }
@@ -1451,73 +1452,73 @@ footer {
 
 
 .night-mode::-webkit-scrollbar {
-  background: $black;
+  background: var(--black);
 }
 .night-mode::-webkit-scrollbar-thumb {
-  background: $ultrablack;
+  background: var(--ultrablack);
 }
 
 body.night-mode,
 .night-mode main,
 .night-mode .master-list {
-  background: $black;
+  background: var(--black);
 }
 .night-mode header.site-header {
-  background: $ultrablack;
+  background: var(--ultrablack);
 }
 .night-mode .highlight {
-  background: $aqua;
+  background: var(--aqua);
 }
 .night-mode .search-toggle {
-  background: $ultrablack;
+  background: var(--ultrablack);
 }
 .night-mode .recipe-content {
-  background: $black;
+  background: var(--black);
 }
 .night-mode .coming-soon {
-  background: $medblack;
+  background: var(--medblack);
 }
 .night-mode .list-toggle {
-  background: $ultrablack;
+  background: var(--ultrablack);
 }
 .night-mode .toggled .list-toggle span {
-  background: $aqua;
+  background: var(--aqua);
 }
 .night-mode .copy-button {
-  background: $aqua;
-  color: $ultrablack;
+  background: var(--aqua);
+  color: var(--ultrablack);
 }
 
 .night-mode .video-btn svg {
-  fill: $aqua;
+  fill: var(--aqua);
 }
 .night-mode .video-btn:hover svg {
-  fill: $white;
+  fill: var(--white);
 }
 .night-mode #play-btn {
-  // background: $clear;
+  // background: var(--clear);
 }
 .night-mode .play-video #play-btn span:first-child {
   border-top: 15px solid transparent;
-  border-left: 30px solid $aqua;
+  border-left: 30px solid var(--aqua);
   border-bottom: 15px solid transparent;
 }
 .night-mode .play-video #play-btn span {
-  background: $clear;
+  background: var(--clear);
 }
 .night-mode #play-btn span {
-  background: $aqua;
+  background: var(--aqua);
 }
 .night-mode .play-video #play-btn:hover span:first-child {
   border-top: 15px solid transparent;
-  border-left: 30px solid $white;
+  border-left: 30px solid var(--white);
   border-bottom: 15px solid transparent;
 }
 .night-mode .play-video #play-btn:hover span {
-  background: $clear;
+  background: var(--clear);
 }
 .night-mode #play-btn:hover span {
-  background: $white;
+  background: var(--white);
 }
 
 
@@ -1526,39 +1527,39 @@ body.night-mode,
 .night-mode h1,
 .night-mode h2,
 .night-mode h3 {
-  color: $aqua;
+  color: var(--aqua);
 }
 .night-mode h3 {
-  color: $white;
+  color: var(--white);
 }
 .night-mode .filter-container span {
-  color: $medblack;
+  color: var(--medblack);
 }
 .night-mode .filter-container span.active-filter,
 .night-mode .filter-container span:hover {
-   color: $white;
+   color: var(--white);
 }
 .night-mode .post-link {
-  color: $white;
+  color: var(--white);
 }
 .night-mode .post-list li:hover {
-  border-bottom: 1px solid $aqua;
+  border-bottom: 1px solid var(--aqua);
 }
 .night-mode .post-list li:hover a {
-  color: $aqua;
+  color: var(--aqua);
 }
 .night-mode .fav-descrition {
-  color: $white;
+  color: var(--white);
 }
 .night-mode .nutrition-container span,
 .night-mode .nutrition-container strong {
-  color: $white;
+  color: var(--white);
 }
 .night-mode .recipe-content li {
-  color: $white;
+  color: var(--white);
 }
 .night-mode ol.instruction-list li:before {
-  color: $aqua;
+  color: var(--aqua);
 }
 
 
@@ -1600,7 +1601,7 @@ body.night-mode,
 
     .sky {
       height: 20%;
-      background: $medgrey;
+      background: var(--medgrey);
     }
     .ground {
       height: 80%;
@@ -1642,11 +1643,11 @@ body.night-mode,
       border-radius: 10px;
     }
     .left-button {
-      background: $red;
+      background: var(--red);
       margin-right: 2.5px;
     }
     .right-button {
-      background: $darkblue;
+      background: var(--darkblue);
       margin-left: 2.5px;
     }
   }
