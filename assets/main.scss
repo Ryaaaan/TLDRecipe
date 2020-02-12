@@ -41,6 +41,7 @@ body {
   background: var(--white);
   height: 100%;
   position: relative;
+  padding-top: 45px;
 
   @include transition(background 150ms ease-in-out);
 

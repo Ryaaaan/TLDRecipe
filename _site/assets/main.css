@@ -755,6 +755,7 @@ body {
   background: var(--white);
   height: 100%;
   position: relative;
+  padding-top: 45px;
   -webkit-transition: background 150ms ease-in-out;
   -moz-transition: background 150ms ease-in-out;
   -ms-transition: background 150ms ease-in-out;
