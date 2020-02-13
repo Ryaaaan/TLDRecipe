@@ -948,7 +948,7 @@ nav.site-nav {
   pointer-events: all; }
 
 .search-modal {
-  height: auto;
+  height: 0;
   max-height: 300px;
   width: 100%;
   padding: 0px 20px;
@@ -989,7 +989,8 @@ nav.site-nav {
 
 .typing .search-modal {
   padding: 10px 20px 10px 30px;
-  border-bottom: 1px solid var(--black); }
+  border-bottom: 1px solid var(--black);
+  height: auto; }
 
 .searching-mobile .search-modal {
   max-height: calc(100% - 395px); }

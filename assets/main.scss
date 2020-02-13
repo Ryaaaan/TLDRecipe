@@ -328,13 +328,13 @@ nav.site-nav {
 .typing .search-modal {
   padding: 10px 20px 10px 30px;
   border-bottom: 1px solid var(--black);
+  height: auto;
 }
 .searching-mobile .search-modal {
   max-height: calc(100% - 395px);
 }
 .searching .search-modal,
 .searching-mobile .search-modal {
-  height: auto;
   opacity: 1;
   pointer-events: all;
 }

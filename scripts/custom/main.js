@@ -119,6 +119,7 @@ $(".search-toggle .close-container").on("click touch", function(e) {
 
 $(".overlay-mask").on("click touch", function() {
   tldr.killSearch();
+  $('html').removeClass('open-nav');
 });
 
 
