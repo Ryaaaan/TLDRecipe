@@ -2,7 +2,7 @@ $(document).ready(function(){
   tldr.initHighlighter();
   tldr.hideCopyButton();
   tldr.updateDOMFavoriteList();
-  tldr.updateDOMNightMode();
+  // tldr.updateDOMNightMode();
   tldr.isNightModeURL();
 
   if (iOSDevice) {

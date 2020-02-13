@@ -2,7 +2,7 @@ $(document).ready(function(){
   tldr.initHighlighter();
   tldr.hideCopyButton();
   tldr.updateDOMFavoriteList();
-  tldr.updateDOMNightMode();
+  // tldr.updateDOMNightMode();
   tldr.isNightModeURL();
 
   if (iOSDevice) {
@@ -371,7 +371,7 @@ tldr.setLocalStorage = function(newData, listName) {
     // init night-mode list
     localStorage.setItem(listName, JSON.stringify(dataList));
     // reflect change on DOM once cookie is set
-    tldr.updateDOMNightMode();
+    // tldr.updateDOMNightMode();
   }
 }
 
@@ -405,7 +405,7 @@ tldr.updateLocalStorage = function(newData, listName) {
     currentList = []
     currentList.push(!newData);
     localStorage.setItem(listName, JSON.stringify(currentList));
-    tldr.updateDOMNightMode();
+    // tldr.updateDOMNightMode();
   }
 }
 

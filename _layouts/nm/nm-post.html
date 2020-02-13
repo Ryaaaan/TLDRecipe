@@ -1,0 +1,273 @@
+---
+layout: nm/nm-recipes
+---
+
+{% comment %}
+Assign Start / End Dates / Time Variables
+
+{%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+{%- assign date_format_no_year = site.minima.date_format | default: "%B %-d" -%}
+{%- assign time_format = site.minima.date_format | default: "%l:%M%p" -%}
+{%- assign year_format = site.minima.date_format | default: "%Y" -%}
+
+
+{%- assign start_date = page.eventStart | date: date_format -%}
+{%- assign end_date = page.eventEnd | date: date_format -%}
+{%- assign start_time = page.eventStart | date: time_format -%}
+{%- assign end_time = page.eventEnd | date: time_format -%}
+{%- assign start_year = page.eventStart | date: year_format -%}
+{%- assign end_year = page.eventEnd | date: year_format -%}
+
+{% comment %} Date Formatting Logic {% endcomment %}
+
+{%- if start_year != end_year -%}
+  {%- assign start_date_formatted = page.eventStart | date: date_format -%}
+  {%- assign end_date_formatted = page.eventEnd | date: date_format -%}
+{% else %}
+  {%- assign start_date_formatted = page.eventStart | date: date_format_no_year -%}
+  {%- assign end_date_formatted = page.eventEnd | date: date_format -%}
+{%- endif -%}
+
+{% endcomment %}
+
+
+
+<div class="notification-banner">
+  <div class="close-button-trigger">
+    <div class="close-button">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="twemoji-holster">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#FFDB5E" d="M34.956 17.916c0-.503-.12-.975-.321-1.404-1.341-4.326-7.619-4.01-16.549-4.221-1.493-.035-.639-1.798-.115-5.668.341-2.517-1.282-6.382-4.01-6.382-4.498 0-.171 3.548-4.148 12.322-2.125 4.688-6.875 2.062-6.875 6.771v10.719c0 1.833.18 3.595 2.758 3.885C8.195 34.219 7.633 36 11.238 36h18.044c1.838 0 3.333-1.496 3.333-3.334 0-.762-.267-1.456-.698-2.018 1.02-.571 1.72-1.649 1.72-2.899 0-.76-.266-1.454-.696-2.015 1.023-.57 1.725-1.649 1.725-2.901 0-.909-.368-1.733-.961-2.336.757-.611 1.251-1.535 1.251-2.581z"/><path fill="#EE9547" d="M23.02 21.249h8.604c1.17 0 2.268-.626 2.866-1.633.246-.415.109-.952-.307-1.199-.415-.247-.952-.108-1.199.307-.283.479-.806.775-1.361.775h-8.81c-.873 0-1.583-.71-1.583-1.583s.71-1.583 1.583-1.583H28.7c.483 0 .875-.392.875-.875s-.392-.875-.875-.875h-5.888c-1.838 0-3.333 1.495-3.333 3.333 0 1.025.475 1.932 1.205 2.544-.615.605-.998 1.445-.998 2.373 0 1.028.478 1.938 1.212 2.549-.611.604-.99 1.441-.99 2.367 0 1.12.559 2.108 1.409 2.713-.524.589-.852 1.356-.852 2.204 0 1.838 1.495 3.333 3.333 3.333h5.484c1.17 0 2.269-.625 2.867-1.632.247-.415.11-.952-.305-1.199-.416-.245-.953-.11-1.199.305-.285.479-.808.776-1.363.776h-5.484c-.873 0-1.583-.71-1.583-1.583s.71-1.583 1.583-1.583h6.506c1.17 0 2.27-.626 2.867-1.633.247-.416.11-.953-.305-1.199-.419-.251-.954-.11-1.199.305-.289.487-.799.777-1.363.777h-7.063c-.873 0-1.583-.711-1.583-1.584s.71-1.583 1.583-1.583h8.091c1.17 0 2.269-.625 2.867-1.632.247-.415.11-.952-.305-1.199-.417-.246-.953-.11-1.199.305-.289.486-.799.776-1.363.776H23.02c-.873 0-1.583-.71-1.583-1.583s.709-1.584 1.583-1.584z"/></svg>
+  </div>
+  <h4>Copied.</h4>
+</div>
+
+
+<article class="recipe-page">
+
+  {%- assign cals = page.calCount -%}
+  {%- assign serving = page.servingSize -%}
+  {%- assign prepTime = page.prepTime -%}
+  {%- assign cookTime = page.cookTime -%}
+
+  <div class="recipe-media">
+    {%- if page.image or page.video -%}
+      {%- if page.image -%}
+        <img src="{{ page.image }}" alt="{{ page.imageAltText | escape }}">
+      {%- endif -%}
+
+      {%- if page.video -%}
+        <div class="video-holster">
+          <video width="100%" id="recipe-video" poster="{{ page.videoPoster }}">
+            <source src="{{ page.video }}.webm" type="video/webm">
+            <source src="{{ page.video }}.mp4" type="video/mp4">
+            <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
+            <!-- Your browser does not support HTML5 video. -->
+          </video>
+          <div class="video-controls-holster play-video" id="video-controller">
+            <div class="main-controls">
+              <span class="video-btn back-btn" id="back-btn">
+
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                <path d="M19.8,2.5l-8.5,6l8.5,6V2.5z M10.8,14.5v-12l-8.5,6L10.8,14.5z"/>
+                <g>
+                  <path d="M13.4,17.4h-2.3L11,19h0.1c0.1-0.1,0.1-0.2,0.2-0.3c0.1-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.2-0.1,0.3-0.2
+                    c0.1,0,0.3-0.1,0.4-0.1c0.2,0,0.4,0,0.6,0.1c0.2,0.1,0.3,0.2,0.5,0.3c0.1,0.1,0.2,0.3,0.3,0.5c0.1,0.2,0.1,0.4,0.1,0.7
+                    c0,0.2,0,0.5-0.1,0.7c-0.1,0.2-0.2,0.4-0.4,0.5c-0.2,0.2-0.4,0.3-0.6,0.4c-0.2,0.1-0.5,0.1-0.8,0.1c-0.2,0-0.5,0-0.6-0.1
+                    c-0.2-0.1-0.4-0.1-0.5-0.2c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4l0.8-0.6c0.1,0.1,0.1,0.2,0.2,0.3
+                    c0.1,0.1,0.1,0.2,0.2,0.2c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0.1,0.3,0.1c0.3,0,0.5-0.1,0.6-0.2c0.1-0.1,0.2-0.3,0.2-0.6v-0.1
+                    c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.6-0.2c-0.2,0-0.4,0-0.5,0.1c-0.1,0.1-0.2,0.2-0.3,0.2l-0.9-0.1l0.2-2.8h3V17.4z"/>
+                </g>
+                </svg>
+
+              </span>
+              <span class="video-btn play-btn" id="play-btn">
+                <div>
+                  <span></span>
+                  <span></span>
+                </div>
+              </span>
+              <span class="video-btn fwd-btn" id="fwd-btn">
+
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                <path d="M4.1,14.5l8.5-6l-8.5-6V14.5z M13.1,2.5v12l8.5-6L13.1,2.5z"/>
+                <g>
+                  <path d="M13.4,17.4h-2.3L11,19h0.1c0.1-0.1,0.1-0.2,0.2-0.3c0.1-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.2-0.1,0.3-0.2
+                    c0.1,0,0.3-0.1,0.4-0.1c0.2,0,0.4,0,0.6,0.1c0.2,0.1,0.3,0.2,0.5,0.3c0.1,0.1,0.2,0.3,0.3,0.5c0.1,0.2,0.1,0.4,0.1,0.7
+                    c0,0.2,0,0.5-0.1,0.7c-0.1,0.2-0.2,0.4-0.4,0.5c-0.2,0.2-0.4,0.3-0.6,0.4c-0.2,0.1-0.5,0.1-0.8,0.1c-0.2,0-0.5,0-0.6-0.1
+                    c-0.2-0.1-0.4-0.1-0.5-0.2c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4l0.8-0.6c0.1,0.1,0.1,0.2,0.2,0.3
+                    c0.1,0.1,0.1,0.2,0.2,0.2c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0.1,0.3,0.1c0.3,0,0.5-0.1,0.6-0.2c0.1-0.1,0.2-0.3,0.2-0.6v-0.1
+                    c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.6-0.2c-0.2,0-0.4,0-0.5,0.1c-0.1,0.1-0.2,0.2-0.3,0.2l-0.9-0.1l0.2-2.8h3V17.4z"/>
+                </g>
+                </svg>
+              </span>
+              <span class="video-btn replay-btn" id="replay-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    {% else %}
+
+    <div class="coming-soon">
+      <div class="twemoji" id="twemoji">&#x1f371</div>
+      <h2>Media Coming Soon</h2>
+    </div>
+
+    {%- endif -%}
+  </div>
+
+
+  <div class="recipe-details">
+
+    <div class="post-header wrapper">
+      <div class="post-title">
+        <h1>{{ page.title | escape }}</h1>
+      </div>
+
+      <div class="favorite-container" data-favorite="{{ page.favorite }}">
+        <span class="favorite-flag">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+          <g>
+            <path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+              c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+              c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+              c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+          </g>
+          </svg>
+        </span>
+        <span class="fav-descrition">Favorite this recipe</span>
+      </div>
+
+      <div class="nutrition-container">
+        <div class="portion-container">
+          <span>Serving Size: <strong>{{ serving }}</strong></span>
+          <span>Calories: <strong>{{ cals }}</strong></span>
+        </div>
+
+        <div class="timing-container">
+          <span>Prep time: <strong>{{ prepTime }}</strong></span>
+          <span>Cook time: <strong>{{ cookTime }}</strong></span>
+        </div>
+
+        <div class="macro-container">
+          {%- assign macros = page.macroList -%}
+          {%- for macro in macros -%}
+            <span>{{macro.name}} <strong>{{macro.amount}}</strong></span>
+          {%- endfor -%}
+        </div>
+
+      </div>
+
+      {% comment %}
+      <div class="date-time">
+        {%- if start_date != end_date -%}
+          <h3>{{ start_date_formatted }} — {{ end_date_formatted }}</h3>
+        {% else %}
+          <h3>{{ start_date }}</h3>
+        {%- endif -%}
+
+        {%- if start_time != end_time -%}
+          <h3>{{ start_time }} — {{ end_time }}</h3>
+        {% else %}
+          <h3>{{ start_time }}</h3>
+        {%- endif -%}
+      </div>
+
+      <p class="post-meta">
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          Last updated: {{ page.date | date: date_format }}
+        </time>
+
+        {%- if page.author -%}
+          <span class="author">— {{ page.author }}</span>
+        {%- endif -%}
+      </p>
+      {% endcomment %}
+
+    </div>
+
+
+
+
+    <div class="recipe-content">
+      <div class="wrapper">
+
+        {{ content }}
+
+
+        <h2>Grocery List:</h2>
+
+        <div class="flex-wrapper">
+          <div class="recipe-container">
+            <h3>Ingredients:</h3>
+            <ul class="ingredient-list list">
+              {%- assign ingredients = page.ingredientList -%}
+              {%- for ingredient in ingredients -%}
+                <li>
+                  <span class="list-toggle">
+                    <span></span>
+                  </span>
+                  {{ingredient.name}} + {{ingredient.amount}}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+
+          <div class="recipe-container">
+            <h3>Seasoning:</h3>
+            <ul class="seasoning-list list">
+              {%- assign seasonings = page.seasoningList -%}
+              {%- for seasoning in seasonings -%}
+                <li>
+                  <span class="list-toggle">
+                    <span></span>
+                  </span>
+                  {{seasoning.name}} + {{seasoning.amount}}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+
+        <div class="instruction-container">
+          <h2>Instructions:</h2>
+          <ol class="instruction-list list">
+            {%- assign instructions = page.instructionList -%}
+            {%- for instruction in instructions -%}
+              <li>
+                {{instruction.step}}
+              </li>
+            {%- endfor -%}
+          </ol>
+        </div>
+
+
+        <form action="" method="">
+          <textarea name="name" rows="8" cols="80" id="copyShit">Ingredients:&#13;{%- for ingredient in ingredients -%} {{ingredient.name}} ({{ingredient.amount}})&#13;{%- endfor -%}&#13;Seasonings:&#13;{%- for seasoning in seasonings -%} {{seasoning.name}} ({{seasoning.amount}})&#13;{%- endfor -%}</textarea>
+          <button type="button" name="button"></button>
+        </form>
+
+      </div>
+
+      <div class="copy-button-holster">
+        <div class="copy-button">
+          Copy Grocery List
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+</article>

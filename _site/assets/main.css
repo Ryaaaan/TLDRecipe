@@ -1183,10 +1183,15 @@ nav.site-nav {
 
 main {
   background: var(--white);
-  -webkit-transition: background 150ms ease-in-out;
-  -moz-transition: background 150ms ease-in-out;
-  -ms-transition: background 150ms ease-in-out;
-  transition: background 150ms ease-in-out; }
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out; }
+
+.open-nav main,
+.searching main,
+.searching-mobile main {
+  filter: blur(3px); }
 
 .content-container {
   padding: 0 20px;

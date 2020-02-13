@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" >
+
+  {%- include head.html -%}
+
+  <body class="recipe-book night-mode">
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8V39RV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    {%- include nm/nm-header.html -%}
+
+    {%- include search-modal.html -%}
+
+    {%- include settings-modal.html -%}
+
+
+    <main class="page-content" aria-label="Content" id="recipe-head">
+      {{ content }}
+      <p class="footnote" id="footnote"></p>
+    </main>
+    <div class="overlay-mask"></div>
+
+
+    {%- include footer.html -%}
+  </body>
+
+</html>

@@ -534,12 +534,17 @@ nav.site-nav {
 main {
   background: var(--white);
 
-  @include transition(background 150ms ease-in-out);
+  @include transition(all 150ms ease-in-out);
 }
 main.page-content {
   // height: calc(100% - 85px);
 }
 
+.open-nav main,
+.searching main,
+.searching-mobile main {
+  filter: blur(3px);
+}
 
 
 //
