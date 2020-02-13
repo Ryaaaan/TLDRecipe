@@ -2,8 +2,8 @@ $(document).ready(function(){
   tldr.initHighlighter();
   tldr.hideCopyButton();
   tldr.updateDOMFavoriteList();
-  // tldr.updateDOMNightMode();
-  tldr.isNightModeURL();
+  tldr.updateDOMNightMode();
+  // tldr.isNightModeURL();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();
@@ -26,23 +26,6 @@ var tldr = window.tldrecipe;
 // Detect iOS
 var iOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-
-// Toggle Night Mode
-$(".nm-toggle").on("click touch", function() {
-  tldr.nightMode();
-});
-
-
-tldr.nightMode = function() {
-  var isDark = document.body.classList.contains('night-mode');
-
-  if (isDark) {
-    document.body.classList.remove('night-mode');
-  } else {
-    document.body.classList.add('night-mode');
-  }
-}
-
 // Night Mode Check
 tldr.hasNightModeClass = function() {
   var hasClass = document.body.classList.contains('night-mode');
@@ -55,12 +38,13 @@ tldr.hasNightModeClass = function() {
 }
 
 tldr.isNightModeURL = function() {
-  var hasNightModeClass = tldr.hasNightModeClass();
   var url = window.location.href;
-  var hasNightMode = url.includes('nightmode=true');
+  var hasNightMode = url.includes('nm/');
 
-  if (hasNightMode && !hasNightModeClass){
-    tldr.nightMode();
+  if (hasNightMode){
+    return true
+  } else {
+    return false
   }
 }
 

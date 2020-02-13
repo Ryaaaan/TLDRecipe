@@ -2,8 +2,8 @@ $(document).ready(function(){
   tldr.initHighlighter();
   tldr.hideCopyButton();
   tldr.updateDOMFavoriteList();
-  // tldr.updateDOMNightMode();
-  tldr.isNightModeURL();
+  tldr.updateDOMNightMode();
+  // tldr.isNightModeURL();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();
@@ -26,23 +26,6 @@ var tldr = window.tldrecipe;
 // Detect iOS
 var iOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-
-// Toggle Night Mode
-$(".nm-toggle").on("click touch", function() {
-  tldr.nightMode();
-});
-
-
-tldr.nightMode = function() {
-  var isDark = document.body.classList.contains('night-mode');
-
-  if (isDark) {
-    document.body.classList.remove('night-mode');
-  } else {
-    document.body.classList.add('night-mode');
-  }
-}
-
 // Night Mode Check
 tldr.hasNightModeClass = function() {
   var hasClass = document.body.classList.contains('night-mode');
@@ -55,12 +38,13 @@ tldr.hasNightModeClass = function() {
 }
 
 tldr.isNightModeURL = function() {
-  var hasNightModeClass = tldr.hasNightModeClass();
   var url = window.location.href;
-  var hasNightMode = url.includes('nightmode=true');
+  var hasNightMode = url.includes('nm/');
 
-  if (hasNightMode && !hasNightModeClass){
-    tldr.nightMode();
+  if (hasNightMode){
+    return true
+  } else {
+    return false
   }
 }
 
@@ -332,11 +316,20 @@ $('.favorite-flag').on('click touch', function(){
 });
 
 // Set Night Mode Flag
-$('#nm-trigger').on('click touch', function(){
+tldr.nmTriggerClicked = function() {
   var isDark = tldr.hasNightModeClass();
   var listName = 'night-mode'
 
   tldr.checkLocalStorage(isDark, listName);
+}
+
+tldr.nmTrigger = document.getElementById('nm-trigger');
+tldr.nmTrigger.addEventListener('click', function() {
+    tldr.nmTriggerClicked();
+});
+
+tldr.nmTrigger.addEventListener('touchstart', function() {
+    tldr.nmTriggerClicked();
 });
 
 
@@ -371,7 +364,7 @@ tldr.setLocalStorage = function(newData, listName) {
     // init night-mode list
     localStorage.setItem(listName, JSON.stringify(dataList));
     // reflect change on DOM once cookie is set
-    // tldr.updateDOMNightMode();
+    tldr.updateDOMNightMode();
   }
 }
 
@@ -405,7 +398,7 @@ tldr.updateLocalStorage = function(newData, listName) {
     currentList = []
     currentList.push(!newData);
     localStorage.setItem(listName, JSON.stringify(currentList));
-    // tldr.updateDOMNightMode();
+    tldr.updateDOMNightMode();
   }
 }
 
@@ -438,12 +431,14 @@ tldr.updateDOMNightMode = function(listName) {
   var listName = 'night-mode'
   // Set Cookie Vars
   var currentList = JSON.parse(localStorage.getItem(listName));
+  var alreadyNM = tldr.isNightModeURL();
 
   // if data has been defined
-  if (currentList != null && currentList[0] ) {
-    $('body').addClass('night-mode');
+  if (currentList != null && currentList[0] && !alreadyNM) {
+    var nmURL = window.location.pathname
+    window.location.href = 'nm' + nmURL;
   } else {
-    $('body').removeClass('night-mode');
+    // $('body').removeClass('night-mode');
   }
 }
 
