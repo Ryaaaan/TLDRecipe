@@ -127,11 +127,12 @@ tldr.updateDOMNightMode = function(listName) {
 
   // if data has been defined
   if (currentList != null) {
-    // if nm cookie is true and we land on a normal page, redirect
     if (currentList[0] && !alreadyNM) {
+      // if nm cookie is true and we on a normal page, redirect
       var nmURL = window.location.pathname
       window.location.href = '/nm' + nmURL;
     } else if (!currentList[0] && alreadyNM) {
+      // if nm cookie is false and we on a nm page, redirect
       var nmURL = window.location.pathname
       var normalURL = nmURL.replace('/nm/', '/');
       window.location.href = normalURL;

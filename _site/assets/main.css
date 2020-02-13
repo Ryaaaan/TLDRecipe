@@ -929,6 +929,7 @@ nav.site-nav {
   box-sizing: border-box;
   background: var(--white);
   border-bottom: 1px solid var(--black);
+  pointer-events: none;
   position: fixed;
   top: 45px;
   left: 0;
@@ -2092,13 +2093,48 @@ body.night-mode,
   background: var(--black); }
 
 .night-mode header.site-header {
-  background: var(--ultrablack); }
+  background: var(--ultrablack);
+  border-bottom: 1px solid var(--ultrablack); }
+
+.night-mode .tldr0,
+.night-mode .tldr0 {
+  fill: var(--aqua); }
+
+.night-mode .tldr1,
+.night-mode .tldr1 {
+  fill: var(--white); }
+
+.night-mode .site-title:hover {
+  background: var(--aqua); }
+  .night-mode .site-title:hover .tldr0,
+  .night-mode .site-title:hover .tldr0,
+  .night-mode .site-title:hover .tldr1,
+  .night-mode .site-title:hover .tldr1 {
+    fill: var(--ultrablack); }
 
 .night-mode .highlight {
   background: var(--aqua); }
 
 .night-mode .search-toggle {
+  background: var(--aqua); }
+  .night-mode .search-toggle span {
+    background: var(--ultrablack); }
+
+.night-mode .search-icon .close-container span:first-child {
+  background: var(--clear);
+  border: 3px solid var(--ultrablack); }
+
+.night-mode .search-input {
+  color: var(--white); }
+
+.night-mode .search-input::placeholder {
+  color: var(--white); }
+
+.night-mode .search-modal {
   background: var(--ultrablack); }
+
+.night-mode .search-results.post-list a {
+  color: var(--white); }
 
 .night-mode .recipe-content {
   background: var(--black); }

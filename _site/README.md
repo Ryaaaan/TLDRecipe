@@ -5,23 +5,26 @@ All recipes. No bullshit.
 Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pages.github.com/).
 
 
-### Todo Items:
+### MVP Todo Items:
 - [ ] Write real README
 - [ ] Test Firefox
 - [ ] Test Safari
 - [ ] Test IE (latest)
-- [ ] Redirect `/recipes` or put someting there
+- [x] Redirect `/recipes` or put something there
 - [x] Add Watch to `gulp.js` on JS file changes
 - [x] Add dark mode cookie
 - [x] Night Mode subdomain to avoid flickering of cookie load?
-- [ ] Full Nutrition List (beyond MVP)
-- [ ] A working HTML 5 Video Player (across all devices / platforms)
-- [ ] Close Search button click area is funky - needs updated
-- [ ] Clean up JS (remove jQuery)
+- [x] Remove video players until fully functional
+- [ ] Close/Search button click area is funky - needs updated
 - [ ] Hover interactions for Search / Menu Buttons
-- [ ] Add custom color picker with `cookies.js` and `var(color)`
 - [x] Add Minify / Uglify JS Functionality
 
+### v2 Todo Items:
+- [ ] Clean up JS (remove jQuery)
+- [ ] A working HTML 5 Video Player (across all devices / platforms)
+- [ ] Full Nutrition List (maybe v3)
+- [ ] Cookie/Setting turn off notifications (copy)
+- [ ] Add custom color picker with `cookies.js` and `var(color)`
 
 ---
 ## Local Dev

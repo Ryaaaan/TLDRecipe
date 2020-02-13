@@ -12,8 +12,8 @@ favorite: can-butter
 image:
 imageAltText: this is the image alt text for ADA compliance
 
-video: ../../assets/vids/recipes/test/test_2
-videoPoster: ../../assets/imgs/recipes/test_two/poster.jpg
+video: 
+videoPoster:
 # tags
 tags: [hot, keto]
 

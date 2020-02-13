@@ -1,0 +1,167 @@
+//
+// Night Mode
+//
+.nm-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nm-toggle span {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background: black;
+  cursor: pointer;
+}
+
+
+.night-mode::-webkit-scrollbar {
+  background: var(--black);
+}
+.night-mode::-webkit-scrollbar-thumb {
+  background: var(--ultrablack);
+}
+
+body.night-mode,
+.night-mode main,
+.night-mode .master-list {
+  background: var(--black);
+}
+.night-mode header.site-header {
+  background: var(--ultrablack);
+  border-bottom: 1px solid var(--ultrablack);
+}
+.night-mode .tldr0,
+.night-mode .tldr0  {
+  fill: var(--aqua);
+}
+.night-mode .tldr1,
+.night-mode .tldr1 {
+  fill: var(--white);
+}
+.night-mode .site-title:hover {
+  background:  var(--aqua);
+
+  .tldr0,
+  .tldr0,
+  .tldr1,
+  .tldr1 {
+    fill: var(--ultrablack);
+  }
+}
+.night-mode .highlight {
+  background: var(--aqua);
+}
+.night-mode .search-toggle {
+  background: var(--aqua);
+
+  span {
+    background: var(--ultrablack);
+  }
+}
+.night-mode .search-icon .close-container span:first-child {
+  background:  var(--clear);
+  border: 3px solid  var(--ultrablack);
+}
+.night-mode .search-input {
+  color: var(--white);
+}
+.night-mode .search-input::placeholder {
+  color: var(--white);
+}
+.night-mode .search-modal {
+  background: var(--ultrablack);
+}
+.night-mode .search-results.post-list a {
+  color: var(--white);
+}
+.night-mode .recipe-content {
+  background: var(--black);
+}
+.night-mode .coming-soon {
+  background: var(--medblack);
+}
+.night-mode .list-toggle {
+  background: var(--ultrablack);
+}
+.night-mode .toggled .list-toggle span {
+  background: var(--aqua);
+}
+.night-mode .copy-button {
+  background: var(--aqua);
+  color: var(--ultrablack);
+}
+
+.night-mode .video-btn svg {
+  fill: var(--aqua);
+}
+.night-mode .video-btn:hover svg {
+  fill: var(--white);
+}
+.night-mode #play-btn {
+  // background: var(--clear);
+}
+.night-mode .play-video #play-btn span:first-child {
+  border-top: 15px solid transparent;
+  border-left: 30px solid var(--aqua);
+  border-bottom: 15px solid transparent;
+}
+.night-mode .play-video #play-btn span {
+  background: var(--clear);
+}
+.night-mode #play-btn span {
+  background: var(--aqua);
+}
+.night-mode .play-video #play-btn:hover span:first-child {
+  border-top: 15px solid transparent;
+  border-left: 30px solid var(--white);
+  border-bottom: 15px solid transparent;
+}
+.night-mode .play-video #play-btn:hover span {
+  background: var(--clear);
+}
+.night-mode #play-btn:hover span {
+  background: var(--white);
+}
+
+
+
+// Typo Changes
+.night-mode h1,
+.night-mode h2,
+.night-mode h3 {
+  color: var(--aqua);
+}
+.night-mode h3 {
+  color: var(--white);
+}
+.night-mode .filter-container span {
+  color: var(--medblack);
+}
+.night-mode .filter-container span.active-filter,
+.night-mode .filter-container span:hover {
+   color: var(--white);
+}
+.night-mode .post-link {
+  color: var(--white);
+}
+.night-mode .post-list li:hover {
+  border-bottom: 1px solid var(--aqua);
+}
+.night-mode .post-list li:hover a {
+  color: var(--aqua);
+}
+.night-mode .fav-descrition {
+  color: var(--white);
+}
+.night-mode .nutrition-container span,
+.night-mode .nutrition-container strong {
+  color: var(--white);
+}
+.night-mode .recipe-content li {
+  color: var(--white);
+}
+.night-mode ol.instruction-list li:before {
+  color: var(--aqua);
+}
