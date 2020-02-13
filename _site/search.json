@@ -49,6 +49,14 @@
     } ,
   
     {
+      "title"    : "Strawberry Ice Cream",
+      "category" : "",
+      "tags"     : "lunch, dinner, pork",
+      "url"      : "/nm/recipes/strawberry-ice-cream",
+      "date"     : "2018-10-22 13:46:59 -0500"
+    } ,
+  
+    {
       "title"    : "Eggs Benny w/ Toast",
       "category" : "",
       "tags"     : "poultry, summer, breakfast",
@@ -125,6 +133,14 @@
       "category" : "",
       "tags"     : "beef, dinner",
       "url"      : "/recipes/pepper-steak",
+      "date"     : "2018-10-22 13:46:59 -0500"
+    } ,
+  
+    {
+      "title"    : "Strawberry Ice Cream",
+      "category" : "",
+      "tags"     : "lunch, dinner, pork",
+      "url"      : "/recipes/strawberry-ice-cream",
       "date"     : "2018-10-22 13:46:59 -0500"
     } ,
   

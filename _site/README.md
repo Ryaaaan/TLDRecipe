@@ -10,9 +10,9 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [ ] Test Firefox
 - [ ] Test Safari
 - [ ] Test IE (latest)
-- [ ] Add Watch to `gulp.js` on JS file changes (and others?)
-- [ ] Add dark mode cookie
-- [ ] Night Mode subdomain to avoid flickering of cookie load?
+- [x] Add Watch to `gulp.js` on JS file changes
+- [x] Add dark mode cookie
+- [x] Night Mode subdomain to avoid flickering of cookie load?
 - [ ] Full Nutrition List (beyond MVP)
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
 - [ ] Close Search button click area is funky - needs updated
@@ -27,7 +27,15 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 ### PC
 - Make sure local environment is set to `development` by running `set JEKYLL_ENV=development`
 
-More information on Jekyll Environments can be found [here](https://jekyllrb.com/docs/configuration/environments/)
+More information on Jekyll Environments can be found: [here](https://jekyllrb.com/docs/configuration/environments/)
+
+### Automate Night Mode Post Creation
+After making a new post within the `_posts` directory automate the `_posts/nm/` creation with gulp. This uses `gulp-replace` to change lines within the new post. Run:
+- `gulp copy-nm-files`
+
+Just look at the file to see how it works dumbass.
+
+More information on Jekyll `_posts` can be found: [here](https://jekyllrb.com/docs/posts/)
 
 ---
 ## Production
@@ -36,7 +44,7 @@ More information on Jekyll Environments can be found [here](https://jekyllrb.com
 - Build project `jekyll build`
 - Alternatively, run the project `bundle exec jekyll serve`
 
-More information on Jekyll Environments can be found [here](https://jekyllrb.com/docs/configuration/environments/)
+More information on Jekyll Environments can be found: [here](https://jekyllrb.com/docs/configuration/environments/)
 
 
 ---
