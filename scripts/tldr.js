@@ -315,19 +315,18 @@ $('.favorite-flag').on('click touch', function(){
   tldr.checkLocalStorage(recipe, listName);
 });
 
-// Set Night Mode Flag
+// Set/Update Night Mode Flag
 tldr.nmTriggerClicked = function() {
   var isDark = tldr.hasNightModeClass();
   var listName = 'night-mode'
 
   tldr.checkLocalStorage(isDark, listName);
 }
-
+// Init NM Trigger
 tldr.nmTrigger = document.getElementById('nm-trigger');
 tldr.nmTrigger.addEventListener('click', function() {
     tldr.nmTriggerClicked();
 });
-
 tldr.nmTrigger.addEventListener('touchstart', function() {
     tldr.nmTriggerClicked();
 });
@@ -434,11 +433,16 @@ tldr.updateDOMNightMode = function(listName) {
   var alreadyNM = tldr.isNightModeURL();
 
   // if data has been defined
-  if (currentList != null && currentList[0] && !alreadyNM) {
-    var nmURL = window.location.pathname
-    window.location.href = 'nm' + nmURL;
-  } else {
-    // $('body').removeClass('night-mode');
+  if (currentList != null) {
+    // if nm cookie is true and we land on a normal page, redirect
+    if (currentList[0] && !alreadyNM) {
+      var nmURL = window.location.pathname
+      window.location.href = '/nm' + nmURL;
+    } else if (!currentList[0] && alreadyNM) {
+      var nmURL = window.location.pathname
+      var normalURL = nmURL.replace('/nm/', '/');
+      window.location.href = normalURL;
+    }
   }
 }
 

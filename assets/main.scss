@@ -275,6 +275,7 @@ nav.site-nav {
 .open-nav .settings-modal {
   opacity: 1;
   pointer-events: all;
+  padding: 20px 20px 20px 30px;
 }
 
 
@@ -751,7 +752,7 @@ section {
   fill: var(--gold);
 }
 .favorite .favorite-flag:hover svg {
-  fill: var(--gold)_hover;
+  fill: var(--gold-hover);
 }
 .post-time {
   display: block;

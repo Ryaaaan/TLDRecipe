@@ -12,6 +12,7 @@
   --darkblue: #311B92;
   --yellow: #ffff00;
   --gold: #FFD54F;
+  --gold-hover: #FFB450;
   --black-op-25: rgba(38, 50, 58, 0.25);
   --ultrablack-op-25: rgba(21, 27, 29, 0.25); }
 
@@ -946,7 +947,8 @@ nav.site-nav {
 
 .open-nav .settings-modal {
   opacity: 1;
-  pointer-events: all; }
+  pointer-events: all;
+  padding: 20px 20px 20px 30px; }
 
 .search-modal {
   height: 0;
@@ -1362,7 +1364,7 @@ section {
   fill: var(--gold); }
 
 .favorite .favorite-flag:hover svg {
-  fill: var(--gold) _hover; }
+  fill: var(--gold-hover); }
 
 .post-time {
   display: block; }

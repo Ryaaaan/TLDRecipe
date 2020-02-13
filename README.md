@@ -10,6 +10,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [ ] Test Firefox
 - [ ] Test Safari
 - [ ] Test IE (latest)
+- [ ] Redirect `/recipes` or put someting there
 - [x] Add Watch to `gulp.js` on JS file changes
 - [x] Add dark mode cookie
 - [x] Night Mode subdomain to avoid flickering of cookie load?
