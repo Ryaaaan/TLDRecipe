@@ -91,18 +91,53 @@ $(".close-button-trigger").on("click touch", function() {
 
 
 
-$(".search-toggle").on("click touch", function() {
-  tldr.openSearch();
-  $('html').removeClass('open-nav');
+// $(".search-toggle").on("click touch", function() {
+//   tldr.openSearch();
+//   $('html').removeClass('open-nav');
+// });
+
+// Init NM Trigger
+tldr.searchTrigger = document.getElementById('search-toggle');
+tldr.searchTrigger.addEventListener('click', function() {
+    tldr.openSearch();
+});
+tldr.searchTrigger.addEventListener('touchstart', function() {
+    tldr.openSearch();
 });
 
-$(".search-toggle .close-container").on("click touch", function(e) {
-  tldr.killSearch();
-  e.stopPropagation();
-});
+
+tldr.openSearch = function() {
+  var isOpen = $('html').hasClass('searching');
+  // var isOpenMobile = $('html').hasClass('searching-mobile');
+
+  if (isOpen) {
+    $('html').removeClass('searching');
+  } else {
+    $('html').addClass('searching');
+    $('#search-input').focus();
+  }
+
+  // if (!isOpen && !isOpenMobile) {
+  //
+  //   if (!iOSDevice) {
+  //     $('html').addClass('searching');
+  //   } else {
+  //     $('html').addClass('searching-mobile');
+  //   }
+  //
+  //   $('#search-input').focus();
+  // }
+}
+// tldr.killSearch = function() {
+//   $('html').removeClass('searching');
+// }
+// $(".search-toggle .close-container").on("click touch", function(e) {
+//   tldr.killSearch();
+//   e.stopPropagation();
+// });
 
 $(".overlay-mask").on("click touch", function() {
-  tldr.killSearch();
+  $('html').removeClass('searching');
   $('html').removeClass('open-nav');
 });
 
@@ -123,41 +158,9 @@ tldr.openSettings = function() {
   }
 }
 
-tldr.openSearch = function() {
-  var isOpen = $('html').hasClass('searching');
-  var isOpenMobile = $('html').hasClass('searching');
 
-  if (!isOpen && !isOpenMobile) {
 
-    if (!iOSDevice) {
-      $('html').addClass('searching');
-    } else {
-      $('html').addClass('searching-mobile');
-    }
 
-    setTimeout(function(){
-      $('site-title').css('display', 'none');
-    }, 175)
-    $('.search-toggle').removeClass('search-icon');
-    $('#search-input').focus();
-  }
-}
-tldr.killSearch = function() {
-  var isOpen = $('html').hasClass('searching');
-  var isOpenMobile = $('html').hasClass('searching-mobile');
-
-  if (isOpen || isOpenMobile) {
-
-    if (!iOSDevice) {
-      $('html').removeClass('searching');
-    } else {
-      $('html').removeClass('searching-mobile');
-    }
-
-    $('site-title').css('display', 'block');
-    $('.search-toggle').addClass('search-icon');
-  }
-}
 
 $("#search-input").keyup(function() {
   var charCount = this.value.length;

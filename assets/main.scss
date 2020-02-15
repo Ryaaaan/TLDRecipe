@@ -64,9 +64,9 @@ input {
   height: 100%;
   overflow: hidden;
 }
-.searching-mobile {
-  height: calc(100% - 395px);
-}
+// .searching-mobile {
+//   height: calc(100% - 395px);
+// }
 .wrapper {
   width: 100%;
   max-width: 420px;
@@ -527,7 +527,7 @@ nav.site-nav {
 
   @include rotate(0deg);
 }
-.search-icon .close-container span:first-child {
+.searching .close-container span:first-child {
   background: transparent;
   border: 3px solid white;
   height: 12px;
@@ -536,7 +536,7 @@ nav.site-nav {
   top: 5px;
   left: -1px;
 }
-.search-icon .close-container span:last-child {
+.searching .close-container span:last-child {
   top: -5px;
   left: 16px;
   width: 10px;
