@@ -1145,15 +1145,15 @@ a.post-link:hover .double-arrow svg {
 .recipe-content {
   // height: 100%;
   background: var(--white);
-  padding: 10px 0 80px;
+  padding: 10px 0 40px;
 
   @include transition(background 150ms ease-in-out);
 
   @media (min-width: 450px) {
-    padding: 15px 0 80px;
+    padding: 15px 0 40px;
   }
   @media (min-width: 720px) {
-    padding: 25px 0 80px;
+    padding: 25px 0 40px;
   }
 }
 .date-time {
