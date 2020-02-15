@@ -97,7 +97,6 @@ $(".search-toggle").on("click touch", function() {
 });
 tldr.openSearch = function() {
   var isOpen = $('html').hasClass('searching');
-  // var isOpenMobile = $('html').hasClass('searching-mobile');
 
   if (!isOpen) {
     $('html').addClass('searching');
