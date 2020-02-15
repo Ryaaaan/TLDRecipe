@@ -279,6 +279,8 @@ html { overflow-x: hidden; height: 100%; }
 
 body { margin: 0; padding: 0; background: var(--white); height: 100%; position: relative; padding-top: 45px; -webkit-transition: background 150ms ease-in-out; -moz-transition: background 150ms ease-in-out; -ms-transition: background 150ms ease-in-out; transition: background 150ms ease-in-out; }
 
+input { border-radius: 0; }
+
 .open-nav, .searching, .searching-mobile { height: 100%; overflow: hidden; }
 
 .searching-mobile { height: calc(100% - 395px); }
