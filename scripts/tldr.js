@@ -90,22 +90,11 @@ $(".close-button-trigger").on("click touch", function() {
 
 
 
-
-// $(".search-toggle").on("click touch", function() {
-//   tldr.openSearch();
-//   $('html').removeClass('open-nav');
-// });
-
-// Init Search Trigger
-tldr.searchTrigger = document.getElementById('search-toggle');
-tldr.searchTrigger.addEventListener('click', function() {
-    tldr.openSearch();
+// Open Search
+$(".search-toggle").on("click touch", function() {
+  tldr.openSearch();
+  $('html').removeClass('open-nav');
 });
-tldr.searchTrigger.addEventListener('touchstart', function() {
-    tldr.openSearch();
-});
-
-
 tldr.openSearch = function() {
   var isOpen = $('html').hasClass('searching');
   // var isOpenMobile = $('html').hasClass('searching-mobile');
@@ -117,55 +106,26 @@ tldr.openSearch = function() {
   } else {
     $('html').removeClass('searching');
   }
-
-  // if (!isOpen && !isOpenMobile) {
-  //
-  //   if (!iOSDevice) {
-  //     $('html').addClass('searching');
-  //   } else {
-  //     $('html').addClass('searching-mobile');
-  //   }
-  //
-  //   $('#search-input').focus();
-  // }
 }
-// tldr.killSearch = function() {
-//   $('html').removeClass('searching');
-// }
-// $(".search-toggle .close-container").on("click touch", function(e) {
-//   tldr.killSearch();
-//   e.stopPropagation();
-// });
 
-// $(".overlay-mask").on("click touch", function() {
-//   $('html').removeClass('searching');
-//   $('html').removeClass('open-nav');
-// });
-
-tldr.overlayMask = document.getElementById('overlay-mask');
-tldr.overlayMask.addEventListener('click', function() {
-  $('html').removeClass('searching');
-  $('html').removeClass('open-nav');
+// Search Input
+$("#search-input").keyup(function() {
+  var charCount = this.value.length;
+  tldr.isSearchingTrigger(charCount);
 });
-tldr.overlayMask.addEventListener('touchstart', function() {
-  $('html').removeClass('searching');
-  $('html').removeClass('open-nav');
-});
+tldr.isSearchingTrigger = function(charCount) {
+  if (charCount > 0) {
+    $('html').addClass('typing');
+  } else {
+    $('html').removeClass('typing');
+  }
+}
 
 
-// Navigation
-// $('.menu-toggle').on('click touch', function(){
-//   tldr.openSettings();
-// });
-
-tldr.menuTrigger = document.getElementById('menu-toggle');
-tldr.menuTrigger.addEventListener('click', function() {
+// Open Settings
+$('.settings-toggle').on('click touch', function(){
   tldr.openSettings();
 });
-tldr.menuTrigger.addEventListener('touchstart', function() {
-  tldr.openSettings();
-});
-
 tldr.openSettings = function() {
   var isOpen = $('html').hasClass('open-nav');
 
@@ -176,22 +136,15 @@ tldr.openSettings = function() {
   }
 }
 
-
-
-
-
-$("#search-input").keyup(function() {
-  var charCount = this.value.length;
-  tldr.isSearchingTrigger(charCount);
+// Overlay Mask Kill Switch
+$(".overlay-mask").on("click touch", function() {
+  $('html').removeClass('searching');
+  $('html').removeClass('open-nav');
 });
 
-tldr.isSearchingTrigger = function(charCount) {
-  if (charCount > 0) {
-    $('html').addClass('typing');
-  } else {
-    $('html').removeClass('typing');
-  }
-}
+
+
+
 
 
 

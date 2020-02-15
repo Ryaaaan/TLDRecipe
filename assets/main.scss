@@ -155,7 +155,7 @@ header.site-header {
 .searching-mobile .nav-button-container {
   // width: calc(100% - 140px);
 }
-.menu-toggle,
+.settings-toggle,
 .search-toggle {
   height: 44px;
   width: 65px;
@@ -180,8 +180,8 @@ header.site-header {
 .searching-mobile .search-toggle {
   width: 50px;
 }
-.searching .menu-toggle,
-.searching-mobile .menu-toggle {
+.searching .settings-toggle,
+.searching-mobile .settings-toggle {
   width: 0px;
   padding: 0px;
   overflow: hidden;
@@ -195,7 +195,7 @@ header.site-header {
   justify-content: flex-start;
   align-items: center;
 }
-.menu-toggle span {
+.settings-toggle span {
   display: block;
   background: var(--white);
   height: 3px;

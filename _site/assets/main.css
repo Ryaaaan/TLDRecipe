@@ -303,15 +303,15 @@ header.site-header { height: 45px; width: 100%; background: var(--clear); paddin
 
 .nav-button-container { display: flex; flex-direction: row; align-items: center; justify-content: flex-end; width: calc(100% - 100px); }
 
-.menu-toggle, .search-toggle { height: 44px; width: 65px; background: var(--black); margin: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; -webkit-transition: all 150ms ease-in-out; -moz-transition: all 150ms ease-in-out; -ms-transition: all 150ms ease-in-out; transition: all 150ms ease-in-out; }
+.settings-toggle, .search-toggle { height: 44px; width: 65px; background: var(--black); margin: 0px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; -webkit-transition: all 150ms ease-in-out; -moz-transition: all 150ms ease-in-out; -ms-transition: all 150ms ease-in-out; transition: all 150ms ease-in-out; }
 
 .searching-mobile .search-toggle { width: 50px; }
 
-.searching .menu-toggle, .searching-mobile .menu-toggle { width: 0px; padding: 0px; overflow: hidden; }
+.searching .settings-toggle, .searching-mobile .settings-toggle { width: 0px; padding: 0px; overflow: hidden; }
 
 .toggle-container { height: 22px; width: 30px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; }
 
-.menu-toggle span { display: block; background: var(--white); height: 3px; width: 22px; margin: 2px 0; }
+.settings-toggle span { display: block; background: var(--white); height: 3px; width: 22px; margin: 2px 0; }
 
 nav.site-nav { overflow: hidden; height: 0px; position: absolute; -webkit-transition: all 125ms ease-in-out; -moz-transition: all 125ms ease-in-out; -ms-transition: all 125ms ease-in-out; transition: all 125ms ease-in-out; }
 
