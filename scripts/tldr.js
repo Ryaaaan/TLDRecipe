@@ -154,9 +154,9 @@ tldr.overlayMask.addEventListener('touchstart', function() {
 
 
 // Navigation
-$('.menu-toggle').on('click touch', function(){
-  tldr.openSettings();
-});
+// $('.menu-toggle').on('click touch', function(){
+//   tldr.openSettings();
+// });
 
 tldr.menuTrigger = document.getElementById('menu-toggle');
 tldr.menuTrigger.addEventListener('click', function() {
