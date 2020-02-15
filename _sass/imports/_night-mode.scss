@@ -30,7 +30,7 @@ body.night-mode,
 }
 .night-mode header.site-header {
   background: var(--ultrablack);
-  border-bottom: 1px solid var(--ultrablack);
+  border-bottom: 1px solid var(--true-black);
 }
 .night-mode .tldr0,
 .night-mode .tldr0  {
@@ -60,9 +60,16 @@ body.night-mode,
     background: var(--ultrablack);
   }
 }
-.night-mode .search-icon .close-container span:first-child {
+.night-mode .search-toggle .icon-container span:first-child {
   background:  var(--clear);
   border: 3px solid  var(--ultrablack);
+}
+.searching .night-mode .search-toggle .icon-container span {
+  background:  var(--ultrablack);
+}
+.searching .night-mode .search-toggle .icon-container span:first-child {
+  background:  var(--ultrablack);
+  border: 0px solid  var(--clear);
 }
 .night-mode .search-input {
   color: var(--white);
@@ -75,6 +82,19 @@ body.night-mode,
 }
 .night-mode .search-results.post-list a {
   color: var(--white);
+}
+.night-mode .settings-modal {
+  background: var(--ultrablack);
+  border-left: 1px solid var(--true-black);
+}
+.night-mode .settings-modal span {
+  color: var(--white);
+}
+.night-mode #nm-trigger .toggle-container {
+  background: var(--aqua);
+}
+.night-mode #nm-trigger .toggle-container span {
+  left: 22px
 }
 .night-mode .recipe-content {
   background: var(--black);

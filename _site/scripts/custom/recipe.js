@@ -1,6 +1,24 @@
 //
 // Recipe Functionality
 //
+// Toggle Recipe Items
+$(".list li").on("click touch", function() {
+  tldr.toggleList(this);
+  // tldr.hapticFeedback()
+});
+
+// Trigger Copy Functionality
+tldr.copyItems = document.getElementById('copyShit');
+$('.copy-button').on('click touch', function(){
+
+  if (iOSDevice) {
+    tldr.iosCopyToClipboard(tldr.copyItems);
+  } else {
+    tldr.normalCopyToClipboard(tldr.copyItems);
+  }
+});
+
+
 tldr.toggleList = function(item) {
   $(item).toggleClass('toggled');
 }

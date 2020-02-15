@@ -160,7 +160,7 @@ section p,
   margin: 0 20px;
   font-weight: 600;
 }
-.open-nav .site-nav a {
+.open-settings .site-nav a {
   color: var(--black);
   padding: 10px 0;
 }
@@ -176,14 +176,14 @@ section p,
     margin: 0 0 0 20px;
   }
 }
-.open-nav .site-nav a.events-link {
+.open-settings .site-nav a.events-link {
   padding: 10px 0;
 }
 .site-nav a.events-link:hover {
   background: var(--red);
   color: var(--white);
 }
-.open-nav .site-nav a.events-link:hover {
+.open-settings .site-nav a.events-link:hover {
   background: var(--yellow);
   color: var(--black);
 }

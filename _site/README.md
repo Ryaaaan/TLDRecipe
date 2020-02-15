@@ -15,7 +15,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [x] Add dark mode cookie
 - [x] Night Mode subdomain to avoid flickering of cookie load?
 - [x] Remove video players until fully functional
-- [ ] Close/Search button click area is funky - needs updated
+- [x] Close/Search button click area is funky - needs updated
 - [ ] Random Recipe Button
 - [ ] SEO / Meta details
 - [ ] Hover interactions for Search / Menu Buttons

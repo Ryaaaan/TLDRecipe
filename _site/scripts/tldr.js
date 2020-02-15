@@ -1,9 +1,10 @@
 $(document).ready(function(){
   tldr.initHighlighter();
   tldr.hideCopyButton();
+
+  // Launch cookies
   tldr.updateDOMFavoriteList();
   tldr.updateDOMNightMode();
-  // tldr.isNightModeURL();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();
@@ -13,9 +14,8 @@ $(document).on('scroll', function(){
   tldr.hideCopyButton();
 });
 $(window).on('resize', function(){
-  $('body').removeClass('open-nav');
+  $('body').removeClass('open-settings');
   tldr.activeFilterFinder();
-  // tldr.animateChef();
 });
 
 
@@ -64,24 +64,6 @@ tldr.nightModeToggle = function() {
 
 
 
-// Toggle Recipe Items
-$(".list li").on("click touch", function() {
-  tldr.toggleList(this);
-  // tldr.hapticFeedback()
-});
-
-// Trigger Copy Functionality
-tldr.copyItems = document.getElementById('copyShit');
-$('.copy-button').on('click touch', function(){
-
-  if (iOSDevice) {
-    tldr.iosCopyToClipboard(tldr.copyItems);
-  } else {
-    tldr.normalCopyToClipboard(tldr.copyItems);
-  }
-});
-
-
 
 
 $(".close-button-trigger").on("click touch", function() {
@@ -93,7 +75,7 @@ $(".close-button-trigger").on("click touch", function() {
 // Open Search
 $(".search-toggle").on("click touch", function() {
   tldr.openSearch();
-  $('html').removeClass('open-nav');
+  $('html').removeClass('open-settings');
 });
 tldr.openSearch = function() {
   var isOpen = $('html').hasClass('searching');
@@ -126,19 +108,19 @@ $('.settings-toggle').on('click touch', function(){
   tldr.openSettings();
 });
 tldr.openSettings = function() {
-  var isOpen = $('html').hasClass('open-nav');
+  var isOpen = $('html').hasClass('open-settings');
 
   if (isOpen) {
-    $('html').removeClass('open-nav');
+    $('html').removeClass('open-settings');
   } else {
-    $('html').addClass('open-nav');
+    $('html').addClass('open-settings');
   }
 }
 
 // Overlay Mask Kill Switch
 $(".overlay-mask").on("click touch", function() {
   $('html').removeClass('searching');
-  $('html').removeClass('open-nav');
+  $('html').removeClass('open-settings');
 });
 
 
@@ -482,6 +464,24 @@ tldr.skipFwd = function() {
 //
 // Recipe Functionality
 //
+// Toggle Recipe Items
+$(".list li").on("click touch", function() {
+  tldr.toggleList(this);
+  // tldr.hapticFeedback()
+});
+
+// Trigger Copy Functionality
+tldr.copyItems = document.getElementById('copyShit');
+$('.copy-button').on('click touch', function(){
+
+  if (iOSDevice) {
+    tldr.iosCopyToClipboard(tldr.copyItems);
+  } else {
+    tldr.normalCopyToClipboard(tldr.copyItems);
+  }
+});
+
+
 tldr.toggleList = function(item) {
   $(item).toggleClass('toggled');
 }
