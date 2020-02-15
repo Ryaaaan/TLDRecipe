@@ -110,11 +110,12 @@ tldr.openSearch = function() {
   var isOpen = $('html').hasClass('searching');
   // var isOpenMobile = $('html').hasClass('searching-mobile');
 
-  if (isOpen) {
-    $('html').removeClass('searching');
-  } else {
+  if (!isOpen) {
     $('html').addClass('searching');
     $('#search-input').focus();
+
+  } else {
+    $('html').removeClass('searching');
   }
 
   // if (!isOpen && !isOpenMobile) {
