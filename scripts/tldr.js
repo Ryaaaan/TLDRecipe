@@ -281,9 +281,11 @@ tldr.nmTriggerClicked = function() {
 tldr.nmTrigger = document.getElementById('nm-trigger');
 tldr.nmTrigger.addEventListener('click', function() {
     tldr.nmTriggerClicked();
+    tldr.nightModeSwitch();
 });
 tldr.nmTrigger.addEventListener('touchstart', function() {
     tldr.nmTriggerClicked();
+    tldr.nightModeSwitch();
 });
 
 
@@ -392,15 +394,79 @@ tldr.updateDOMNightMode = function(listName) {
     if (currentList[0] && !alreadyNM) {
       // if nm cookie is true and we on a normal page, redirect
       var nmURL = window.location.pathname
-      window.location.href = '/nm' + nmURL;
+      // window.location.href = '/nm' + nmURL;
+      history.pushState('', '', '/nm' + nmURL);
     } else if (!currentList[0] && alreadyNM) {
       // if nm cookie is false and we on a nm page, redirect
       var nmURL = window.location.pathname
       var normalURL = nmURL.replace('/nm/', '/');
-      window.location.href = normalURL;
+      // window.location.href = normalURL;
+      history.pushState('', '', normalURL);
     }
   }
 }
+
+
+tldr.nightModeSwitch = function() {
+  var isNight = $('body').hasClass('night-mode');
+
+  if (!isNight) {
+    $('body').addClass('night-mode');
+    tldr.swapURLPaths(isNight);
+  } else {
+    $('body').removeClass('night-mode');
+    tldr.swapURLPaths(isNight);
+  }
+}
+
+tldr.swapURLPaths = function(isNight) {
+  var anch = document.querySelectorAll('a');
+
+  for (var i = 0; i < anch.length; i++) {
+    var host = anch[i].host;
+    var url = anch[i].href;
+    var targetURL = url.split(host)[1];
+
+    // console.log(url.split(host)[1]);
+    // var notRoot = url.contains('/nm/');
+
+    if (isNight) {
+      var regURL = url.split('/nm')[1];
+      anch[i].href = regURL;
+    } else {
+      anch[i].href = '/nm' + targetURL;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
 
 //
 // Video Controls
