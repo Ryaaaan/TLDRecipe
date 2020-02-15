@@ -281,6 +281,8 @@ body { margin: 0; padding: 0; background: var(--white); height: 100%; position: 
 
 .open-nav, .searching, .searching-mobile { height: 100%; overflow: hidden; }
 
+.searching-mobile { height: calc(100% - 395px); }
+
 .wrapper { width: 100%; max-width: 420px; margin: 0 auto; box-sizing: border-box; padding: 0; position: relative; }
 
 @media (min-width: 720px) { .wrapper { max-width: 700px; } }

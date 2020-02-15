@@ -60,6 +60,9 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.searching-mobile {
+  height: calc(100% - 395px);
+}
 .wrapper {
   width: 100%;
   max-width: 420px;
