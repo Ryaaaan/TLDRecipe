@@ -158,6 +158,14 @@ $('.menu-toggle').on('click touch', function(){
   tldr.openSettings();
 });
 
+tldr.menuTrigger = document.getElementById('menu-toggle');
+tldr.menuTrigger.addEventListener('click', function() {
+  tldr.openSettings();
+});
+tldr.menuTrigger.addEventListener('touchstart', function() {
+  tldr.openSettings();
+});
+
 tldr.openSettings = function() {
   var isOpen = $('html').hasClass('open-nav');
 
