@@ -54,6 +54,12 @@ body {
   //   padding: 125px 0 0;
   // }
 }
+.open-nav,
+.searching,
+.searching-mobile {
+  height: 100%;
+  overflow: hidden;
+}
 .wrapper {
   width: 100%;
   max-width: 420px;
@@ -116,7 +122,6 @@ header.site-header {
   background: var(--white);
   border-bottom: 1px solid var(--black);
 
-
   @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
@@ -158,8 +163,6 @@ header.site-header {
   z-index: 1000;
   cursor: pointer;
 
-  @include rotate(0deg);
-  @include box-shadow(0px 2px 5px var(--black-op-25));
   @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
@@ -247,18 +250,18 @@ nav.site-nav {
 // Menu / Settings Styles
 //
 .settings-modal {
-  height: auto;
-  width: 100%;
+  height: 100%;
+  width: auto;
   padding: 20px;
   margin: auto;
   box-sizing: border-box;
   background: var(--white);
-  border-bottom: 1px solid var(--black);
+  border-left: 1px solid var(--black);
   pointer-events: none;
 
   position: fixed;
   top: 45px;
-  left: 0;
+  right: -300px;
   z-index: 1001;
   opacity: 0;
 
@@ -277,6 +280,8 @@ nav.site-nav {
   opacity: 1;
   pointer-events: all;
   padding: 20px 20px 20px 30px;
+
+  right: 0;
 }
 
 
@@ -547,6 +552,15 @@ main.page-content {
 .searching-mobile main {
   filter: blur(3px);
 }
+// No Blur on FF — gets glitchy
+@-moz-document url-prefix() {
+  .open-nav main,
+  .searching main,
+  .searching-mobile main {
+    filter: blur(0px);
+  }
+}
+
 
 
 //
