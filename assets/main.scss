@@ -31,10 +31,6 @@ html {
   overflow-x: hidden;
   height: 100%;
 }
-.searching-mobile body {
-  overflow-y: hidden;
-  // height: 100%;
-}
 body {
   margin: 0;
   padding: 0;
@@ -44,29 +40,17 @@ body {
   padding-top: 45px;
 
   @include transition(background 150ms ease-in-out);
-
-  // @include transition(all 250ms ease-in-out);
-  //
-  // @media (min-width: 690px) {
-  //   padding: 105px 0 0;
-  // }
-  // @media (min-width: 980px) {
-  //   padding: 125px 0 0;
-  // }
 }
 // For iOS styles
 input {
   border-radius: 0;
 }
 .open-nav,
-.searching,
-.searching-mobile {
+.searching {
   height: 100%;
   overflow: hidden;
 }
-// .searching-mobile {
-//   height: calc(100% - 395px);
-// }
+
 .wrapper {
   width: 100%;
   max-width: 420px;
@@ -136,9 +120,6 @@ header.site-header {
     @include transition(background 150ms ease-in-out);
   }
 }
-.searching-mobile header.site-header {
-  top: 0;
-}
 .nav-button-container {
   display: flex;
   flex-direction: row;
@@ -150,10 +131,6 @@ header.site-header {
   @media (min-width: 720px) {
     // width: calc(100% - 130px);
   }
-}
-.searching .nav-button-container,
-.searching-mobile .nav-button-container {
-  // width: calc(100% - 140px);
 }
 .settings-toggle,
 .search-toggle {
@@ -177,11 +154,7 @@ header.site-header {
     // top: 15px;
   }
 }
-.searching-mobile .search-toggle {
-  width: 50px;
-}
-.searching .settings-toggle,
-.searching-mobile .settings-toggle {
+.searching .settings-toggle {
   width: 0px;
   padding: 0px;
   overflow: hidden;
@@ -344,13 +317,10 @@ nav.site-nav {
   border-bottom: 1px solid var(--black);
   height: auto;
 }
-.searching-mobile .search-modal {
-  max-height: calc(100% - 395px);
-}
-.searching .search-modal,
-.searching-mobile .search-modal {
+.searching .search-modal {
   opacity: 1;
   pointer-events: all;
+  max-height: calc(100% - 395px);
 }
 .search-input {
   border: none;
@@ -382,8 +352,7 @@ nav.site-nav {
   width: calc(100% - 130px);
 }
 
-.searching .search-input,
-.searching-mobile .search-input {
+.searching .search-input {
   opacity: 1;
   pointer-events: all;
 
@@ -498,14 +467,13 @@ nav.site-nav {
   height: 26px;
   width: 26px;
   margin: 10px;
-  pointer-events: none;
+  // pointer-events: none;
 
   @include rotate(45deg);
   @include transition(all 75ms ease-in-out);
 }
-.searching .close-container,
-.searching-mobile .close-container {
-  pointer-events: all;
+.searching .close-container {
+  // pointer-events: all;
 
   // @include rotate(135deg);
 }
@@ -558,15 +526,13 @@ main.page-content {
 }
 
 .open-nav main,
-.searching main,
-.searching-mobile main {
+.searching main{
   filter: blur(3px);
 }
 // No Blur on FF — gets glitchy
 @-moz-document url-prefix() {
   .open-nav main,
-  .searching main,
-  .searching-mobile main {
+  .searching main {
     filter: blur(0px);
   }
 }
@@ -830,7 +796,6 @@ a.post-link:hover .double-arrow svg {
 }
 .open-nav .overlay-mask,
 .searching .overlay-mask,
-.searching-mobile .overlay-mask,
 .open-notification .overlay-mask {
   opacity: 1;
   pointer-events: all;
