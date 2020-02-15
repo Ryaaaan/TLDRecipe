@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   // Launch cookies
   tldr.updateDOMFavoriteList();
-  tldr.updateDOMNightMode();
+  tldr.forceDOMNightMode();
 
   if (iOSDevice) {
     tldr.iosPlayerControls();

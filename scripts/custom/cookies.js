@@ -8,10 +8,6 @@ $('.favorite-flag').on('click touch', function(){
   tldr.checkLocalStorage(recipe, listName);
 });
 
-// Set/Update Night Mode Flag
-tldr.nmTriggerClicked = function() {
-
-}
 
 // Init NM Trigger
 $("#nm-trigger").on("click touch", function() {
@@ -129,14 +125,35 @@ tldr.updateDOMNightMode = function(listName) {
     if (currentList[0] && !alreadyNM) {
       // if nm cookie is true and we on a normal page, redirect
       var nmURL = window.location.pathname
+      // window.location.href = '/nm' + nmURL;
+      history.pushState('', '', '/nm' + nmURL);
+    } else if (!currentList[0] && alreadyNM) {
+      // if nm cookie is false and we on a nm page, redirect
+      var nmURL = window.location.pathname
+      var normalURL = nmURL.replace('/nm/', '/');
+      // window.location.href = normalURL;
+      history.pushState('', '', normalURL);
+    }
+  }
+}
+
+tldr.forceDOMNightMode = function(listName) {
+  var listName = 'night-mode'
+  // Set Cookie Vars
+  var currentList = JSON.parse(localStorage.getItem(listName));
+  var alreadyNM = tldr.isNightModeURL();
+
+  // if data has been defined
+  if (currentList != null) {
+    if (currentList[0] && !alreadyNM) {
+      // if nm cookie is true and we on a normal page, redirect
+      var nmURL = window.location.pathname
       window.location.href = '/nm' + nmURL;
-      // history.pushState('', '', '/nm' + nmURL);
     } else if (!currentList[0] && alreadyNM) {
       // if nm cookie is false and we on a nm page, redirect
       var nmURL = window.location.pathname
       var normalURL = nmURL.replace('/nm/', '/');
       window.location.href = normalURL;
-      // history.pushState('', '', normalURL);
     }
   }
 }
@@ -148,13 +165,9 @@ tldr.nightModeSwitch = function() {
   if (!isNight) {
     $('body').addClass('night-mode');
     tldr.swapURLPaths(isNight);
-    var nmURL = window.location.pathname
-    history.pushState('', '', '/nm' + nmURL);
   } else {
     $('body').removeClass('night-mode');
     tldr.swapURLPaths(isNight);
-    var nmURL = window.location.pathname
-    history.pushState('', '', '/nm' + nmURL);
   }
 }
 
