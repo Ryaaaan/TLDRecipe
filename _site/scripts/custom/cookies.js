@@ -15,16 +15,13 @@ tldr.nmTriggerClicked = function() {
 
   tldr.checkLocalStorage(isDark, listName);
 }
+
 // Init NM Trigger
-tldr.nmTrigger = document.getElementById('nm-trigger');
-tldr.nmTrigger.addEventListener('click', function() {
-    tldr.nmTriggerClicked();
-    tldr.nightModeSwitch();
+$("#nm-trigger").on("click touch", function() {
+  tldr.nmTriggerClicked();
+  tldr.nightModeSwitch();
 });
-tldr.nmTrigger.addEventListener('touchstart', function() {
-    tldr.nmTriggerClicked();
-    tldr.nightModeSwitch();
-});
+
 
 
 tldr.checkLocalStorage = function(newData, listName) {
