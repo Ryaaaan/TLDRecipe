@@ -96,7 +96,7 @@ $(".close-button-trigger").on("click touch", function() {
 //   $('html').removeClass('open-nav');
 // });
 
-// Init NM Trigger
+// Init Search Trigger
 tldr.searchTrigger = document.getElementById('search-toggle');
 tldr.searchTrigger.addEventListener('click', function() {
     tldr.openSearch();
@@ -136,11 +136,20 @@ tldr.openSearch = function() {
 //   e.stopPropagation();
 // });
 
-$(".overlay-mask").on("click touch", function() {
+// $(".overlay-mask").on("click touch", function() {
+//   $('html').removeClass('searching');
+//   $('html').removeClass('open-nav');
+// });
+
+tldr.overlayMask = document.getElementById('overlay-mask');
+tldr.overlayMask.addEventListener('click', function() {
   $('html').removeClass('searching');
   $('html').removeClass('open-nav');
 });
-
+tldr.overlayMask.addEventListener('touchstart', function() {
+  $('html').removeClass('searching');
+  $('html').removeClass('open-nav');
+});
 
 
 // Navigation
