@@ -749,6 +749,8 @@ body.night-mode, .night-mode main, .night-mode .master-list { background: var(--
 
 .night-mode .search-results.post-list a { color: var(--white); }
 
+.night-mode .search-results.post-list a:focus { border-bottom: 1px solid var(--aqua); }
+
 .night-mode .settings-modal { background: var(--ultrablack); border-left: 1px solid var(--true-black); }
 
 .night-mode .settings-modal span { color: var(--white); }

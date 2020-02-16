@@ -83,6 +83,9 @@ body.night-mode,
 .night-mode .search-results.post-list a {
   color: var(--white);
 }
+.night-mode .search-results.post-list a:focus {
+  border-bottom: 1px solid var(--aqua);
+}
 .night-mode .settings-modal {
   background: var(--ultrablack);
   border-left: 1px solid var(--true-black);
