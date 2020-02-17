@@ -739,9 +739,19 @@ footer { background: var(--black); margin: 0; padding: 20px; }
 
 .night-mode::-webkit-scrollbar-thumb { background: var(--ultrablack); }
 
-body.night-mode, .night-mode main, .night-mode .master-list { background: var(--black); }
+body.night-mode { background: var(--black); }
 
 .night-mode header.site-header { background: var(--ultrablack); border-bottom: 1px solid var(--true-black); }
+
+.searching .night-mode .search-toggle .icon-container span { background: var(--ultrablack); }
+
+.searching .night-mode .search-toggle .icon-container span:first-child { background: var(--ultrablack); border: 0px solid var(--clear); }
+
+.night-mode *::-moz-selection { background: var(--ultrablack); color: var(--white); }
+
+.night-mode *::selection { background: var(--ultrablack); color: var(--white); }
+
+.night-mode main, .night-mode .master-list { background: var(--black); }
 
 .night-mode .tldr0, .night-mode .tldr0 { fill: var(--aqua); }
 
@@ -758,10 +768,6 @@ body.night-mode, .night-mode main, .night-mode .master-list { background: var(--
 .night-mode .search-toggle span { background: var(--ultrablack); }
 
 .night-mode .search-toggle .icon-container span:first-child { background: var(--clear); border: 3px solid var(--ultrablack); }
-
-.searching .night-mode .search-toggle .icon-container span { background: var(--ultrablack); }
-
-.searching .night-mode .search-toggle .icon-container span:first-child { background: var(--ultrablack); border: 0px solid var(--clear); }
 
 .night-mode .search-input { color: var(--white); }
 
@@ -784,6 +790,18 @@ body.night-mode, .night-mode main, .night-mode .master-list { background: var(--
 .night-mode .recipe-content { background: var(--black); }
 
 .night-mode .coming-soon { background: var(--medblack); }
+
+.night-mode .recipe-page h4 { color: var(--white); }
+
+.night-mode .recipe-page h5 { color: var(--aqua); }
+
+.night-mode .portion-container, .night-mode .cal-container, .night-mode .macro, .night-mode .prep-time { border-bottom: 1px solid var(--medblack); }
+
+.night-mode .macro:nth-child(odd) { border-right: 1px solid var(--medblack); }
+
+.night-mode .macro:nth-child(even) { border-right: 0px solid var(--clear); }
+
+.night-mode .icon svg { fill: var(--white); }
 
 .night-mode .list-toggle { background: var(--ultrablack); }
 

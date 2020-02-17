@@ -158,7 +158,6 @@ tldr.forceDOMNightMode = function(listName) {
   }
 }
 
-
 tldr.nightModeSwitch = function() {
   var isNight = $('body').hasClass('night-mode');
 
@@ -178,9 +177,6 @@ tldr.swapURLPaths = function(isNight) {
     var host = anch[i].host;
     var url = anch[i].href;
     var targetURL = url.split(host)[1];
-
-    // console.log(url.split(host)[1]);
-    // var notRoot = url.contains('/nm/');
 
     if (isNight) {
       var regURL = url.split('/nm')[1];
