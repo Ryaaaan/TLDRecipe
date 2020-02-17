@@ -226,6 +226,9 @@ body.night-mode {
   .recipe-content li {
     color: var(--white);
   }
+  .recipe-content li.toggled {
+    color: var(--darkgrey);
+  }
   ol.instruction-list li:before {
     color: var(--aqua);
   }

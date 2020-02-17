@@ -849,6 +849,8 @@ body.night-mode { background: var(--black); }
 
 .night-mode .recipe-content li { color: var(--white); }
 
+.night-mode .recipe-content li.toggled { color: var(--darkgrey); }
+
 .night-mode ol.instruction-list li:before { color: var(--aqua); }
 
 /*# sourceMappingURL=main.css.map */
