@@ -23,13 +23,24 @@
 
     
 
+    
+
+    {
+        "title"    : "Lasagna",
+        "desc"     : "http://0.0.0.0:4000",
+        "category" : "",
+        "tags"     : "hot, keto",
+        "url"      : "/recipes/lasagna",
+        "date"     : "2018-10-22 13:46:59 -0500"
+      } ,
+
     {
         "title"    : "Zuppa Toscana",
         "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "hot, keto, dinner, meal prep",
         "url"      : "/recipes/zuppa",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -38,7 +49,7 @@
         "category" : "",
         "tags"     : "hot, keto",
         "url"      : "/recipes/canni-butter",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -47,7 +58,7 @@
         "category" : "",
         "tags"     : "keto, summer, dinner",
         "url"      : "/recipes/gummies",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -56,7 +67,7 @@
         "category" : "",
         "tags"     : "hot, poultry, breakfast",
         "url"      : "/recipes/the-taco",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -65,7 +76,7 @@
         "category" : "",
         "tags"     : "hot, poultry, lunch",
         "url"      : "/recipes/pulled-pork-slaw",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -74,7 +85,7 @@
         "category" : "",
         "tags"     : "beef, dinner",
         "url"      : "/recipes/pepper-steak",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -83,7 +94,7 @@
         "category" : "",
         "tags"     : "lunch, dinner, pork",
         "url"      : "/recipes/strawberry-ice-cream",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -92,7 +103,7 @@
         "category" : "",
         "tags"     : "poultry, summer, breakfast",
         "url"      : "/recipes/eggs-benny",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -101,7 +112,7 @@
         "category" : "",
         "tags"     : "hot, keto, lunch",
         "url"      : "/recipes/curry-almond-chicken",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -110,7 +121,7 @@
         "category" : "",
         "tags"     : "poultry, dinner",
         "url"      : "/recipes/chicken-chili",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
@@ -119,7 +130,7 @@
         "category" : "",
         "tags"     : "keto, pork, lunch",
         "url"      : "/recipes/blt",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     
@@ -130,6 +141,6 @@
         "category" : "",
         "tags"     : "hot, poultry, keto, lunch",
         "url"      : "/recipes/baked-mac",
-        "date"     : "2018-10-05 16:20:00 -0400"
+        "date"     : "2018-10-05 15:20:00 -0500"
       } 
 ]

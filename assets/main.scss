@@ -1287,9 +1287,9 @@ a.post-link:hover .double-arrow svg {
 .recipe-content li {
   display: flex;
   flex-direction: row;
-  align-items: center;
   margin: 10px 0;
   cursor: pointer;
+  text-transform: capitalize;
 }
 ol.instruction-list {
   counter-reset: item;
@@ -1299,6 +1299,8 @@ ol.instruction-list li {
   display: block;
   position: relative;
   margin: 15px 0;
+  text-transform: unset;
+  line-height: 22px;
 }
 ol.instruction-list li:before {
   font-weight: 600;
