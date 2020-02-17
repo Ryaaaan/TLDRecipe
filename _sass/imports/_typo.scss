@@ -343,7 +343,7 @@ a.post-link:hover h3,
 }
 .recipe-page h4 {
   font-size: 24px;
-  margin-bottom: 5px;
+  margin: 0px 0px 5px;
 }
 .recipe-page h5 {
   margin: 5px 0 0;
@@ -363,12 +363,9 @@ a.post-link:hover h3,
 .nutrition-container strong {
   font-weight: 600;
 }
-.macro-container span {
-  // font-size: 20px;
-  // font-weight: 500;
-  // color: var(--red);
-  //
-  // @include transition(color 150ms ease-in-out);
+.nutrition-container .disabled span,
+.nutrition-container .disabled strong {
+  color: var(--medgrey);
 }
 .copy-button {
   color: var(--white);

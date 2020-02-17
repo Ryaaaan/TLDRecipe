@@ -245,7 +245,7 @@ section p, .modal p { line-height: 30px; margin: 20px 0; }
 
 .recipe-page h3 { font-family: "Fira Sans", sans-serif; font-weight: bold; text-transform: unset; color: var(--red); }
 
-.recipe-page h4 { font-size: 24px; margin-bottom: 5px; }
+.recipe-page h4 { font-size: 24px; margin: 0px 0px 5px; }
 
 .recipe-page h5 { margin: 5px 0 0; color: var(--red); font-weight: 500; }
 
@@ -254,6 +254,8 @@ section p, .modal p { line-height: 30px; margin: 20px 0; }
 .nutrition-container span, .nutrition-container strong { font-weight: 500; color: var(--black); -webkit-transition: color 150ms ease-in-out; -moz-transition: color 150ms ease-in-out; -ms-transition: color 150ms ease-in-out; transition: color 150ms ease-in-out; }
 
 .nutrition-container strong { font-weight: 600; }
+
+.nutrition-container .disabled span, .nutrition-container .disabled strong { color: var(--medgrey); }
 
 .copy-button { color: var(--white); }
 
@@ -595,6 +597,8 @@ a.post-link:hover .double-arrow svg { fill: var(--red); }
 
 .portion-container { border-top: 8px solid var(--black); }
 
+.per-serving-container { margin-bottom: 20px; }
+
 .portion-container, .cal-container { padding: 10px 2px; border-bottom: 1px solid var(--medgrey); }
 
 .macro-container { display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; }
@@ -604,6 +608,16 @@ a.post-link:hover .double-arrow svg { fill: var(--red); }
 .macro:nth-child(odd) { border-right: 1px solid var(--medgrey); padding-right: 10px; }
 
 .macro:nth-child(even) { border-right: 0px solid var(--clear); padding-left: 10px; }
+
+.prep-time, .cook-time, .prep-time div, .cook-time div { display: flex; flex-direction: row; justify-content: space-between; align-content: center; padding: 8px 0; }
+
+.prep-time { border-bottom: 1px solid var(--medgrey); }
+
+.prep-time div, .cook-time div { padding: 0px 0; }
+
+.icon { height: 20px; width: 20px; display: block; margin-right: 5px; }
+
+.icon svg { height: 20px; width: 20px; }
 
 .recipe-content { background: var(--white); padding: 10px 0 40px; -webkit-transition: background 150ms ease-in-out; -moz-transition: background 150ms ease-in-out; -ms-transition: background 150ms ease-in-out; transition: background 150ms ease-in-out; }
 

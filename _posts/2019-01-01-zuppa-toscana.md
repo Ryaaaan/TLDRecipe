@@ -28,16 +28,21 @@ servingsCount: 20
 # Macros
 macroList:
   - name: Carbs
-    amount: 10g
+    amount: 4g
   - name: Fat
     amount: 12g
+  - name: Cholesterol
+    amount: 4g
+  - name: Sodium
+    amount: 4g
   - name: Sugar
-    amount: 3g
+    amount: 1g
   - name: Protein
-    amount: 50g
+    amount: 20g
   - name: Fiber
-    amount: 6g
-
+    amount: 1g
+  - name: THC
+    amount: n/a
 
 # Ingredients
 ingredientList:

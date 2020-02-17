@@ -12,7 +12,7 @@ favorite: can-butter
 image:
 imageAltText: this is the image alt text for ADA compliance
 
-video: 
+video:
 videoPoster:
 # tags
 tags: [hot, keto]
@@ -31,6 +31,10 @@ macroList:
     amount: 4g
   - name: Fat
     amount: 12g
+  - name: Cholesterol
+    amount: 4g
+  - name: Sodium
+    amount: 4g
   - name: Sugar
     amount: 1g
   - name: Protein
@@ -38,7 +42,8 @@ macroList:
   - name: Fiber
     amount: 1g
   - name: THC
-    amount: 10mg
+    amount: n/a
+
 
 # Ingredients
 ingredientList:
