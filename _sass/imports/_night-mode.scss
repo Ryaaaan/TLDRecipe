@@ -113,7 +113,7 @@ body.night-mode {
 
   // Recipe Page
   .recipe-content {
-    background: var(--black);
+    // background: var(--black);
   }
   .coming-soon {
     background: var(--medblack);
@@ -123,6 +123,9 @@ body.night-mode {
   }
   .recipe-page h5 {
     color: var(--aqua);
+  }
+  .portion-container {
+    border-top: 8px solid var(--white);
   }
   .portion-container,
   .cal-container,
@@ -135,6 +138,10 @@ body.night-mode {
   }
   .macro:nth-child(even){
     border-right: 0px solid var(--clear);
+  }
+  .nutrition-container .disabled span,
+  .nutrition-container .disabled strong {
+    color: var(--medblack);
   }
   .icon svg {
     fill: var(--white);

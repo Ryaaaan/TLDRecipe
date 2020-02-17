@@ -1158,6 +1158,8 @@ a.post-link:hover .double-arrow svg {
 }
 .portion-container {
   border-top: 8px solid var(--black);
+
+  @include transition(all 150ms ease-in-out);
 }
 .per-serving-container {
   margin-bottom: 20px;
@@ -1166,6 +1168,8 @@ a.post-link:hover .double-arrow svg {
 .cal-container {
   padding: 10px 2px;
   border-bottom: 1px solid var(--medgrey);
+
+  @include transition(all 150ms ease-in-out);
 }
 .macro-container {
   display: flex;
@@ -1184,6 +1188,8 @@ a.post-link:hover .double-arrow svg {
   padding: 10px 2px;
   border-bottom: 1px solid var(--medgrey);
   box-sizing: border-box;
+
+  @include transition(all 150ms ease-in-out);
 }
 .macro:nth-child(odd){
   border-right: 1px solid var(--medgrey);
@@ -1206,6 +1212,8 @@ a.post-link:hover .double-arrow svg {
 }
 .prep-time {
   border-bottom: 1px solid var(--medgrey);
+
+  @include transition(all 150ms ease-in-out);
 }
 .prep-time div,
 .cook-time div {
@@ -1220,10 +1228,12 @@ a.post-link:hover .double-arrow svg {
 .icon svg {
   height: 20px;
   width: 20px;
+
+  @include transition(all 150ms ease-in-out);
 }
 .recipe-content {
   // height: 100%;
-  background: var(--white);
+  // background: var(--white);
   padding: 10px 0 40px;
 
   @include transition(background 150ms ease-in-out);
