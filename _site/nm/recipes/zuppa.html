@@ -19,7 +19,7 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <!-- <link rel="stylesheet" href="https://use.typekit.net/qmc4dqr.css"> -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,500,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,500,900|Fira+Sans+Condensed:900" rel="stylesheet">
   <link rel="icon" type="image/png" href="/assets/imgs/fav.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/apple_touch_light_180x180.png" />
 
@@ -116,14 +116,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </span>
 
 </header>
-<!-- HTML elements for search -->
 <div class="search-modal">
   <ul class="search-results post-list" id="results-container">
     <!-- <span>No results...</span> -->
   </ul>
 </div>
-
-<!-- /nm/recipes/zuppa -->
 <!-- HTML elements for search -->
 
 <div class="settings-modal">
@@ -198,17 +195,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
 
       <div class="nutrition-container">
+        <h4>Nutrition Facts:</h4>
+
         <div class="portion-container">
-          <span>Serving Size: <strong>20oz</strong></span>
-          <span>Calories: <strong>450</strong></span>
+          <span>Serving Per Recipe: </span>
+          <span><strong>20 Servings</strong></span>
         </div>
+
+        <div class="per-serving-container">
+          <h5>Amount per serving:</h5>
+
+          <div class="cal-container">
+            <span>Calories </span>
+            <span><strong>450</strong></span>
+          </div>
+
+          <div class="macro-container"><div class="macro">
+              <span>Carbs</span>
+              <span><strong>10g</strong></span>
+            </div><div class="macro">
+              <span>Fat</span>
+              <span><strong>12g</strong></span>
+            </div><div class="macro">
+              <span>Sugar</span>
+              <span><strong>3g</strong></span>
+            </div><div class="macro">
+              <span>Protein</span>
+              <span><strong>50g</strong></span>
+            </div><div class="macro">
+              <span>Fiber</span>
+              <span><strong>6g</strong></span>
+            </div></div>
+        </div>
+
+
+
 
         <div class="timing-container">
           <span>Prep time: <strong>20min.</strong></span>
           <span>Cook time: <strong>1hr.</strong></span>
         </div>
 
-        <div class="macro-container"><span>Carbs <strong>10g</strong></span><span>Fat <strong>12g</strong></span><span>Sugar <strong>3g</strong></span><span>Protein <strong>50g</strong></span><span>Fiber <strong>6g</strong></span></div>
 
       </div>
 
@@ -344,10 +371,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script type="text/javascript" src="/scripts/libs/jquery_3.3.1.min.js"></script>
   <script type="text/javascript" src="/scripts/tldr.js"></script>
 
-<!-- development -->
 
-<!-- nm-scripts -->
-<!-- Simple Search Functionality — Thanks to: Christian Fei — Give the man (or woman) some love ———> https://github.com/christian-fei/Simple-Jekyll-Search -->
+
 <script type="text/javascript" src="/scripts/libs/search-library.min.js"></script>
 <script type="text/javascript">
   var sjs = SimpleJekyllSearch({

@@ -49,7 +49,7 @@ Assign Start / End Dates / Time Variables
 <article class="recipe-page">
 
   {%- assign cals = page.calCount -%}
-  {%- assign serving = page.servingSize -%}
+  {%- assign serving = page.servingsCount -%}
   {%- assign prepTime = page.prepTime -%}
   {%- assign cookTime = page.cookTime -%}
 
@@ -147,22 +147,40 @@ Assign Start / End Dates / Time Variables
       </div>
 
       <div class="nutrition-container">
+        <h4>Nutrition Facts:</h4>
+
         <div class="portion-container">
-          <span>Serving Size: <strong>{{ serving }}</strong></span>
-          <span>Calories: <strong>{{ cals }}</strong></span>
+          <span>Serving Per Recipe: </span>
+          <span><strong>{{ serving }} Servings</strong></span>
         </div>
+
+        <div class="per-serving-container">
+          <h5>Amount per serving:</h5>
+
+          <div class="cal-container">
+            <span>Calories </span>
+            <span><strong>{{ cals }}</strong></span>
+          </div>
+
+          <div class="macro-container">
+            {%- assign macros = page.macroList -%}
+            {%- for macro in macros -%}
+            <div class="macro">
+              <span>{{macro.name}}</span>
+              <span><strong>{{ macro.amount }}</strong></span>
+            </div>
+            {%- endfor -%}
+          </div>
+        </div>
+
+
+
 
         <div class="timing-container">
           <span>Prep time: <strong>{{ prepTime }}</strong></span>
           <span>Cook time: <strong>{{ cookTime }}</strong></span>
         </div>
 
-        <div class="macro-container">
-          {%- assign macros = page.macroList -%}
-          {%- for macro in macros -%}
-            <span>{{macro.name}} <strong>{{macro.amount}}</strong></span>
-          {%- endfor -%}
-        </div>
 
       </div>
 

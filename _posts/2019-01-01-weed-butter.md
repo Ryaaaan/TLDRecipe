@@ -23,7 +23,7 @@ cookTime: 1hr.
 
 # Nutrition
 calCount: 450
-servingSize: 20oz
+servingsCount: 20
 
 # Macros
 macroList:
