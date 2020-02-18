@@ -583,11 +583,11 @@ a.post-link:hover .double-arrow svg { fill: var(--red); }
 
 .coming-soon { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 100%; margin: 0 auto; background: var(--grey); padding: 30px 0 20px; -webkit-transition: background 150ms ease-in-out; -moz-transition: background 150ms ease-in-out; -ms-transition: background 150ms ease-in-out; transition: background 150ms ease-in-out; }
 
-@media (min-width: 720px) { .coming-soon { height: 210px; padding: 0; margin: 0 45px 0 0; position: fixed; max-width: 320px; } }
+@media (min-width: 720px) { .coming-soon { height: 210px; max-width: 290px; padding: 0; margin: 0 45px 0 0; position: fixed; } }
 
-@media (min-width: 860px) { .coming-soon { height: 280px; margin: 0 45px 0 0; max-width: 400px; } }
+@media (min-width: 860px) { .coming-soon { height: 280px; max-width: 435px; } }
 
-@media (min-width: 1200px) { .coming-soon { max-width: 420px; } }
+@media (min-width: 1600px) { .coming-soon { max-width: 675px; } }
 
 @media (min-width: 720px) { .recipe-book img.emoji { margin: 0 auto; position: relative; } }
 
