@@ -360,9 +360,14 @@ a.post-link:hover h3,
 .nutrition-container span,
 .nutrition-container strong {
   font-weight: 300;
+  font-size: 12px;
   color: var(--black);
 
   @include transition(color 150ms ease-in-out);
+
+  @media (min-width: 480px) {
+    font-size: 16px;
+  }
 }
 .nutrition-container strong {
   font-weight: 600;

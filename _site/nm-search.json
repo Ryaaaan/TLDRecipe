@@ -3,10 +3,21 @@
 
   
       {
+        "title"    : "Stuffed Peppers",
+        "desc"     : "Stuffed Peppers",
+        "category" : "",
+        "tags"     : "lunch, dinner, meal prep",
+        "url"      : "/nm/recipes/stuffed-peppers",
+        "date"     : "2018-10-22 14:46:59 -0400"
+      } ,
+  
+
+  
+      {
         "title"    : "Lasagna",
         "desc"     : "Lasagna",
         "category" : "",
-        "tags"     : "hot, keto",
+        "tags"     : "dinner, meal prep",
         "url"      : "/nm/recipes/lasagna",
         "date"     : "2018-10-22 14:46:59 -0400"
       } ,
@@ -25,54 +36,10 @@
 
   
       {
-        "title"    : "Canni-butter",
-        "desc"     : "Canni-butter",
-        "category" : "",
-        "tags"     : "hot, keto",
-        "url"      : "/nm/recipes/canni-butter",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Watermelon thc gummies",
-        "desc"     : "Watermelon thc gummies",
-        "category" : "",
-        "tags"     : "keto, summer, dinner",
-        "url"      : "/nm/recipes/gummies",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "The Turkey Taco",
-        "desc"     : "The Turkey Taco",
-        "category" : "",
-        "tags"     : "hot, poultry, breakfast",
-        "url"      : "/nm/recipes/the-taco",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Pulled Pork + Slaw",
-        "desc"     : "Pulled Pork + Slaw",
-        "category" : "",
-        "tags"     : "hot, poultry, lunch",
-        "url"      : "/nm/recipes/pulled-pork-slaw",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
         "title"    : "Slow Cooker Steak &amp; Peppers",
         "desc"     : "Slow Cooker Steak &amp; Peppers",
         "category" : "",
-        "tags"     : "beef, dinner",
+        "tags"     : "red meat, dinner, meal prep",
         "url"      : "/nm/recipes/pepper-steak",
         "date"     : "2018-10-22 14:46:59 -0400"
       } ,
@@ -80,55 +47,11 @@
 
   
       {
-        "title"    : "Strawberry Ice Cream",
-        "desc"     : "Strawberry Ice Cream",
+        "title"    : "Stuffed Peppers",
+        "desc"     : "Stuffed Peppers",
         "category" : "",
-        "tags"     : "lunch, dinner, pork",
-        "url"      : "/nm/recipes/strawberry-ice-cream",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Eggs Benny w/ Toast",
-        "desc"     : "Eggs Benny w/ Toast",
-        "category" : "",
-        "tags"     : "poultry, summer, breakfast",
-        "url"      : "/nm/recipes/eggs-benny",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Curry Almond Breaded Chicken",
-        "desc"     : "Curry Almond Breaded Chicken",
-        "category" : "",
-        "tags"     : "hot, keto, lunch",
-        "url"      : "/nm/recipes/curry-almond-chicken",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Chicken Chili",
-        "desc"     : "Chicken Chili",
-        "category" : "",
-        "tags"     : "poultry, dinner",
-        "url"      : "/nm/recipes/chicken-chili",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Bacon Lettuce + Tomato",
-        "desc"     : "Bacon Lettuce + Tomato",
-        "category" : "",
-        "tags"     : "keto, pork, lunch",
-        "url"      : "/nm/recipes/blt",
+        "tags"     : "lunch, dinner, meal prep",
+        "url"      : "/recipes/stuffed-peppers",
         "date"     : "2018-10-22 14:46:59 -0400"
       } ,
   
@@ -138,7 +61,7 @@
         "title"    : "Lasagna",
         "desc"     : "Lasagna",
         "category" : "",
-        "tags"     : "hot, keto",
+        "tags"     : "dinner, meal prep",
         "url"      : "/recipes/lasagna",
         "date"     : "2018-10-22 14:46:59 -0400"
       } ,
@@ -157,133 +80,12 @@
 
   
       {
-        "title"    : "Canni-butter",
-        "desc"     : "Canni-butter",
-        "category" : "",
-        "tags"     : "hot, keto",
-        "url"      : "/recipes/canni-butter",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Watermelon thc gummies",
-        "desc"     : "Watermelon thc gummies",
-        "category" : "",
-        "tags"     : "keto, summer, dinner",
-        "url"      : "/recipes/gummies",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "The Turkey Taco",
-        "desc"     : "The Turkey Taco",
-        "category" : "",
-        "tags"     : "hot, poultry, breakfast",
-        "url"      : "/recipes/the-taco",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Pulled Pork + Slaw",
-        "desc"     : "Pulled Pork + Slaw",
-        "category" : "",
-        "tags"     : "hot, poultry, lunch",
-        "url"      : "/recipes/pulled-pork-slaw",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
         "title"    : "Slow Cooker Steak &amp; Peppers",
         "desc"     : "Slow Cooker Steak &amp; Peppers",
         "category" : "",
-        "tags"     : "beef, dinner",
+        "tags"     : "red meat, dinner, meal prep",
         "url"      : "/recipes/pepper-steak",
         "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Strawberry Ice Cream",
-        "desc"     : "Strawberry Ice Cream",
-        "category" : "",
-        "tags"     : "lunch, dinner, pork",
-        "url"      : "/recipes/strawberry-ice-cream",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Eggs Benny w/ Toast",
-        "desc"     : "Eggs Benny w/ Toast",
-        "category" : "",
-        "tags"     : "poultry, summer, breakfast",
-        "url"      : "/recipes/eggs-benny",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Curry Almond Breaded Chicken",
-        "desc"     : "Curry Almond Breaded Chicken",
-        "category" : "",
-        "tags"     : "hot, keto, lunch",
-        "url"      : "/recipes/curry-almond-chicken",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Chicken Chili",
-        "desc"     : "Chicken Chili",
-        "category" : "",
-        "tags"     : "poultry, dinner",
-        "url"      : "/recipes/chicken-chili",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Bacon Lettuce + Tomato",
-        "desc"     : "Bacon Lettuce + Tomato",
-        "category" : "",
-        "tags"     : "keto, pork, lunch",
-        "url"      : "/recipes/blt",
-        "date"     : "2018-10-22 14:46:59 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Quadruple Baked Mac",
-        "desc"     : "Quadruple Baked Mac",
-        "category" : "",
-        "tags"     : "hot, poultry, keto, lunch",
-        "url"      : "/nm/recipes/baked-mac",
-        "date"     : "2018-10-05 16:20:00 -0400"
-      } ,
-  
-
-  
-      {
-        "title"    : "Quadruple Baked Mac",
-        "desc"     : "Quadruple Baked Mac",
-        "category" : "",
-        "tags"     : "hot, poultry, keto, lunch",
-        "url"      : "/recipes/baked-mac",
-        "date"     : "2018-10-05 16:20:00 -0400"
       } 
   
 ]

@@ -15,7 +15,7 @@ imageAltText: this is the image alt text for ADA compliance
 video:
 videoPoster:
 # tags
-tags: [beef, dinner]
+tags: [red meat, dinner, meal prep]
 
 # Timing
 prepTime: 20min.
