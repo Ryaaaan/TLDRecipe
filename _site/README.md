@@ -18,13 +18,13 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [x] Close/Search button click area is funky - needs updated
 - [ ] Random Recipe Button
 - [ ] SEO / Meta details
-- [ ] Hover interactions for Search / Menu Buttons
+- [x] Hover interactions for Search / Menu Buttons
 - [x] Add Minify / Uglify JS Functionality
 
 ### v2 Todo Items:
-- [ ] Clean up JS (remove jQuery)
+- [ ] Clean up JS
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
-- [ ] Full Nutrition List (maybe v3)
+- [ ] Full Nutrition List (breakdown of macros + vitamins)
 - [ ] Cookie/Setting turn off notifications (copy)
 - [ ] Add custom color picker with `cookies.js` and `var(color)`
 

@@ -78,6 +78,9 @@ body.night-mode {
       background: var(--ultrablack);
     }
   }
+  .search-toggle:hover {
+    background: var(--aqua-hover);
+  }
   .search-toggle .icon-container span:first-child {
     background:  var(--clear);
     border: 3px solid  var(--ultrablack);
@@ -155,6 +158,9 @@ body.night-mode {
   .copy-button {
     background: var(--aqua);
     color: var(--ultrablack);
+  }
+  .copy-button:hover {
+    background: var(--aqua-hover);
   }
 
   .video-btn svg {

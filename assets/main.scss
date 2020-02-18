@@ -154,6 +154,9 @@ header.site-header {
     // top: 15px;
   }
 }
+.settings-toggle:hover {
+  background: var(--ultrablack);
+}
 .searching .settings-toggle {
   width: 0px;
   padding: 0px;
@@ -515,12 +518,15 @@ nav.site-nav {
 
   // @include rotate(0deg);
   // @include box-shadow(0px 2px 5px var(--black-op-25));
-  // @include transition(all 150ms ease-in-out);
+  @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
     // right: 25px;
     // top: 15px;
   }
+}
+.search-toggle:hover {
+  background: var(--red-hover);
 }
 .search-toggle .icon-container {
   height: 26px;
@@ -1368,6 +1374,9 @@ ol.instruction-list li.toggled:before {
   @media (min-width: 720px) {
     // max-width: 110px;
   }
+}
+.copy-button:hover {
+  background: var(--red-hover);
 }
 .copy-button.hide-it {
   transform: translate3d(0px, 75px, 0px);
