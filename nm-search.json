@@ -5,17 +5,17 @@ layout: null
   {% for post in site.posts %}
 
   {% comment %} <!-- Filter out night mode posts --> {% endcomment %}
-  {%- if post.permalink contains '/nm/' -%}
-  {
-    "title"    : "{{ post.title | escape }}",
-    "desc"     : "{{ site.url | escape }}",
-    "category" : "{{ post.category }}",
-    "tags"     : "{{ post.tags | join: ', ' }}",
-    "url"      : "/{{ post.permalink }}",
-    "date"     : "{{ post.date }}"
-  } {% unless forloop.last %},{% endunless %}
+  {%- if post.permalink contains 'nm/' -%}
+    {% comment %} <!-- Do Nothing :) --> {% endcomment %}
   {%- else -%}
-
+    {
+      "title"    : "{{ post.title | escape }}",
+      "desc"     : "{{ site.url | escape }}",
+      "category" : "{{ post.category }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "/nm/{{ post.permalink }}",
+      "date"     : "{{ post.date }}"
+    } {% unless forloop.last %},{% endunless %}
     {%- endif -%}
   {% endfor %}
 ]

@@ -9,11 +9,39 @@
 
   
 
-  
+  {
+      "title"    : "Stuffed Peppers",
+      "desc"     : "http://0.0.0.0:4000",
+      "category" : "",
+      "tags"     : "lunch, dinner, meal prep",
+      "url"      : "/nm/recipes/stuffed-peppers",
+      "date"     : "2018-10-22 13:46:59 -0500"
+    } ,
 
-  
+  {
+      "title"    : "Lasagna",
+      "desc"     : "http://0.0.0.0:4000",
+      "category" : "",
+      "tags"     : "dinner, meal prep",
+      "url"      : "/nm/recipes/lasagna",
+      "date"     : "2018-10-22 13:46:59 -0500"
+    } ,
 
-  
+  {
+      "title"    : "Zuppa Toscana",
+      "desc"     : "http://0.0.0.0:4000",
+      "category" : "",
+      "tags"     : "hot, keto, dinner, meal prep",
+      "url"      : "/nm/recipes/zuppa",
+      "date"     : "2018-10-22 13:46:59 -0500"
+    } ,
 
-  
+  {
+      "title"    : "Slow Cooker Steak &amp; Peppers",
+      "desc"     : "http://0.0.0.0:4000",
+      "category" : "",
+      "tags"     : "red meat, dinner, meal prep",
+      "url"      : "/nm/recipes/pepper-steak",
+      "date"     : "2018-10-22 13:46:59 -0500"
+    } 
 ]
