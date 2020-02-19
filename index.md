@@ -5,10 +5,13 @@
 
 # Define layout
 layout: home
-title: 
+title: TLDRecipe
+description: Just Recipes. No bullshit.
+
+image: ../../assets/imgs/og-banner.jpg
 
 # Master List Section
-listHeader: The Big List
+listHeader: The List
 listCopy:
 
 

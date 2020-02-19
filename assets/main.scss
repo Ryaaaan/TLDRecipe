@@ -74,10 +74,12 @@ input {
   }
 }
 .button {
-  background: var(--yellow);
+  background: var(--red);
   padding: 12px;
   border-radius: 3px;
   display: block;
+
+  @include transition(all 125ms ease-in-out);
 }
 .button:hover {
   background: var(--red);
@@ -296,7 +298,70 @@ nav.site-nav {
   cursor: pointer;
   width: 180px;
   padding: 5px 0;
+
+  &.disabled {
+    opacity: 0.33;
+    pointer-events: none;
+  }
+
+  &.button {
+    justify-content: flex-start;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+    span {
+      text-transform: none;
+    }
+  }
+  &#nm-trigger {
+    background: var(--black);
+
+    .night-copy {
+      display: block;
+      opacity: 1;
+    }
+    .day-copy {
+      display: none;
+      opacity: 0;
+    }
+
+    &:hover {
+      background: var(--ultrablack);
+    }
+    span {
+      color: var(--white);
+    }
+  }
 }
+
+.setting .icon {
+  margin-right: 10px;
+  position: relative;
+}
+#nm-trigger .icon svg {
+  fill: var(--white);
+
+  &.moon {
+    position: absolute;
+    opacity: 1;
+    left: 0;
+
+    @include transition(all 125ms ease-in-out);
+    @include rotate(0deg);
+  }
+  &.sun {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+
+    @include transition(all 125ms ease-in-out);
+    @include rotate(180deg);
+  }
+}
+
+// Maybe Old code...
 .toggle-container {
   height: 20px;
   width: 40px;
@@ -689,7 +754,7 @@ section {
   flex-wrap: wrap;
 
   @media (min-width: 1080px) {
-    flex-direction: row;
+    // flex-direction: row;
     justify-content: space-between;
   }
 }
@@ -697,23 +762,36 @@ section {
   width: auto;
   position: relative;
   height: auto;
-  margin: 25px auto;
+  margin: 45px 0 0 -10px;
   width: 100%;
 
   @media (min-width: 720px) {
     display: block;
-    margin: 40px auto 25px;
-    max-width: 680px
+    margin: 75px 0 0 -10px;
+    // max-width: 680px
   }
   @media (min-width: 1080px) {
     // margin: 40px 0 25px;
   }
 }
+.toggles h5 {
+  text-transform: lowercase;
+  // font-style: italic;
+  // font-weight: 300;
+  color: var(--black);
+
+  margin-left: 10px;
+
+  position: absolute;
+  top: -35px;
+}
 .toggles {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+
+  position: relative;
 
   @media (min-width: 1080px) {
     // justify-content: flex-start;
@@ -726,7 +804,7 @@ section {
   padding: 5px 10px;
 
   @media (min-width: 720px) {
-    padding: 5px 20px;
+    // padding: 5px 20px;
   }
 }
 .highlight {
@@ -749,7 +827,7 @@ section {
 .post-list {
   padding: 0;
   display: none;
-  flex-direction: column-reverse;
+  flex-direction: column;
   flex-wrap: wrap;
   box-sizing: border-box;
   margin: 20px auto;
@@ -853,15 +931,13 @@ a.post-link:hover .double-arrow svg {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  background: var(--black-op-25);
+  background: var(--ultrablack-op-75);
   height: 100%;
   width: 100%;
 
-  @include transition(all 300ms ease-in-out);
+  @include transition(all 150ms ease-in-out);
 }
-.night-mode .overlay-mask {
-  background: var(--ultrablack-op-25);
-}
+.open-message .overlay-mask,
 .open-settings .overlay-mask,
 .searching .overlay-mask,
 .open-notification .overlay-mask {
@@ -875,9 +951,10 @@ a.post-link:hover .double-arrow svg {
   -webkit-transform: translate3d(0px, 0px, 0px);
   top: -45px;
   left: 10px;
+
   width: calc(100% - 20px);
   height: auto;
-  padding: 25px 30px;
+  padding: 10px 15px;
   opacity: 0;
   box-sizing: border-box;
   border-radius: 5px;
@@ -885,26 +962,28 @@ a.post-link:hover .double-arrow svg {
   pointer-events: none;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 
 
-  @include transition(all 300ms ease-in-out);
-  @include transition-delay(100ms);
+  @include transition(all 150ms ease-in-out);
   @include box-shadow(0px 2px 5px var(--black-op-25));
 
+  @media (min-width: 480px) {
+    justify-content: flex-start;
+  }
 }
 .open-notification .notification-banner {
-  transform: translate3d(0px, 55px, 0px);
-  -webkit-transform: translate3d(0px, 55px, 0px);
+  transform: translate3d(0px, 100px, 0px);
+  -webkit-transform: translate3d(0px, 100px, 0px);
   opacity: 1;
   pointer-events: all;
 }
 .close-button-trigger {
   position: absolute;
   height: 100%;
-  width: 60px;
+  width: 45px;
   background: var(--clear);
   right: 0;
   top: 0;
@@ -920,10 +999,6 @@ a.post-link:hover .double-arrow svg {
   width: 20px;
   position: relative;
 
-  @include rotate(180deg);
-  @include transition(all 450ms ease-in-out);
-}
-.open-notification .close-button {
   @include rotate(45deg);
 }
 .close-button span {
@@ -938,28 +1013,29 @@ a.post-link:hover .double-arrow svg {
 .close-button span:last-child {
   @include rotate(90deg);
 }
-.twemoji-holster {
+.emoji-holster {
   height: 50px;
-  width: 50px;
-  margin: 20px 0 35px;
-  opacity: 0;
+  width: 36px;
+  display: block;
+  margin: 0px 20px 0px 0;
 
-  @include rotate(-30deg);
-  @include transition(all 300ms ease-in-out);
-  @include transition-delay(100ms);
+  font-size: 30px;
+
+  @include transition(all 175ms ease-in-out);
+  @include rotate(-180deg);
 }
-.open-notification .twemoji-holster {
+.open-notification .emoji-holster {
   @include rotate(0deg);
   opacity: 1;
 }
-.twemoji-holster svg {
+.emoji-holster svg {
   height: 50px;
   width: 50px;
   @include transform(-20px, -45px, 0);
   @include transition(all 300ms ease-in-out);
   @include transition-delay(100ms);
 }
-.open-notification .twemoji-holster svg {
+.open-notification .emoji-holster svg {
   @include transform(0, 0, 0);
 }
 
@@ -1125,12 +1201,13 @@ a.post-link:hover .double-arrow svg {
     position: relative;
   }
 }
-.twemoji {
+.emoji {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .recipe-details {
   padding: 0 20px;
   width: 100%;
@@ -1150,6 +1227,98 @@ a.post-link:hover .double-arrow svg {
 
   @media (min-width: 720px) {
     width: 50%;
+  }
+}
+.nutrition-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 5px;
+  position: relative;
+}
+.more-info {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  height: 14px;
+  width: 14px;
+  border: 2px solid var(--black);
+  border-radius: 40px;
+  position: relative;
+
+  text-align: center;
+
+  padding: 0px;
+  margin: 0 0 0 10px;
+
+  cursor: pointer;
+
+  @include transition(all 150ms ease-in-out);
+
+  > span {
+    font-weight: 500;
+    color: var(--black);
+    font-size: 10px;
+
+    @include transition(all 150ms ease-in-out);
+  }
+  .info-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 10px;
+  }
+
+  &:hover {
+    border: 2px solid var(--red);
+
+    > span {
+      color: var(--red);
+    }
+  }
+}
+
+.info-message {
+  width: 100%;
+  background: var(--white);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px var(--black-op-25);
+  display: inline-block;
+  cursor: auto;
+  z-index: 1100;
+
+  position: absolute;
+  left: -9px;
+  top: 35px;
+
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--black);
+
+  opacity: 0;
+  pointer-events: none;
+
+  @include transition(all 150ms ease-in-out);
+
+  @media (min-width: 720px) {
+    width: 320px;
+  }
+}
+.open-message .info-message {
+  top: 50px;
+  opacity: 1;
+  pointer-events: all;
+
+  @media (min-width: 720px) {
+    top: 53px;
   }
 }
 .portion-container,

@@ -71,12 +71,18 @@ body.night-mode {
   .highlight {
     background: var(--aqua);
   }
+  .toggles h5 {
+    color: var(--medblack);
+  }
   .search-toggle {
     background: var(--aqua);
 
     span {
       background: var(--ultrablack);
     }
+  }
+  .overlay-mask {
+    background: var(--true-black-op-75);
   }
   .search-toggle:hover {
     background: var(--aqua-hover);
@@ -107,11 +113,57 @@ body.night-mode {
   .settings-modal span {
     color: var(--white);
   }
-  #nm-trigger .toggle-container {
-    background: var(--aqua);
+  // #nm-trigger .toggle-container {
+  //   background: var(--aqua);
+  // }
+  // #nm-trigger .toggle-container span {
+  //   left: 22px
+  // }
+  .setting {
+
+    &.disabled {
+      opacity: 0.2;
+    }
+
+    &.button {
+      //
+
+      span {
+        //
+      }
+    }
+    &#nm-trigger {
+      background: var(--gold);
+
+      .night-copy {
+        display: none;
+        opacity: 0;
+      }
+      .day-copy {
+        display: block;
+        opacity: 1;
+      }
+
+      &:hover {
+        background: var(--gold-hover);
+      }
+      span {
+        color: var(--ultrablack);
+      }
+    }
   }
-  #nm-trigger .toggle-container span {
-    left: 22px
+
+  #nm-trigger .icon svg {
+    fill: var(--ultrablack);
+
+    &.moon {
+      opacity: 0;
+      @include rotate(180deg);
+    }
+    &.sun {
+      opacity: 1;
+      @include rotate(0deg);
+    }
   }
 
   // Recipe Page
@@ -126,6 +178,34 @@ body.night-mode {
   }
   .recipe-page h5 {
     color: var(--aqua);
+  }
+  .more-info {
+    border: 2px solid var(--white);
+
+    > span {
+      color: var(--white);
+    }
+
+    &:hover {
+      border: 2px solid var(--aqua);
+
+      > span {
+        color: var(--aqua);
+      }
+    }
+  }
+  .info-message {
+    background: var(--ultrablack);
+    box-shadow: 0px 0px 5px var(--ultrablack-op-25);
+    color: var(--white);
+
+    a {
+      color: var(--white);
+
+      &:hover {
+        color: var(--aqua);
+      }
+    }
   }
   .portion-container {
     border-top: 8px solid var(--white);

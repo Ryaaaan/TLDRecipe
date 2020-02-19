@@ -6,13 +6,15 @@ $(document).ready(function(){
   tldr.updateDOMFavoriteList();
   tldr.forceDOMNightMode();
 
-  if (iOSDevice) {
-    tldr.iosPlayerControls();
-  }
+  // if (iOSDevice) {
+  //   tldr.iosPlayerControls();
+  // }
 });
+
 $(document).on('scroll', function(){
   tldr.hideCopyButton();
 });
+
 $(window).on('resize', function(){
   $('body').removeClass('open-settings');
   tldr.activeFilterFinder();
@@ -60,16 +62,6 @@ tldr.nightModeToggle = function() {
 
   window.location = newURL
 }
-
-
-
-
-
-
-$(".close-button-trigger").on("click touch", function() {
-  tldr.killNotification();
-});
-
 
 
 // Open Search
@@ -121,12 +113,10 @@ tldr.openSettings = function() {
 $(".overlay-mask").on("click touch", function() {
   $('html').removeClass('searching');
   $('html').removeClass('open-settings');
+
+  tldr.killNotification();
+  tldr.killMessage();
 });
-
-
-
-
-
 
 
 // Smooth Scroll Copy Pasta
@@ -154,22 +144,66 @@ $('a[href*="#"]')
 //
 // Notificaiton Functionality
 //
-var notificationTimeout;
+tldr.notificationTimer;
 
 tldr.popNotification = function() {
   tldr.killNotification();
   $('html').addClass('open-notification');
 
   // Set timeOut
-  notificationTimeout = setTimeout(function(){ $('html').removeClass('open-notification');}, 2500);
+  tldr.notificationTimer = setTimeout(function(){
+    $('html').removeClass('open-notification');
+  }, 5000);
 }
 tldr.killNotification = function() {
   tldr.killNotificationTimeout();
   $('html').removeClass('open-notification');
 }
 tldr.killNotificationTimeout = function() {
-  clearTimeout(notificationTimeout);
+  clearTimeout(tldr.notificationTimer);
 }
+
+$(".close-button-trigger").on("click touch", function() {
+  tldr.killNotification();
+});
+
+
+
+//
+// More info / Message Functionality
+//
+tldr.messageTimer;
+
+// Info Toggle Function
+tldr.toggleInfo = function() {
+  var message = document.getElementById('info-message');
+  var isOpen = $('html').hasClass('open-message');
+
+  if (isOpen) {
+    $('html').removeClass('open-message');
+    tldr.killMessageTimeout();
+
+  } else {
+    $('html').addClass('open-message');
+
+    tldr.messageTimer = setTimeout(function(){
+      $('html').removeClass('open-message');
+    }, 10000);
+  }
+}
+
+tldr.killMessage = function() {
+  tldr.killMessageTimeout();
+  $('html').removeClass('open-message');
+}
+tldr.killMessageTimeout = function() {
+  clearTimeout(tldr.messageTimer);
+}
+
+// More Info
+$("#more-info").on("click touch", function() {
+  tldr.toggleInfo();
+});
 
 //
 // Big List Functionality
@@ -413,13 +447,12 @@ tldr.forceDOMNightMode = function(listName) {
       window.location.href = '/nm' + nmURL;
     } else if (!currentList[0] && alreadyNM) {
       // if nm cookie is false and we on a nm page, redirect
-      var nmURL = window.location.pathname
-      var normalURL = nmURL.replace('/nm/', '/');
-      window.location.href = normalURL;
+      // var nmURL = window.location.pathname
+      // var normalURL = nmURL.replace('/nm/', '/');
+      // window.location.href = normalURL;
     }
   }
 }
-
 
 tldr.nightModeSwitch = function() {
   var isNight = $('body').hasClass('night-mode');
@@ -433,6 +466,7 @@ tldr.nightModeSwitch = function() {
   }
 }
 
+
 tldr.swapURLPaths = function(isNight) {
   var anch = document.querySelectorAll('a');
 
@@ -440,9 +474,6 @@ tldr.swapURLPaths = function(isNight) {
     var host = anch[i].host;
     var url = anch[i].href;
     var targetURL = url.split(host)[1];
-
-    // console.log(url.split(host)[1]);
-    // var notRoot = url.contains('/nm/');
 
     if (isNight) {
       var regURL = url.split('/nm')[1];
@@ -544,10 +575,10 @@ tldr.skipFwd = function() {
 //
 // Recipe Functionality
 //
+
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {
   tldr.toggleList(this);
-  // tldr.hapticFeedback()
 });
 
 // Trigger Copy Functionality

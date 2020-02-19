@@ -326,9 +326,13 @@ a.post-link:hover h3,
 //
 // Notification Styles
 //
-.notification-banner h4 {
+.notification-message {
   margin: 0;
-  font-size: 20px;
+  font-size: 14px;
+  padding-right: 30px;
+  font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
+  text-transform: none;
 }
 
 //
@@ -343,7 +347,8 @@ a.post-link:hover h3,
 }
 .recipe-page h4 {
   font-size: 24px;
-  margin: 0px 0px 5px;
+  margin: 0px;
+  display: inline-block;
 
   @include transition(all 150ms ease-in-out);
 }
@@ -354,8 +359,13 @@ a.post-link:hover h3,
 
   @include transition(all 150ms ease-in-out);
 }
-.cal-container span {
-  font-size: 24px;
+.nutrition-container .cal-container span,
+.nutrition-container .cal-container strong {
+  font-size: 18px;
+
+  @media (min-width: 480px) {
+    font-size: 24px;
+  }
 }
 .nutrition-container span,
 .nutrition-container strong {

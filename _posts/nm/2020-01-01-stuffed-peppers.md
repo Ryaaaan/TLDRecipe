@@ -4,7 +4,8 @@ date:   2018-10-22 14:46:59 -0400
 
 # Event / Post Information
 title:  "Stuffed Peppers"
-author: Ryaan Beck
+description: The choose-your-own adventure when it comes to stuffing choices.
+author: TLDRecipe
 permalink: nm/recipes/stuffed-peppers
 favorite: stuffed-peppers
 # link constructed from categories (when applied + and not overridden by permalink)

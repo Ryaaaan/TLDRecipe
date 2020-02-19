@@ -3,15 +3,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Recipes | TLDRecipe</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Recipes" />
+<title>TLDRecipe Recipe List | TLDRecipe</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="TLDRecipe Recipe List" />
 <meta property="og:locale" content="en_US" />
+<meta name="description" content="Just Recipes. No bullshit." />
+<meta property="og:description" content="Just Recipes. No bullshit." />
 <link rel="canonical" href="http://0.0.0.0:4000/recipes" />
 <meta property="og:url" content="http://0.0.0.0:4000/recipes" />
 <meta property="og:site_name" content="TLDRecipe" />
+<meta property="og:image" content="http://0.0.0.0:4000/assets/imgs/og-banner.jpg" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://0.0.0.0:4000/recipes","headline":"Recipes","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"TLDRecipe Recipe List","url":"http://0.0.0.0:4000/recipes","image":"http://0.0.0.0:4000/assets/imgs/og-banner.jpg","description":"Just Recipes. No bullshit.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <!-- <link rel="stylesheet" href="https://use.typekit.net/qmc4dqr.css"> -->
@@ -121,8 +124,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="settings-modal">
 
-  <div class="setting" id="nm-trigger">
-    <span>Nightmode</span>
+  <div class="setting button" id="nm-trigger">
+    <div class="icon">
+      <!-- moon -->
+      <svg class="moon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      	 viewBox="0 0 21.12 21.1" style="enable-background:new 0 0 21.12 21.1;" xml:space="preserve">
+      <g>
+      	<path class="moon0" d="M20.61,10.55c0,5.41-4.39,9.79-9.79,9.79c-4.36,0-8.07-2.86-9.33-6.81c1.22,0.6,2.59,0.93,4.04,0.93
+      		c5.09,0,9.21-4.12,9.21-9.21c0-1.45-0.34-2.82-0.93-4.04C17.75,2.47,20.61,6.18,20.61,10.55z"/>
+      	<polygon class="moon0" points="4.52,0.87 5.73,3.32 8.43,3.71 6.47,5.62 6.94,8.31 4.52,7.04 2.1,8.31 2.57,5.62 0.61,3.71
+      		3.31,3.32 	"/>
+      </g>
+      </svg>
+
+      <!-- sun -->
+      <svg class="sun" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      	 viewBox="0 0 26.04 26.01" style="enable-background:new 0 0 26.04 26.01;" xml:space="preserve">
+      <g>
+      	<circle class="st0" cx="12.86" cy="12.64" r="7.67"/>
+      	<g>
+      		<polygon class="st0" points="4.77,6.89 4.04,3.82 7.11,4.55 		"/>
+      		<polygon class="st0" points="21.34,18.78 22.07,21.85 19,21.12 		"/>
+      	</g>
+      	<g>
+      		<polygon class="st0" points="19,4.55 22.07,3.82 21.34,6.89 		"/>
+      		<polygon class="st0" points="7.11,21.12 4.04,21.85 4.77,18.78 		"/>
+      	</g>
+      	<g>
+      		<polygon class="st0" points="23.12,11.18 25.81,12.84 23.12,14.49 		"/>
+      		<polygon class="st0" points="2.99,14.49 0.31,12.84 2.99,11.18 		"/>
+      	</g>
+      	<g>
+      		<polygon class="st0" points="14.71,22.9 13.06,25.59 11.4,22.9 		"/>
+      		<polygon class="st0" points="11.4,2.77 13.06,0.09 14.71,2.77 		"/>
+      	</g>
+      </g>
+      </svg>
+    </div>
+
+    <span class="night-copy">Night Mode</span>
+    <span class="day-copy">Day Mode</span>
+
+    <!-- <div class="toggle-container">
+      <span></span>
+    </div> -->
+  </div>
+
+  <div class="setting disabled" id="">
+    <span>Turn Off Ads</span>
 
     <div class="toggle-container">
       <span></span>
@@ -130,14 +179,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 
   <!-- <div class="setting" id="">
-    <span>Notifications</span>
-
-    <div class="toggle-container">
-      <span></span>
-    </div>
-  </div>
-
-  <div class="setting" id="">
     <span>Clear Favorites</span>
 
     <div class="toggle-container">
@@ -160,6 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="filter-container">
 
         <div class="toggles" id="toggle-list">
+          <h5>Filter</h5>
           <span id="alpha-toggle" class="active-filter">alpha</span>
           <span id="new-toggle">latest</span>
 
@@ -257,22 +299,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </li></ul>
 
       <ul class="post-list new-toggle-list">
-        <li data-favorite="pepper-steak" class="">
-            <a class="post-link" href="/recipes/pepper-steak">
-              Slow Cooker Steak &amp; Peppers
-            </a>
-            <span class="favorite-flag">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              	 viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
-              <g>
-              	<path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
-              		c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
-              		c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
-              		c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
-              </g>
-              </svg>
-            </span>
-          </li><li data-favorite="stuffed-peppers" class="">
+        <li data-favorite="stuffed-peppers" class="">
             <a class="post-link" href="/recipes/stuffed-peppers">
               Stuffed Peppers
             </a>
@@ -305,6 +332,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </li><li data-favorite="zuppa" class="">
             <a class="post-link" href="/recipes/zuppa">
               Zuppa Toscana
+            </a>
+            <span class="favorite-flag">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              	 viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+              <g>
+              	<path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+              		c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+              		c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+              		c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+              </g>
+              </svg>
+            </span>
+          </li><li data-favorite="pepper-steak" class="">
+            <a class="post-link" href="/recipes/pepper-steak">
+              Slow Cooker Steak &amp; Peppers
             </a>
             <span class="favorite-flag">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

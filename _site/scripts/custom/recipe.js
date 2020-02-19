@@ -1,10 +1,10 @@
 //
 // Recipe Functionality
 //
+
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {
   tldr.toggleList(this);
-  // tldr.hapticFeedback()
 });
 
 // Trigger Copy Functionality

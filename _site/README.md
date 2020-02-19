@@ -7,7 +7,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 
 ### MVP Todo Items:
 - [ ] Write real README
-- [x] Test Firefox
+- [ ] Test Firefox
 - [ ] Test Safari
 - [ ] Test IE (latest)
 - [x] Redirect `/recipes` or put something there
@@ -17,18 +17,23 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [x] Remove video players until fully functional
 - [x] Close/Search button click area is funky - needs updated
 - [ ] Random Recipe Button
-- [ ] Notification bubble - finish styles / functionality
-- [ ] Recipe disclaimer (macros + times)
-- [ ] SEO / Meta details
+- [x] SEO / Meta details
 - [x] Hover interactions for Search / Menu Buttons
 - [x] Add Minify / Uglify JS Functionality
 
 ### v2 Todo Items:
 - [ ] Clean up JS
+- [ ] SCSS utilize nesting
+- [ ] Organize SCSS by include (typo)
+- [ ] Update / Clean up SCSS Color Vars
+- [ ] Random JS Notification Message
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
 - [ ] Full Nutrition List (breakdown of macros + vitamins)
 - [ ] Cookie/Setting turn off notifications (copy)
 - [ ] Add custom color picker with `cookies.js` and `var(color)`
+
+### v3 Todo Items:
+- [ ] All images are cinemagraphs / custom photography
 
 ---
 ## Local Dev

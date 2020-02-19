@@ -4,7 +4,8 @@ date:   2018-10-22 14:46:59 -0400
 
 # Event / Post Information
 title:  "Slow Cooker Steak & Peppers"
-author: Ryaan Beck
+description: Literally the easiest thing to make and it tastes wonderful.
+author: TLDRecipe
 permalink: nm/recipes/pepper-steak
 favorite: pepper-steak
 # link constructed from categories (when applied + and not overridden by permalink)
