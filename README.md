@@ -7,7 +7,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 
 ### MVP Todo Items:
 - [ ] Write real README
-- [ ] Test Firefox
+- [x] Test Firefox
 - [ ] Test Safari
 - [ ] Test IE (latest)
 - [x] Redirect `/recipes` or put something there
@@ -17,6 +17,8 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [x] Remove video players until fully functional
 - [x] Close/Search button click area is funky - needs updated
 - [ ] Random Recipe Button
+- [ ] Notification bubble - finish styles / functionality
+- [ ] Recipe disclaimer (macros + times)
 - [ ] SEO / Meta details
 - [x] Hover interactions for Search / Menu Buttons
 - [x] Add Minify / Uglify JS Functionality
