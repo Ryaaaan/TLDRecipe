@@ -326,9 +326,13 @@ a.post-link:hover h3,
 //
 // Notification Styles
 //
-.notification-banner h4 {
+.notification-message {
   margin: 0;
-  font-size: 20px;
+  font-size: 14px;
+  padding-right: 30px;
+  font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
+  text-transform: none;
 }
 
 //

@@ -122,9 +122,11 @@ $(".overlay-mask").on("click touch", function() {
   $('html').removeClass('searching');
   $('html').removeClass('open-settings');
 
+  tldr.killNotification();
+  tldr.killMessage();
   // Message Kill
-  $('html').removeClass('open-message');
-  clearTimeout(tldr.messageTimer);
+  // $('html').removeClass('open-message');
+  // clearTimeout(tldr.messageTimer);
 });
 
 
@@ -153,21 +155,56 @@ $('a[href*="#"]')
 //
 // Notificaiton Functionality
 //
-var notificationTimeout;
+tldr.notificationTimer;
 
 tldr.popNotification = function() {
   tldr.killNotification();
   $('html').addClass('open-notification');
 
   // Set timeOut
-  notificationTimeout = setTimeout(function(){ $('html').removeClass('open-notification');}, 2500);
+  tldr.notificationTimer = setTimeout(function(){
+    $('html').removeClass('open-notification');
+  }, 2500);
 }
 tldr.killNotification = function() {
   tldr.killNotificationTimeout();
   $('html').removeClass('open-notification');
 }
 tldr.killNotificationTimeout = function() {
-  clearTimeout(notificationTimeout);
+  clearTimeout(tldr.notificationTimer);
+}
+
+
+
+//
+// More info / Message Functionality 
+//
+tldr.messageTimer;
+
+// Info Toggle Function
+tldr.toggleInfo = function() {
+  var message = document.getElementById('info-message');
+  var isOpen = $('html').hasClass('open-message');
+
+  if (isOpen) {
+    $('html').removeClass('open-message');
+    tldr.killMessageTimeout();
+
+  } else {
+    $('html').addClass('open-message');
+
+    tldr.messageTimer = setTimeout(function(){
+      $('html').removeClass('open-message');
+    }, 10000);
+  }
+}
+
+tldr.killMessage = function() {
+  tldr.killMessageTimeout();
+  $('html').removeClass('open-message');
+}
+tldr.killMessageTimeout = function() {
+  clearTimeout(tldr.messageTimer);
 }
 
 //
@@ -546,27 +583,6 @@ tldr.skipFwd = function() {
 $("#more-info").on("click touch", function() {
   tldr.toggleInfo();
 });
-
-tldr.messageTimer;
-
-// Info Toggle Function
-tldr.toggleInfo = function() {
-  var message = document.getElementById('info-message');
-  var isOpen = $('html').hasClass('open-message');
-
-  if (isOpen) {
-    $('html').removeClass('open-message');
-    clearTimeout(tldr.messageTimer);
-
-  } else {
-    $('html').addClass('open-message');
-
-    tldr.messageTimer = setTimeout(function(){
-      $('html').removeClass('open-message');
-    }, 10000);
-
-  }
-}
 
 
 // Toggle Recipe Items

@@ -9,27 +9,6 @@ $("#more-info").on("click touch", function() {
   tldr.toggleInfo();
 });
 
-tldr.messageTimer;
-
-// Info Toggle Function
-tldr.toggleInfo = function() {
-  var message = document.getElementById('info-message');
-  var isOpen = $('html').hasClass('open-message');
-
-  if (isOpen) {
-    $('html').removeClass('open-message');
-    clearTimeout(tldr.messageTimer);
-
-  } else {
-    $('html').addClass('open-message');
-
-    tldr.messageTimer = setTimeout(function(){
-      $('html').removeClass('open-message');
-    }, 10000);
-
-  }
-}
-
 
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {

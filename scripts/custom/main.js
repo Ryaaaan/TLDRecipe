@@ -122,9 +122,11 @@ $(".overlay-mask").on("click touch", function() {
   $('html').removeClass('searching');
   $('html').removeClass('open-settings');
 
+  tldr.killNotification();
+  tldr.killMessage();
   // Message Kill
-  $('html').removeClass('open-message');
-  clearTimeout(tldr.messageTimer);
+  // $('html').removeClass('open-message');
+  // clearTimeout(tldr.messageTimer);
 });
 
 
