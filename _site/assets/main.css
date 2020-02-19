@@ -643,6 +643,8 @@ a.post-link:hover .double-arrow svg { fill: var(--red); }
 
 @media (min-width: 720px) { .info-message { width: 320px; } }
 
+@media (min-width: 1200px) { .info-message { width: 480px; } }
+
 .open-message .info-message { top: 50px; opacity: 1; pointer-events: all; }
 
 @media (min-width: 720px) { .open-message .info-message { top: 53px; } }
