@@ -633,7 +633,7 @@ a.post-link:hover .double-arrow svg { fill: var(--red); }
 
 .more-info > span { font-weight: 500; color: var(--black); font-size: 10px; -webkit-transition: all 150ms ease-in-out; -moz-transition: all 150ms ease-in-out; -ms-transition: all 150ms ease-in-out; transition: all 150ms ease-in-out; }
 
-.more-info .info-marker { position: absolute; top: 0; bottom: 0; margin: auto; height: 10px; }
+.more-info .info-marker { position: absolute; top: 0; bottom: 0; margin: auto; height: 12px; }
 
 .more-info:hover { border: 2px solid var(--red); }
 
@@ -673,7 +673,7 @@ a.post-link:hover .double-arrow svg { fill: var(--red); }
 
 .icon { height: 20px; width: 20px; display: block; margin-right: 5px; }
 
-.icon svg { height: 20px; width: 20px; -webkit-transition: all 150ms ease-in-out; -moz-transition: all 150ms ease-in-out; -ms-transition: all 150ms ease-in-out; transition: all 150ms ease-in-out; }
+.icon svg { height: 20px; width: 20px; -webkit-transition: all 225ms ease-in-out; -moz-transition: all 225ms ease-in-out; -ms-transition: all 225ms ease-in-out; transition: all 225ms ease-in-out; }
 
 .recipe-content { padding: 10px 0 40px; -webkit-transition: background 150ms ease-in-out; -moz-transition: background 150ms ease-in-out; -ms-transition: background 150ms ease-in-out; transition: background 150ms ease-in-out; }
 

@@ -1271,7 +1271,7 @@ a.post-link:hover .double-arrow svg {
     top: 0;
     bottom: 0;
     margin: auto;
-    height: 10px;
+    height: 12px;
   }
 
   &:hover {
@@ -1404,7 +1404,7 @@ a.post-link:hover .double-arrow svg {
   height: 20px;
   width: 20px;
 
-  @include transition(all 150ms ease-in-out);
+  @include transition(all 225ms ease-in-out);
 }
 .recipe-content {
   // height: 100%;
