@@ -26,6 +26,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [ ] SCSS utilize nesting
 - [ ] Organize SCSS by include (typo)
 - [ ] Update / Clean up SCSS Color Vars
+- [ ] Social Media Presence
 - [ ] Randomize Message JS Notification (for copying recipe)
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
 - [ ] Cookie/Setting turn off notifications (copy)
