@@ -5,7 +5,10 @@
 
 # Define layout
 layout: nm/nm-home
-title:
+title: TLDRecipe
+description: Just Recipes. No bullshit.
+
+image: ../../assets/imgs/og-banner-dark.jpg
 
 # Master List Section
 listHeader: The Big List

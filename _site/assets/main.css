@@ -17,7 +17,9 @@
   --gold: #FFD54F;
   --gold-hover: #FFB450;
   --black-op-25: rgba(38, 50, 58, 0.25);
-  --ultrablack-op-25: rgba(21, 27, 29, 0.25); }
+  --ultrablack-op-25: rgba(21, 27, 29, 0.25);
+  --ultrablack-op-75: rgba(21, 27, 29, 0.75);
+  --true-black-op-75: rgba(0, 0, 0, 0.75); }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -1467,7 +1469,7 @@ section {
 .post-list {
   padding: 0;
   display: none;
-  flex-direction: column-reverse;
+  flex-direction: column;
   flex-wrap: wrap;
   box-sizing: border-box;
   margin: 20px auto; }
@@ -1565,16 +1567,13 @@ a.post-link:hover .double-arrow svg {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  background: var(--black-op-25);
+  background: var(--ultrablack-op-75);
   height: 100%;
   width: 100%;
-  -webkit-transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -ms-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out; }
-
-.night-mode .overlay-mask {
-  background: var(--ultrablack-op-25); }
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out; }
 
 .open-message .overlay-mask,
 .open-settings .overlay-mask,
@@ -2430,6 +2429,8 @@ body.night-mode {
   background: var(--aqua); }
   .night-mode .search-toggle span {
     background: var(--ultrablack); }
+.night-mode .overlay-mask {
+  background: var(--true-black-op-75); }
 .night-mode .search-toggle:hover {
   background: var(--aqua-hover); }
 .night-mode .search-toggle .icon-container span:first-child {

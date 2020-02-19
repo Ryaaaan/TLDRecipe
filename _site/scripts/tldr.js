@@ -447,9 +447,9 @@ tldr.forceDOMNightMode = function(listName) {
       window.location.href = '/nm' + nmURL;
     } else if (!currentList[0] && alreadyNM) {
       // if nm cookie is false and we on a nm page, redirect
-      var nmURL = window.location.pathname
-      var normalURL = nmURL.replace('/nm/', '/');
-      window.location.href = normalURL;
+      // var nmURL = window.location.pathname
+      // var normalURL = nmURL.replace('/nm/', '/');
+      // window.location.href = normalURL;
     }
   }
 }

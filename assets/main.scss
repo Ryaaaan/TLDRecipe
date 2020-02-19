@@ -814,7 +814,7 @@ section {
 .post-list {
   padding: 0;
   display: none;
-  flex-direction: column-reverse;
+  flex-direction: column;
   flex-wrap: wrap;
   box-sizing: border-box;
   margin: 20px auto;
@@ -918,14 +918,11 @@ a.post-link:hover .double-arrow svg {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  background: var(--black-op-25);
+  background: var(--ultrablack-op-75);
   height: 100%;
   width: 100%;
 
-  @include transition(all 300ms ease-in-out);
-}
-.night-mode .overlay-mask {
-  background: var(--ultrablack-op-25);
+  @include transition(all 150ms ease-in-out);
 }
 .open-message .overlay-mask,
 .open-settings .overlay-mask,

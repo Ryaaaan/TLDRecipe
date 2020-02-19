@@ -78,6 +78,9 @@ body.night-mode {
       background: var(--ultrablack);
     }
   }
+  .overlay-mask {
+    background: var(--true-black-op-75);
+  }
   .search-toggle:hover {
     background: var(--aqua-hover);
   }
