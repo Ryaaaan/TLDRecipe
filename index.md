@@ -12,7 +12,7 @@ image: ../../assets/imgs/og-banner.jpg
 
 # Master List Section
 listHeader: The List
-listCopy:
+listCopy: Some copy
 
 
 # Override default link structure (built from file name) with "permalink"
