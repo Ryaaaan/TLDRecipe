@@ -17,6 +17,6 @@ layout: null
         "date"     : "{{ post.date }}"
       } {% unless forloop.last %},{% endunless %}
       {%- endif -%}
-      
+
   {% endfor %}
 ]
