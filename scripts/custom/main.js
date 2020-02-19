@@ -6,13 +6,15 @@ $(document).ready(function(){
   tldr.updateDOMFavoriteList();
   tldr.forceDOMNightMode();
 
-  if (iOSDevice) {
-    tldr.iosPlayerControls();
-  }
+  // if (iOSDevice) {
+  //   tldr.iosPlayerControls();
+  // }
 });
+
 $(document).on('scroll', function(){
   tldr.hideCopyButton();
 });
+
 $(window).on('resize', function(){
   $('body').removeClass('open-settings');
   tldr.activeFilterFinder();
@@ -60,16 +62,6 @@ tldr.nightModeToggle = function() {
 
   window.location = newURL
 }
-
-
-
-
-
-
-$(".close-button-trigger").on("click touch", function() {
-  tldr.killNotification();
-});
-
 
 
 // Open Search
@@ -124,9 +116,6 @@ $(".overlay-mask").on("click touch", function() {
 
   tldr.killNotification();
   tldr.killMessage();
-  // Message Kill
-  // $('html').removeClass('open-message');
-  // clearTimeout(tldr.messageTimer);
 });
 
 

@@ -170,6 +170,7 @@ tldr.nightModeSwitch = function() {
   }
 }
 
+
 tldr.swapURLPaths = function(isNight) {
   var anch = document.querySelectorAll('a');
 

@@ -2,14 +2,6 @@
 // Recipe Functionality
 //
 
-
-
-// More Info
-$("#more-info").on("click touch", function() {
-  tldr.toggleInfo();
-});
-
-
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {
   tldr.toggleList(this);

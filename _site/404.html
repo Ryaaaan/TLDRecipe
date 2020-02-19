@@ -121,8 +121,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="settings-modal">
 
-  <div class="setting" id="nm-trigger">
-    <span>Nightmode</span>
+  <div class="setting button" id="nm-trigger">
+    <div class="icon">
+      <!-- moon -->
+      <svg class="moon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      	 viewBox="0 0 21.12 21.1" style="enable-background:new 0 0 21.12 21.1;" xml:space="preserve">
+      <g>
+      	<path class="moon0" d="M20.61,10.55c0,5.41-4.39,9.79-9.79,9.79c-4.36,0-8.07-2.86-9.33-6.81c1.22,0.6,2.59,0.93,4.04,0.93
+      		c5.09,0,9.21-4.12,9.21-9.21c0-1.45-0.34-2.82-0.93-4.04C17.75,2.47,20.61,6.18,20.61,10.55z"/>
+      	<polygon class="moon0" points="4.52,0.87 5.73,3.32 8.43,3.71 6.47,5.62 6.94,8.31 4.52,7.04 2.1,8.31 2.57,5.62 0.61,3.71
+      		3.31,3.32 	"/>
+      </g>
+      </svg>
+
+      <!-- sun -->
+      <svg class="sun" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      	 viewBox="0 0 26.04 26.01" style="enable-background:new 0 0 26.04 26.01;" xml:space="preserve">
+      <g>
+      	<circle class="st0" cx="12.86" cy="12.64" r="7.67"/>
+      	<g>
+      		<polygon class="st0" points="4.77,6.89 4.04,3.82 7.11,4.55 		"/>
+      		<polygon class="st0" points="21.34,18.78 22.07,21.85 19,21.12 		"/>
+      	</g>
+      	<g>
+      		<polygon class="st0" points="19,4.55 22.07,3.82 21.34,6.89 		"/>
+      		<polygon class="st0" points="7.11,21.12 4.04,21.85 4.77,18.78 		"/>
+      	</g>
+      	<g>
+      		<polygon class="st0" points="23.12,11.18 25.81,12.84 23.12,14.49 		"/>
+      		<polygon class="st0" points="2.99,14.49 0.31,12.84 2.99,11.18 		"/>
+      	</g>
+      	<g>
+      		<polygon class="st0" points="14.71,22.9 13.06,25.59 11.4,22.9 		"/>
+      		<polygon class="st0" points="11.4,2.77 13.06,0.09 14.71,2.77 		"/>
+      	</g>
+      </g>
+      </svg>
+    </div>
+
+    <span class="night-copy">Night Mode</span>
+    <span class="day-copy">Day Mode</span>
+
+    <!-- <div class="toggle-container">
+      <span></span>
+    </div> -->
+  </div>
+
+  <div class="setting disabled" id="">
+    <span>Turn Off Ads</span>
 
     <div class="toggle-container">
       <span></span>
@@ -130,14 +176,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 
   <!-- <div class="setting" id="">
-    <span>Notifications</span>
-
-    <div class="toggle-container">
-      <span></span>
-    </div>
-  </div>
-
-  <div class="setting" id="">
     <span>Clear Favorites</span>
 
     <div class="toggle-container">

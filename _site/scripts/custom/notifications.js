@@ -10,7 +10,7 @@ tldr.popNotification = function() {
   // Set timeOut
   tldr.notificationTimer = setTimeout(function(){
     $('html').removeClass('open-notification');
-  }, 2500);
+  }, 5000);
 }
 tldr.killNotification = function() {
   tldr.killNotificationTimeout();
@@ -20,10 +20,14 @@ tldr.killNotificationTimeout = function() {
   clearTimeout(tldr.notificationTimer);
 }
 
+$(".close-button-trigger").on("click touch", function() {
+  tldr.killNotification();
+});
+
 
 
 //
-// More info / Message Functionality 
+// More info / Message Functionality
 //
 tldr.messageTimer;
 
@@ -52,3 +56,8 @@ tldr.killMessage = function() {
 tldr.killMessageTimeout = function() {
   clearTimeout(tldr.messageTimer);
 }
+
+// More Info
+$("#more-info").on("click touch", function() {
+  tldr.toggleInfo();
+});

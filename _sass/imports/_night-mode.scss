@@ -107,11 +107,57 @@ body.night-mode {
   .settings-modal span {
     color: var(--white);
   }
-  #nm-trigger .toggle-container {
-    background: var(--aqua);
+  // #nm-trigger .toggle-container {
+  //   background: var(--aqua);
+  // }
+  // #nm-trigger .toggle-container span {
+  //   left: 22px
+  // }
+  .setting {
+
+    &.disabled {
+      opacity: 0.2;
+    }
+
+    &.button {
+      //
+
+      span {
+        //
+      }
+    }
+    &#nm-trigger {
+      background: var(--gold);
+
+      .night-copy {
+        display: none;
+        opacity: 0;
+      }
+      .day-copy {
+        display: block;
+        opacity: 1;
+      }
+
+      &:hover {
+        background: var(--gold-hover);
+      }
+      span {
+        color: var(--ultrablack);
+      }
+    }
   }
-  #nm-trigger .toggle-container span {
-    left: 22px
+
+  #nm-trigger .icon svg {
+    fill: var(--ultrablack);
+
+    &.moon {
+      opacity: 0;
+      @include rotate(180deg);
+    }
+    &.sun {
+      opacity: 1;
+      @include rotate(0deg);
+    }
   }
 
   // Recipe Page

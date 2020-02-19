@@ -23,6 +23,10 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 
 ### v2 Todo Items:
 - [ ] Clean up JS
+- [ ] SCSS utilize nesting
+- [ ] Organize SCSS by include (typo)
+- [ ] Update / Clean up SCSS Color Vars
+- [ ] Random JS Notification Message
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
 - [ ] Full Nutrition List (breakdown of macros + vitamins)
 - [ ] Cookie/Setting turn off notifications (copy)
