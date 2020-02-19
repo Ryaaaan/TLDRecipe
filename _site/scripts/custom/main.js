@@ -121,12 +121,11 @@ tldr.openSettings = function() {
 $(".overlay-mask").on("click touch", function() {
   $('html').removeClass('searching');
   $('html').removeClass('open-settings');
+
+  // Message Kill
+  $('html').removeClass('open-message');
+  clearTimeout(tldr.messageTimer);
 });
-
-
-
-
-
 
 
 // Smooth Scroll Copy Pasta

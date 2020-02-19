@@ -862,6 +862,7 @@ a.post-link:hover .double-arrow svg {
 .night-mode .overlay-mask {
   background: var(--ultrablack-op-25);
 }
+.open-message .overlay-mask,
 .open-settings .overlay-mask,
 .searching .overlay-mask,
 .open-notification .overlay-mask {
@@ -1131,6 +1132,7 @@ a.post-link:hover .double-arrow svg {
   justify-content: center;
   align-items: center;
 }
+
 .recipe-details {
   padding: 0 20px;
   width: 100%;
@@ -1150,6 +1152,91 @@ a.post-link:hover .double-arrow svg {
 
   @media (min-width: 720px) {
     width: 50%;
+  }
+}
+.nutrition-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 5px;
+  position: relative;
+}
+.more-info {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  height: 12px;
+  width: 14px;
+  border: 2px solid var(--black);
+  border-radius: 40px;
+  position: relative;
+
+  text-align: center;
+
+  padding: 2px 0px 0px 0px;
+  margin: 0 0 0 10px;
+
+  cursor: pointer;
+
+  @include transition(all 150ms ease-in-out);
+
+  > span {
+    font-weight: 500;
+    color: var(--black);
+    font-size: 10px;
+
+    @include transition(all 150ms ease-in-out);
+  }
+
+  &:hover {
+    border: 2px solid var(--red);
+
+    > span {
+      color: var(--red);
+    }
+  }
+}
+
+.info-message {
+  width: 100%;
+  background: var(--white);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px var(--black-op-25);
+  display: inline-block;
+  cursor: auto;
+  z-index: 1100;
+
+  position: absolute;
+  left: -9px;
+  top: 35px;
+
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--black);
+
+  opacity: 0;
+  pointer-events: none;
+
+  @include transition(all 150ms ease-in-out);
+
+  @media (min-width: 720px) {
+    width: 320px;
+  }
+}
+.open-message .info-message {
+  top: 50px;
+  opacity: 1;
+  pointer-events: all;
+
+  @media (min-width: 720px) {
+    top: 53px;
   }
 }
 .portion-container,

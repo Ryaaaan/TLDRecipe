@@ -121,12 +121,11 @@ tldr.openSettings = function() {
 $(".overlay-mask").on("click touch", function() {
   $('html').removeClass('searching');
   $('html').removeClass('open-settings');
+
+  // Message Kill
+  $('html').removeClass('open-message');
+  clearTimeout(tldr.messageTimer);
 });
-
-
-
-
-
 
 
 // Smooth Scroll Copy Pasta
@@ -420,7 +419,6 @@ tldr.forceDOMNightMode = function(listName) {
   }
 }
 
-
 tldr.nightModeSwitch = function() {
   var isNight = $('body').hasClass('night-mode');
 
@@ -440,9 +438,6 @@ tldr.swapURLPaths = function(isNight) {
     var host = anch[i].host;
     var url = anch[i].href;
     var targetURL = url.split(host)[1];
-
-    // console.log(url.split(host)[1]);
-    // var notRoot = url.contains('/nm/');
 
     if (isNight) {
       var regURL = url.split('/nm')[1];
@@ -544,10 +539,39 @@ tldr.skipFwd = function() {
 //
 // Recipe Functionality
 //
+
+
+
+// More Info
+$("#more-info").on("click touch", function() {
+  tldr.toggleInfo();
+});
+
+tldr.messageTimer;
+
+// Info Toggle Function
+tldr.toggleInfo = function() {
+  var message = document.getElementById('info-message');
+  var isOpen = $('html').hasClass('open-message');
+
+  if (isOpen) {
+    $('html').removeClass('open-message');
+    clearTimeout(tldr.messageTimer);
+
+  } else {
+    $('html').addClass('open-message');
+
+    tldr.messageTimer = setTimeout(function(){
+      $('html').removeClass('open-message');
+    }, 10000);
+
+  }
+}
+
+
 // Toggle Recipe Items
 $(".list li").on("click touch", function() {
   tldr.toggleList(this);
-  // tldr.hapticFeedback()
 });
 
 // Trigger Copy Functionality
