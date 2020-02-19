@@ -1169,7 +1169,7 @@ a.post-link:hover .double-arrow svg {
   justify-content: center;
   align-content: center;
 
-  height: 12px;
+  height: 14px;
   width: 14px;
   border: 2px solid var(--black);
   border-radius: 40px;
@@ -1177,7 +1177,7 @@ a.post-link:hover .double-arrow svg {
 
   text-align: center;
 
-  padding: 2px 0px 0px 0px;
+  padding: 0px;
   margin: 0 0 0 10px;
 
   cursor: pointer;
@@ -1190,6 +1190,13 @@ a.post-link:hover .double-arrow svg {
     font-size: 10px;
 
     @include transition(all 150ms ease-in-out);
+  }
+  .info-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 10px;
   }
 
   &:hover {

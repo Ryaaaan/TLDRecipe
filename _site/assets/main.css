@@ -1839,13 +1839,13 @@ a.post-link:hover .double-arrow svg {
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  height: 12px;
+  height: 14px;
   width: 14px;
   border: 2px solid var(--black);
   border-radius: 40px;
   position: relative;
   text-align: center;
-  padding: 2px 0px 0px 0px;
+  padding: 0px;
   margin: 0 0 0 10px;
   cursor: pointer;
   -webkit-transition: all 150ms ease-in-out;
@@ -1860,6 +1860,12 @@ a.post-link:hover .double-arrow svg {
     -moz-transition: all 150ms ease-in-out;
     -ms-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out; }
+  .more-info .info-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 10px; }
   .more-info:hover {
     border: 2px solid var(--red); }
     .more-info:hover > span {
