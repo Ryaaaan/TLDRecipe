@@ -4,6 +4,7 @@ date:   2018-10-22 14:46:59 -0400
 
 # Event / Post Information
 title:  "Zuppa Toscana"
+description: Kinda healthy, kinda fatty but super delicious on cold days.
 author: Ryaan Beck
 permalink: nm/recipes/zuppa
 favorite: zuppa
