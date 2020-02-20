@@ -11,37 +11,37 @@
 
     {
         "title"    : "Stuffed Peppers",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
-        "tags"     : "lunch, dinner, meal prep",
+        "tags"     : "lunch, dinner, meal prep, slump, prove, outer, merit, tribe, essay, drive, spare, haunt, glass, water, drink, piano, motif, quest, trace, wagon, petty, blast, alive, cater, entry, giant, sight, watch, heavy, dozen, steam, reign, shape",
         "url"      : "/recipes/stuffed-peppers",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
         "title"    : "Lasagna",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "dinner, meal prep",
         "url"      : "/recipes/lasagna",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
         "title"    : "Zuppa Toscana",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "hot, keto, dinner, meal prep",
         "url"      : "/recipes/zuppa",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } ,
 
     {
         "title"    : "Slow Cooker Steak &amp; Peppers",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "red meat, dinner, meal prep",
         "url"      : "/recipes/pepper-steak",
-        "date"     : "2018-10-22 14:46:59 -0400"
+        "date"     : "2018-10-22 13:46:59 -0500"
       } 
 ]

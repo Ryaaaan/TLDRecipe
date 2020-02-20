@@ -245,7 +245,7 @@ section p,
 .filter-container span {
   font-size: 22px;
   font-weight: 600;
-  color: var(--medgrey);
+  color: var(--darkgrey);
 
   @include transition(color 150ms ease-in-out);
 }

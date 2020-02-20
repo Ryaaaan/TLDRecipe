@@ -16,7 +16,8 @@ imageAltText: baked red and green bell peppers, sliced in half vertically, stuff
 video:
 videoPoster:
 # tags
-tags: [lunch, dinner, meal prep]
+tags: [lunch, dinner, meal prep, slump, prove, outer, merit, tribe,
+essay, drive, spare, haunt, glass, water, drink, piano, motif, quest, trace, wagon, petty, blast, alive, cater, entry, giant, sight, watch, heavy, dozen, steam, reign, shape]
 
 # Timing
 prepTime: 20min.
