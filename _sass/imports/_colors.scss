@@ -21,6 +21,8 @@ $darkblue: #311B92;
 $gold: #FFD54F;
 $gold-hover: #FFB450;
 
+$white-op-35: rgba(255, 255, 255, 0.35);
+
 $black-op-25: rgba(38, 50, 58, 0.25);
 
 $ultrablack-op-25: rgba(21, 27, 29, 0.25);
@@ -47,6 +49,8 @@ $true-black-op-75: rgba(0, 0, 0, 0.75);
   --aqua-hover: #00BFA5;
   --gold: #FFD54F;
   --gold-hover: #FFB450;
+
+  --white-op-35: rgba(255, 255, 255, 0.35);
 
   --black-op-25: rgba(38, 50, 58, 0.25);
 
@@ -78,6 +82,7 @@ $vars: (
   aqua-hover: #00BFA5,
   gold: #FFD54F,
   gold-hover: #FFB450,
+  white-op-35: rgba(255, 255, 255, 0.35),
   black-op-25: rgba(38, 50, 58, 0.25),
   ultrablack-op-25: rgba(21, 27, 29, 0.25),
   ultrablack-op-75: rgba(21, 27, 29, 0.75),

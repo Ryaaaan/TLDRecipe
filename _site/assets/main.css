@@ -14,6 +14,7 @@
   --aqua-hover: #00BFA5;
   --gold: #FFD54F;
   --gold-hover: #FFB450;
+  --white-op-35: rgba(255, 255, 255, 0.35);
   --black-op-25: rgba(38, 50, 58, 0.25);
   --ultrablack-op-25: rgba(21, 27, 29, 0.25);
   --ultrablack-op-75: rgba(21, 27, 29, 0.75);
@@ -578,7 +579,7 @@ section p,
 
 .post-list a {
   text-decoration: none;
-  font-size: 28px;
+  font-size: 20px;
   text-transform: lowercase;
   width: 100%;
   -webkit-transition: all 75ms ease-in-out;
@@ -616,15 +617,19 @@ section p,
   transition: all 175ms ease-in-out; }
 
 .post-list h3 {
-  padding: 20px 0;
   margin: 0;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid var(--grey);
+  text-transform: lowercase;
+  font-size: 28px;
+  color: var(--primary);
   -webkit-transition: all 175ms ease-in-out;
   -moz-transition: all 175ms ease-in-out;
   -ms-transition: all 175ms ease-in-out;
   transition: all 175ms ease-in-out; }
   @media (min-width: 720px) {
     .post-list h3 {
-      line-height: 46px; } }
+      font-size: 36px; } }
 
 .post-list h4,
 .post-list h5 {
@@ -1278,14 +1283,15 @@ nav.site-nav {
   border-bottom: 0px solid var(--clear); }
 
 .search-results.post-list a {
-  padding: 15px 0;
+  padding: 10px 0;
   text-decoration: none;
   display: block;
   position: relative;
   font-size: 18px; }
   @media (min-width: 720px) {
     .search-results.post-list a {
-      font-size: 28px; } }
+      font-size: 28px;
+      padding: 15px 0; } }
 
 .search-results.post-list a:focus {
   padding-left: 5px;
@@ -1466,7 +1472,7 @@ section {
 .list-button-container {
   padding: 5px;
   width: 100%;
-  margin: 50px auto 0;
+  margin: 25px auto 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1497,7 +1503,8 @@ section {
   @media (min-width: 720px) {
     .list-button-container {
       flex-direction: row;
-      width: 380px; } }
+      width: 380px;
+      margin: 50px auto 0; } }
 
 .filter-container {
   position: relative;
@@ -1673,11 +1680,12 @@ section {
 
 .post-link {
   display: block;
-  padding: 15px 0;
+  padding: 10px 0;
   position: relative; }
   @media (min-width: 720px) {
     .post-link {
-      height: calc(100% - 100px); } }
+      height: calc(100% - 100px);
+      padding: 15px 0; } }
 
 .double-arrow {
   position: absolute;
@@ -2820,8 +2828,8 @@ body.night-mode {
   color: #ffffff;
   color: var(--white); }
 .night-mode .filter-container span {
-  color: #37474F;
-  color: var(--medblack); }
+  color: rgba(255, 255, 255, 0.35);
+  color: var(--white-op-35); }
 .night-mode .filter-container span.active-filter,
 .night-mode .filter-container span:hover {
   color: #ffffff;

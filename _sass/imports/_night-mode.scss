@@ -308,7 +308,7 @@ body.night-mode {
     @include var(color, white);
   }
   .filter-container span {
-    @include var(color, medblack);
+    @include var(color, white-op-35);
   }
   .filter-container span.active-filter,
   .filter-container span:hover {

@@ -224,7 +224,7 @@ section p,
 }
 .post-list a {
   text-decoration: none;
-  font-size: 28px;
+  font-size: 20px;
   text-transform: lowercase;
   width: 100%;
 
@@ -258,11 +258,16 @@ section p,
   @include transition(all 175ms ease-in-out);
 }
 .post-list h3 {
-  padding: 20px 0;
   margin: 0;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid var(--grey);
+
+  text-transform: lowercase;
+  font-size: 28px;
+  color: var(--primary);
 
   @media (min-width: 720px) {
-    line-height: 46px;
+    font-size: 36px;
   }
 
   @include transition(all 175ms ease-in-out);
