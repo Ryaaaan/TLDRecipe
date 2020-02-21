@@ -10,7 +10,7 @@ permalink: nm/recipes/zuppa
 favorite: zuppa
 # link constructed from categories (when applied + and not overridden by permalink)
 # categories: calendar
-image: ../../assets/imgs/recipes/test_soup/banner.jpg
+image: 
 imageAltText: this is the image alt text for ADA compliance
 
 video:

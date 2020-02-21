@@ -16,7 +16,7 @@ imageAltText: baked red and green bell peppers, sliced in half vertically, stuff
 video:
 videoPoster:
 # tags
-tags: [lunch, dinner, meal prep]
+tags: [lunch, dinner, meal prep, mustard, mexicana, poultry]
 
 # Timing
 prepTime: 20min.

@@ -9,12 +9,12 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Just Recipes. No bullshit." />
 <meta property="og:description" content="Just Recipes. No bullshit." />
-<link rel="canonical" href="http://0.0.0.0:4000/nm/recipes" />
-<meta property="og:url" content="http://0.0.0.0:4000/nm/recipes" />
+<link rel="canonical" href="http://www.tldrecipe.co/nm/recipes" />
+<meta property="og:url" content="http://www.tldrecipe.co/nm/recipes" />
 <meta property="og:site_name" content="TLDRecipe" />
-<meta property="og:image" content="http://0.0.0.0:4000/assets/imgs/og-banner-dark.jpg" />
+<meta property="og:image" content="http://www.tldrecipe.co/assets/imgs/og-banner-dark.jpg" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"TLDRecipe Recipe List","url":"http://0.0.0.0:4000/nm/recipes","image":"http://0.0.0.0:4000/assets/imgs/og-banner-dark.jpg","description":"Just Recipes. No bullshit.","@context":"https://schema.org"}</script>
+{"headline":"TLDRecipe Recipe List","@type":"WebPage","image":"http://www.tldrecipe.co/assets/imgs/og-banner-dark.jpg","url":"http://www.tldrecipe.co/nm/recipes","description":"Just Recipes. No bullshit.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <!-- <link rel="stylesheet" href="https://use.typekit.net/qmc4dqr.css"> -->
@@ -29,7 +29,7 @@
   <!-- Rectangular Windows tile -->
   <!-- <meta name="msapplication-wide310x150logo" content=""> -->
   <!-- Windows tile theme color -->
-  <!-- <meta name="msapplication-TileColor" content="#FF1744"> --><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="TLDRecipe" /><!-- Google Tag Manager -->
+  <!-- <meta name="msapplication-TileColor" content="#FF1744"> --><link type="application/atom+xml" rel="alternate" href="http://www.tldrecipe.co/feed.xml" title="TLDRecipe" /><!-- Google Tag Manager -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -165,9 +165,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="night-copy">Night Mode</span>
     <span class="day-copy">Day Mode</span>
 
-    <!-- <div class="toggle-container">
-      <span></span>
-    </div> -->
   </div>
 
   <div class="setting disabled" id="">
@@ -198,86 +195,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         Recipes
       </h2>
 
-      <div class="filter-container">
+      <div class="list-button-container">
+        <div class="setting button" id="custom-trigger">
+          <div class="icon">
+            <!-- custom -->
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 21.24 16" style="enable-background:new 0 0 21.24 16;" xml:space="preserve">
+            <g>
+            	<g>
+            		<rect x="2.28" y="7.56" class="custom0" width="1.91" height="8.19"/>
+            		<rect x="9.55" y="13.75" class="custom0" width="1.91" height="2"/>
+            		<polygon class="custom0" points="6.07,2.92 4.18,2.92 4.18,0.25 2.28,0.25 2.28,2.92 0.39,2.92 0.39,4.72 0.39,4.96 1.88,4.96
+            			4.58,4.96 6.07,4.96 6.07,4.72 		"/>
+            		<polygon class="custom0" points="7.67,9.12 7.67,10.91 7.67,11.16 9.15,11.16 11.86,11.16 13.35,11.16 13.35,10.91 13.35,9.12
+            			11.46,9.12 11.46,0.25 9.55,0.25 9.55,9.12 		"/>
+            		<rect x="17.05" y="10.15" class="custom0" width="1.91" height="5.6"/>
+            		<polygon class="custom0" points="15.18,5.52 15.18,7.31 15.18,7.56 16.65,7.56 19.36,7.56 20.85,7.56 20.85,7.31 20.85,5.52
+            			18.96,5.52 18.96,0.25 17.05,0.25 17.05,5.52 		"/>
+            	</g>
+            </g>
+            </svg>
+
+          </div>
+          <span class="button-copy">Customize List</span>
+        </div>
+        <div class="setting button" id="random-trigger">
+          <div class="icon">
+            <!-- random -->
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 19 16" style="enable-background:new 0 0 19 16;" xml:space="preserve">
+
+            <g>
+            	<path class="random0" d="M6.51,6.61l0.29-0.58C7.04,5.58,7.3,5.15,7.6,4.75C6.15,3.21,4.13,2.31,1.94,2.31H0.6v2.04h1.34
+            		C3.76,4.35,5.44,5.19,6.51,6.61z"/>
+            	<path class="random0" d="M14.43,4.43V5.9l4.14-2.52l-4.14-2.52V2.4c-2.73,0.19-5.16,1.77-6.41,4.25L7.09,8.49
+            		c-0.99,1.95-2.96,3.17-5.15,3.17H0.6v2.04h1.34c2.96,0,5.63-1.64,6.96-4.28l0.93-1.84C10.74,5.77,12.47,4.62,14.43,4.43z"/>
+            	<path class="random0" d="M14.43,11.57c-1.59-0.15-3.03-0.94-3.99-2.19l-0.32,0.63c-0.22,0.43-0.47,0.85-0.75,1.23
+            		c1.32,1.38,3.11,2.23,5.07,2.37v1.53l4.14-2.52l-4.14-2.52V11.57z"/>
+            </g>
+            </svg>
+
+          </div>
+          <span class="button-copy">Random Recipe</span>
+        </div>
+      </div>
+
+      <div class="filter-container" id="filter-container">
 
         <div class="toggles" id="toggle-list">
-          <h5>Filter</h5>
-          <span id="alpha-toggle" class="active-filter">alpha</span>
-          <span id="new-toggle">latest</span>
-
-          
-            <span id="red-meat-toggle">red meat</span>
-          
-            <span id="dinner-toggle">dinner</span>
-          
-            <span id="meal-prep-toggle">meal prep</span>
-          
-            <span id="hot-toggle">hot</span>
-          
-            <span id="keto-toggle">keto</span>
-          
-            <span id="lunch-toggle">lunch</span>
-          
-            <span id="slump-toggle">slump</span>
-          
-            <span id="prove-toggle">prove</span>
-          
-            <span id="outer-toggle">outer</span>
-          
-            <span id="merit-toggle">merit</span>
-          
-            <span id="tribe-toggle">tribe</span>
-          
-            <span id="essay-toggle">essay</span>
-          
-            <span id="drive-toggle">drive</span>
-          
-            <span id="spare-toggle">spare</span>
-          
-            <span id="haunt-toggle">haunt</span>
-          
-            <span id="glass-toggle">glass</span>
-          
-            <span id="water-toggle">water</span>
-          
-            <span id="drink-toggle">drink</span>
-          
-            <span id="piano-toggle">piano</span>
-          
-            <span id="motif-toggle">motif</span>
-          
-            <span id="quest-toggle">quest</span>
-          
-            <span id="trace-toggle">trace</span>
-          
-            <span id="wagon-toggle">wagon</span>
-          
-            <span id="petty-toggle">petty</span>
-          
-            <span id="blast-toggle">blast</span>
-          
-            <span id="alive-toggle">alive</span>
-          
-            <span id="cater-toggle">cater</span>
-          
-            <span id="entry-toggle">entry</span>
-          
-            <span id="giant-toggle">giant</span>
-          
-            <span id="sight-toggle">sight</span>
-          
-            <span id="watch-toggle">watch</span>
-          
-            <span id="heavy-toggle">heavy</span>
-          
-            <span id="dozen-toggle">dozen</span>
-          
-            <span id="steam-toggle">steam</span>
-          
-            <span id="reign-toggle">reign</span>
-          
-            <span id="shape-toggle">shape</span>
-          
+          <div class="toggle-holster">
+            <h5>Sort</h5>
+            <span id="alpha-toggle" class="active-filter">alpha</span>
+            <span id="new-toggle">latest</span>
+          </div>
+          <div class="toggle-holster">
+            <h5>Filter</h5>
+            
+              <span id="red-meat-toggle">red meat</span>
+            
+              <span id="dinner-toggle">dinner</span>
+            
+              <span id="meal-prep-toggle">meal prep</span>
+            
+              <span id="hot-toggle">hot</span>
+            
+              <span id="keto-toggle">keto</span>
+            
+              <span id="lunch-toggle">lunch</span>
+            
+              <span id="mustard-toggle">mustard</span>
+            
+              <span id="mexicana-toggle">mexicana</span>
+            
+              <span id="poultry-toggle">poultry</span>
+            
+          </div>
         </div>
 
         <div class="highlight"></div>
@@ -663,182 +655,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
         </ul>
       
-        <ul class="post-list slump-toggle-list">
+        <ul class="post-list mustard-toggle-list">
           
+
+            <li data-favorite="stuffed-peppers" class="">
+                <a class="post-link" href="/nm/recipes/stuffed-peppers">
+                  Stuffed Peppers
+                </a>
+                <span class="favorite-flag">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+                  <g>
+                    <path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+                      c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+                      c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+                      c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+                  </g>
+                  </svg>
+                </span>
+              </li>
 
             
         </ul>
       
-        <ul class="post-list prove-toggle-list">
+        <ul class="post-list mexicana-toggle-list">
           
+
+            <li data-favorite="stuffed-peppers" class="">
+                <a class="post-link" href="/nm/recipes/stuffed-peppers">
+                  Stuffed Peppers
+                </a>
+                <span class="favorite-flag">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+                  <g>
+                    <path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+                      c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+                      c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+                      c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+                  </g>
+                  </svg>
+                </span>
+              </li>
 
             
         </ul>
       
-        <ul class="post-list outer-toggle-list">
+        <ul class="post-list poultry-toggle-list">
           
 
-            
-        </ul>
-      
-        <ul class="post-list merit-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list tribe-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list essay-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list drive-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list spare-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list haunt-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list glass-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list water-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list drink-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list piano-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list motif-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list quest-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list trace-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list wagon-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list petty-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list blast-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list alive-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list cater-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list entry-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list giant-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list sight-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list watch-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list heavy-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list dozen-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list steam-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list reign-toggle-list">
-          
-
-            
-        </ul>
-      
-        <ul class="post-list shape-toggle-list">
-          
+            <li data-favorite="stuffed-peppers" class="">
+                <a class="post-link" href="/nm/recipes/stuffed-peppers">
+                  Stuffed Peppers
+                </a>
+                <span class="favorite-flag">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 280.7 268.7" style="enable-background:new 0 0 280.7 268.7;" xml:space="preserve">
+                  <g>
+                    <path d="M132.3,235.2l-59.8,31.4c-12.8,6.7-27.7-4.1-25.2-18.3l11.4-66.6c1-5.6-0.9-11.4-5-15.4L5.3,119.2
+                      c-10.3-10.1-4.6-27.6,9.6-29.7l66.8-9.7c5.7-0.8,10.6-4.4,13.1-9.5l29.9-60.6c6.4-12.9,24.8-12.9,31.2,0l29.9,60.6
+                      c2.5,5.1,7.4,8.7,13.1,9.5l66.8,9.7c14.3,2.1,20,19.6,9.6,29.7l-48.4,47.1c-4.1,4-6,9.8-5,15.4l11.4,66.6
+                      c2.4,14.2-12.5,25-25.2,18.3l-59.8-31.4C143.4,232.5,137.3,232.5,132.3,235.2z"/>
+                  </g>
+                  </svg>
+                </span>
+              </li>
 
             
         </ul>
@@ -859,10 +740,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+  <script type="text/javascript" src="/scripts/min/tldr.js"></script>
 
 
 
-  <script type="text/javascript" src="/scripts/tldr.js"></script>
 
 
 

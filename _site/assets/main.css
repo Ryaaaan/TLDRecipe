@@ -994,7 +994,7 @@ nav.site-nav {
   transition: all 125ms ease-in-out; }
   @media (min-width: 720px) {
     .settings-modal {
-      padding: 0px 20px 0px 30px; } }
+      padding: 20px 20px 0px 30px; } }
 
 .open-settings .settings-modal {
   opacity: 1;
@@ -1008,7 +1008,7 @@ nav.site-nav {
   align-content: center;
   justify-content: space-between;
   cursor: pointer;
-  width: 180px;
+  width: 150px;
   padding: 5px 0; }
   .setting.disabled {
     opacity: 0.33;
@@ -1016,7 +1016,6 @@ nav.site-nav {
   .setting.button {
     justify-content: flex-start;
     padding: 10px 15px;
-    border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 10px; }
     .setting.button span {
@@ -1429,41 +1428,123 @@ section {
     .list-head-container {
       justify-content: space-between; } }
 
+.list-button-container {
+  padding: 5px;
+  width: 100%;
+  margin: 50px auto 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  .list-button-container .setting {
+    width: 180px;
+    justify-content: center;
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out; }
+    .list-button-container .setting#custom-trigger {
+      background: var(--black); }
+      .list-button-container .setting#custom-trigger:hover {
+        background: var(--ultrablack); }
+    .list-button-container .setting#random-trigger:hover {
+      background: var(--red-hover); }
+    .list-button-container .setting span {
+      color: var(--white); }
+    .list-button-container .setting svg {
+      fill: var(--white); }
+  @media (min-width: 720px) {
+    .list-button-container {
+      flex-direction: row;
+      width: 380px; } }
+
 .filter-container {
-  width: auto;
   position: relative;
   height: auto;
-  margin: 45px 0 0 -10px;
-  width: 100%; }
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  margin: 0 0 0 -10px;
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out; }
   @media (min-width: 720px) {
     .filter-container {
-      display: block;
-      margin: 75px 0 0 -10px; } }
+      display: block; } }
+
+.open-filters.filter-container {
+  height: auto;
+  opacity: 1;
+  padding: 30px 0 0;
+  margin: 15px 0 0 -10px; }
+  @media (min-width: 720px) {
+    .open-filters.filter-container {
+      margin: 45px 0 0 -10px; } }
 
 .toggles h5 {
   text-transform: lowercase;
   color: var(--black);
   margin-left: 10px;
   position: absolute;
-  top: -35px; }
+  top: -45px; }
+
+.toggle-holster {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box; }
+
+.toggle-holster:first-child {
+  border-top: 1px solid var(--medgrey);
+  padding: 5px 0px 40px; }
+  @media (min-width: 720px) {
+    .toggle-holster:first-child {
+      width: 30%;
+      padding: 5px 15px 10px 0;
+      border-bottom: 1px solid var(--medgrey); } }
+  @media (min-width: 1080px) {
+    .toggle-holster:first-child {
+      width: 20%; } }
+
+.toggle-holster:last-child {
+  border-top: 1px solid var(--medgrey);
+  border-bottom: 1px solid var(--medgrey);
+  padding: 5px 0px 10px; }
+  @media (min-width: 720px) {
+    .toggle-holster:last-child {
+      width: calc(70% - 1px);
+      padding: 5px 0 10px 15px;
+      border-left: 1px solid var(--medgrey); } }
+  @media (min-width: 1080px) {
+    .toggle-holster:last-child {
+      width: calc(80% - 1px); } }
 
 .toggles {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
   position: relative; }
+  @media (min-width: 720px) {
+    .toggles {
+      flex-direction: row; } }
 
 .toggles span {
   padding: 0;
   cursor: pointer;
   z-index: 1000;
-  padding: 5px 10px; }
+  padding: 5px 10px;
+  display: inline-block; }
 
 .highlight {
   height: 5px;
   background: var(--red);
   position: absolute;
+  z-index: 900;
   -webkit-transition: all 175ms ease-in-out;
   -moz-transition: all 175ms ease-in-out;
   -ms-transition: all 175ms ease-in-out;
@@ -2431,6 +2512,18 @@ body.night-mode {
     fill: var(--ultrablack); }
 .night-mode .highlight {
   background: var(--aqua); }
+.night-mode .list-button-container .setting#custom-trigger {
+  background: var(--ultrablack); }
+  .night-mode .list-button-container .setting#custom-trigger:hover {
+    background: var(--true-black); }
+.night-mode .list-button-container .setting#random-trigger {
+  background: var(--aqua); }
+  .night-mode .list-button-container .setting#random-trigger span {
+    color: var(--ultrablack); }
+  .night-mode .list-button-container .setting#random-trigger svg {
+    fill: var(--ultrablack); }
+  .night-mode .list-button-container .setting#random-trigger:hover {
+    background: var(--aqua-hover); }
 .night-mode .toggles h5 {
   color: var(--medblack); }
 .night-mode .search-toggle {

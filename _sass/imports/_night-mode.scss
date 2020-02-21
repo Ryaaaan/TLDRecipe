@@ -71,6 +71,33 @@ body.night-mode {
   .highlight {
     background: var(--aqua);
   }
+  .list-button-container {
+
+    .setting {
+
+      &#custom-trigger {
+        background: var(--ultrablack);
+
+        &:hover {
+          background: var(--true-black);
+        }
+      }
+      &#random-trigger {
+        background: var(--aqua);
+
+        span {
+          color: var(--ultrablack);
+        }
+        svg {
+          fill: var(--ultrablack);
+        }
+        &:hover {
+          background: var(--aqua-hover);
+        }
+      }
+
+    }
+  }
   .toggles h5 {
     color: var(--medblack);
   }
@@ -113,12 +140,6 @@ body.night-mode {
   .settings-modal span {
     color: var(--white);
   }
-  // #nm-trigger .toggle-container {
-  //   background: var(--aqua);
-  // }
-  // #nm-trigger .toggle-container span {
-  //   left: 22px
-  // }
   .setting {
 
     &.disabled {

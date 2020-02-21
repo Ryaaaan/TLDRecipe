@@ -18,6 +18,7 @@ $(document).on('scroll', function(){
 $(window).on('resize', function(){
   $('body').removeClass('open-settings');
   tldr.activeFilterFinder();
+  tldr.dynamicSizeFilterContainer();
 });
 
 

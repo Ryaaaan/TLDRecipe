@@ -7,8 +7,8 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 
 ### MVP Todo Items:
 - [ ] Write real README
-- [x] Test Firefox
-- [x] Test Safari
+- [ ] Test Firefox
+- [ ] Test Safari
 - [ ] Test IE (latest)
 - [x] Redirect `/recipes` or put something there
 - [x] Add Watch to `gulp.js` on JS file changes
@@ -16,7 +16,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [x] Night Mode subdomain to avoid flickering of cookie load?
 - [x] Remove video players until fully functional
 - [x] Close/Search button click area is funky - needs updated
-- [ ] Random Recipe Button
+- [x] Random Recipe Button
 - [x] SEO / Meta details
 - [x] Hover interactions for Search / Menu Buttons
 - [x] Add Minify / Uglify JS Functionality

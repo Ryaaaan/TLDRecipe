@@ -11,16 +11,65 @@ layout: nm/nm-default
         {{ page.listHeader }}
       </h2>
 
-      <div class="filter-container">
+      <div class="list-button-container">
+        <div class="setting button" id="custom-trigger">
+          <div class="icon">
+            <!-- custom -->
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 21.24 16" style="enable-background:new 0 0 21.24 16;" xml:space="preserve">
+            <g>
+            	<g>
+            		<rect x="2.28" y="7.56" class="custom0" width="1.91" height="8.19"/>
+            		<rect x="9.55" y="13.75" class="custom0" width="1.91" height="2"/>
+            		<polygon class="custom0" points="6.07,2.92 4.18,2.92 4.18,0.25 2.28,0.25 2.28,2.92 0.39,2.92 0.39,4.72 0.39,4.96 1.88,4.96
+            			4.58,4.96 6.07,4.96 6.07,4.72 		"/>
+            		<polygon class="custom0" points="7.67,9.12 7.67,10.91 7.67,11.16 9.15,11.16 11.86,11.16 13.35,11.16 13.35,10.91 13.35,9.12
+            			11.46,9.12 11.46,0.25 9.55,0.25 9.55,9.12 		"/>
+            		<rect x="17.05" y="10.15" class="custom0" width="1.91" height="5.6"/>
+            		<polygon class="custom0" points="15.18,5.52 15.18,7.31 15.18,7.56 16.65,7.56 19.36,7.56 20.85,7.56 20.85,7.31 20.85,5.52
+            			18.96,5.52 18.96,0.25 17.05,0.25 17.05,5.52 		"/>
+            	</g>
+            </g>
+            </svg>
+
+          </div>
+          <span class="button-copy">Customize List</span>
+        </div>
+        <div class="setting button" id="random-trigger">
+          <div class="icon">
+            <!-- random -->
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 19 16" style="enable-background:new 0 0 19 16;" xml:space="preserve">
+
+            <g>
+            	<path class="random0" d="M6.51,6.61l0.29-0.58C7.04,5.58,7.3,5.15,7.6,4.75C6.15,3.21,4.13,2.31,1.94,2.31H0.6v2.04h1.34
+            		C3.76,4.35,5.44,5.19,6.51,6.61z"/>
+            	<path class="random0" d="M14.43,4.43V5.9l4.14-2.52l-4.14-2.52V2.4c-2.73,0.19-5.16,1.77-6.41,4.25L7.09,8.49
+            		c-0.99,1.95-2.96,3.17-5.15,3.17H0.6v2.04h1.34c2.96,0,5.63-1.64,6.96-4.28l0.93-1.84C10.74,5.77,12.47,4.62,14.43,4.43z"/>
+            	<path class="random0" d="M14.43,11.57c-1.59-0.15-3.03-0.94-3.99-2.19l-0.32,0.63c-0.22,0.43-0.47,0.85-0.75,1.23
+            		c1.32,1.38,3.11,2.23,5.07,2.37v1.53l4.14-2.52l-4.14-2.52V11.57z"/>
+            </g>
+            </svg>
+
+          </div>
+          <span class="button-copy">Random Recipe</span>
+        </div>
+      </div>
+
+      <div class="filter-container" id="filter-container">
 
         <div class="toggles" id="toggle-list">
-          <h5>Filter</h5>
-          <span id="alpha-toggle" class="active-filter">alpha</span>
-          <span id="new-toggle">latest</span>
-
-          {% for tag in site.tags %}
-            <span id="{{tag[0] | replace: " ", "-" }}-toggle">{{ tag[0] }}</span>
-          {% endfor %}
+          <div class="toggle-holster">
+            <h5>Sort</h5>
+            <span id="alpha-toggle" class="active-filter">alpha</span>
+            <span id="new-toggle">latest</span>
+          </div>
+          <div class="toggle-holster">
+            <h5>Filter</h5>
+            {% for tag in site.tags %}
+              <span id="{{tag[0] | replace: " ", "-" }}-toggle">{{ tag[0] }}</span>
+            {% endfor %}
+          </div>
         </div>
 
         <div class="highlight"></div>
