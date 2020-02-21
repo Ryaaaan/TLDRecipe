@@ -1,6 +1,34 @@
 //
 // Color Variables
 //
+
+$clear: transparent;
+
+$white: #ffffff;
+$grey: #eeeeee;
+$medgrey: #e0e0e0;
+$darkgrey: #bdbdbd;
+$medblack: #37474F;
+$black: #263238;
+$ultrablack: #151B1D;
+$true-black: #000000;
+
+$red: #FF1744;
+$red-hover: #D81645;
+$aqua: #1DE9B6;
+$aqua-hover: #00BFA5;
+$darkblue: #311B92;
+$gold: #FFD54F;
+$gold-hover: #FFB450;
+
+$black-op-25: rgba(38, 50, 58, 0.25);
+
+$ultrablack-op-25: rgba(21, 27, 29, 0.25);
+$ultrablack-op-75: rgba(21, 27, 29, 0.75);
+
+$true-black-op-75: rgba(0, 0, 0, 0.75);
+
+
 :root {
   --clear: transparent;
 
@@ -13,12 +41,10 @@
   --ultrablack: #151B1D;
   --true-black: #000000;
 
-  --red: #FF1744;
-  --red-hover: #D81645;
+  --primary: #FF1744;
+  --primary-hover: #D81645;
   --aqua: #1DE9B6;
   --aqua-hover: #00BFA5;
-  --darkblue: #311B92;
-  --yellow: #ffff00;
   --gold: #FFD54F;
   --gold-hover: #FFB450;
 
@@ -28,4 +54,47 @@
   --ultrablack-op-75: rgba(21, 27, 29, 0.75);
 
   --true-black-op-75: rgba(0, 0, 0, 0.75);
+}
+
+
+
+
+
+
+
+$vars: (
+  clear: transparent,
+  white: #ffffff,
+  grey: #eeeeee,
+  medgrey: #e0e0e0,
+  darkgrey: #bdbdbd,
+  medblack: #37474F,
+  black: #263238,
+  ultrablack: #151B1D,
+  true-black: #000000,
+  primary: #FF1744,
+  primary-hover: #D81645,
+  aqua: #1DE9B6,
+  aqua-hover: #00BFA5,
+  gold: #FFD54F,
+  gold-hover: #FFB450,
+  black-op-25: rgba(38, 50, 58, 0.25),
+  ultrablack-op-25: rgba(21, 27, 29, 0.25),
+  ultrablack-op-75: rgba(21, 27, 29, 0.75),
+  true-black-op-75: rgba(0, 0, 0, 0.75)
+);
+
+@mixin var($property, $varName) {
+  #{$property}: map-get($vars, $varName);
+  #{$property}: var(--#{$varName});
+}
+
+@mixin border($property, $size, $style, $color) {
+  #{$property}: $size $style map-get($vars, $color);
+  #{$property}: $size $style var(--#{$color});
+}
+
+@mixin box($property, $xsize, $ysize, $blur, $color) {
+  #{$property}: $xsize $ysize $blur map-get($vars, $color);
+  #{$property}: $xsize $ysize $blur var(--#{$color});
 }

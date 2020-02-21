@@ -17,128 +17,128 @@
 
 
 .night-mode::-webkit-scrollbar {
-  background: var(--black);
+  @include var(background, black);
 }
 .night-mode::-webkit-scrollbar-thumb {
-  background: var(--ultrablack);
+  @include var(background, ultrablack);
 }
 body.night-mode {
-  background: var(--black);
+  @include var(background, black);
 }
 .night-mode header.site-header {
-  background: var(--ultrablack);
-  border-bottom: 1px solid var(--true-black);
+  @include var(background, ultrablack);
+  @include border(border-bottom, 1px, solid, true-black);
 }
 .searching .night-mode .search-toggle .icon-container span {
-  background:  var(--ultrablack);
+  @include var(background, ultrablack);
 }
 .searching .night-mode .search-toggle .icon-container span:first-child {
-  background:  var(--ultrablack);
-  border: 0px solid  var(--clear);
+  @include var(background, ultrablack);
+  @include border(border, 0px, solid, clear);
 }
 
 .night-mode {
   *::-moz-selection {
-    background: var(--ultrablack);
-    color: var(--white);
+    @include var(background, ultrablack);
+    @include var(color, white);
   }
   *::selection {
-    background: var(--ultrablack);
-    color: var(--white);
+    @include var(background, ultrablack);
+    @include var(color, white);
   }
   main,
   .master-list {
-    background: var(--black);
+    @include var(background, black);
   }
   .tldr0,
   .tldr0  {
-    fill: var(--aqua);
+    @include var(fill, aqua);
   }
   .tldr1,
   .tldr1 {
-    fill: var(--white);
+    @include var(fill, white);
   }
   .site-title:hover {
-    background:  var(--aqua);
+    @include var(background, aqua);
 
     .tldr0,
     .tldr0,
     .tldr1,
     .tldr1 {
-      fill: var(--ultrablack);
+      @include var(fill, ultrablack);
     }
   }
   .highlight {
-    background: var(--aqua);
+    @include var(background, aqua);
   }
   .list-button-container {
 
     .setting {
 
       &#custom-trigger {
-        background: var(--ultrablack);
+        @include var(background, ultrablack);
 
         &:hover {
-          background: var(--true-black);
+          @include var(background, true-black);
         }
       }
       &#random-trigger {
-        background: var(--aqua);
+        @include var(background, aqua);
 
         span {
-          color: var(--ultrablack);
+          @include var(color, ultrablack);
         }
         svg {
-          fill: var(--ultrablack);
+          @include var(fill, ultrablack);
         }
         &:hover {
-          background: var(--aqua-hover);
+          @include var(background, aqua-hover);
         }
       }
 
     }
   }
   .toggles h5 {
-    color: var(--medblack);
+    @include var(color, medblack);
   }
   .search-toggle {
-    background: var(--aqua);
+    @include var(background, aqua);
 
     span {
-      background: var(--ultrablack);
+      @include var(background, ultrablack);
     }
   }
   .overlay-mask {
-    background: var(--true-black-op-75);
+    @include var(background, true-black-op-75);
   }
   .search-toggle:hover {
-    background: var(--aqua-hover);
+    @include var(background, aqua-hover);
   }
   .search-toggle .icon-container span:first-child {
-    background:  var(--clear);
-    border: 3px solid  var(--ultrablack);
+    @include var(background, clear);
+    @include border(border, 3px, solid, ultrablack);
   }
   .search-input {
-    color: var(--white);
+    @include var(color, white);
   }
   .search-input::placeholder {
-    color: var(--white);
+    @include var(color, white);
   }
   .search-modal {
-    background: var(--ultrablack);
+    @include var(background, ultrablack);
   }
   .search-results.post-list a {
-    color: var(--white);
+    @include var(color, white);
   }
   .search-results.post-list a:focus {
-    border-bottom: 1px solid var(--aqua);
+    @include border(border-bottom, 1px, solid, aqua);
   }
   .settings-modal {
-    background: var(--ultrablack);
-    border-left: 1px solid var(--true-black);
+    @include var(background, ultrablack);
+    @include border(border-left, 1px, solid, true-black);
   }
   .settings-modal span {
-    color: var(--white);
+    @include var(color, white);
   }
   .setting {
 
@@ -154,7 +154,7 @@ body.night-mode {
       }
     }
     &#nm-trigger {
-      background: var(--gold);
+      @include var(background, gold);
 
       .night-copy {
         display: none;
@@ -166,16 +166,16 @@ body.night-mode {
       }
 
       &:hover {
-        background: var(--gold-hover);
+        @include var(background, gold-hover);
       }
       span {
-        color: var(--ultrablack);
+        @include var(color, ultrablack);
       }
     }
   }
 
   #nm-trigger .icon svg {
-    fill: var(--ultrablack);
+    @include var(fill, ultrablack);
 
     &.moon {
       opacity: 0;
@@ -189,111 +189,111 @@ body.night-mode {
 
   // Recipe Page
   .recipe-content {
-    // background: var(--black);
+    // @include var(background, black);
   }
   .coming-soon {
-    background: var(--medblack);
+    @include var(background, medblack);
   }
   .recipe-page h4 {
-    color: var(--white);
+    @include var(color, white);
   }
   .recipe-page h5 {
-    color: var(--aqua);
+    @include var(color, aqua);
   }
   .more-info {
-    border: 2px solid var(--white);
+    @include border(border, 2px, solid, white);
 
     > span {
-      color: var(--white);
+      @include var(color, white);
     }
 
     &:hover {
-      border: 2px solid var(--aqua);
+      @include border(border, 2px, solid, aqua);
 
       > span {
-        color: var(--aqua);
+        @include var(color, aqua);
       }
     }
   }
   .info-message {
-    background: var(--ultrablack);
-    box-shadow: 0px 0px 5px var(--ultrablack-op-25);
-    color: var(--white);
+    @include var(background, ultrablack);
+    @include box(box-shadow, 0px, 0px, 5px, ultrablack-op-25);
+    @include var(color, white);
 
     a {
-      color: var(--white);
+      @include var(color, white);
 
       &:hover {
-        color: var(--aqua);
+        @include var(color, aqua);
       }
     }
   }
   .portion-container {
-    border-top: 8px solid var(--white);
+    @include border(border-top, 8px, solid, white);
   }
   .portion-container,
   .cal-container,
   .macro,
   .prep-time {
-    border-bottom: 1px solid var(--medblack);
+    @include border(border-bottom, 1px, solid, medblack);
   }
   .macro:nth-child(odd){
-    border-right: 1px solid var(--medblack);
+    @include border(border-right, 1px, solid, medblack);
   }
   .macro:nth-child(even){
-    border-right: 0px solid var(--clear);
+    @include border(border-right, 0px, solid, clear);
   }
   .nutrition-container .disabled span,
   .nutrition-container .disabled strong {
-    color: var(--medblack);
+    @include var(color, medblack);
   }
   .icon svg {
-    fill: var(--white);
+    @include var(fill, white);
   }
   .list-toggle {
-    background: var(--ultrablack);
+    @include var(background, ultrablack);
   }
   .toggled .list-toggle span {
-    background: var(--aqua);
+    @include var(background, aqua);
   }
   .copy-button {
-    background: var(--aqua);
-    color: var(--ultrablack);
+    @include var(background, aqua);
+    @include var(color, ultrablack);
   }
   .copy-button:hover {
-    background: var(--aqua-hover);
+    @include var(background, aqua-hover);
   }
 
   .video-btn svg {
-    fill: var(--aqua);
+    @include var(fill, aqua);
   }
   .video-btn:hover svg {
-    fill: var(--white);
+    @include var(fill, white);
   }
   #play-btn {
-    // background: var(--clear);
+    // @include var(background, clear);
   }
   .play-video #play-btn span:first-child {
-    border-top: 15px solid transparent;
-    border-left: 30px solid var(--aqua);
-    border-bottom: 15px solid transparent;
+    @include border(border-top, 15px, solid, clear);
+    @include border(border-left, 30px, solid, aqua);
+    @include border(border-bottom, 15px, solid, clear);
   }
   .play-video #play-btn span {
-    background: var(--clear);
+    @include var(background, clear);
   }
   #play-btn span {
-    background: var(--aqua);
+    @include var(background, aqua);
   }
   .play-video #play-btn:hover span:first-child {
-    border-top: 15px solid transparent;
-    border-left: 30px solid var(--white);
-    border-bottom: 15px solid transparent;
+    @include border(border-top, 15px, solid, clear);
+    @include border(border-left, 30px, solid, white);
+    @include border(border-bottom, 15px, solid, clear);
   }
   .play-video #play-btn:hover span {
-    background: var(--clear);
+    @include var(background, clear);
   }
   #play-btn:hover span {
-    background: var(--white);
+    @include var(background, white);
   }
 
 
@@ -302,41 +302,41 @@ body.night-mode {
   h1,
   h2,
   h3 {
-    color: var(--aqua);
+    @include var(color, aqua);
   }
   h3 {
-    color: var(--white);
+    @include var(color, white);
   }
   .filter-container span {
-    color: var(--medblack);
+    @include var(color, medblack);
   }
   .filter-container span.active-filter,
   .filter-container span:hover {
-     color: var(--white);
+     @include var(color, white);
   }
   .post-link {
-    color: var(--white);
+    @include var(color, white);
   }
   .post-list li:hover {
-    border-bottom: 1px solid var(--aqua);
+    @include border(border-bottom, 1px, solid, aqua);
   }
   .post-list li:hover a {
-    color: var(--aqua);
+    @include var(color, aqua);
   }
   .fav-descrition {
-    color: var(--white);
+    @include var(color, white);
   }
   .nutrition-container span,
   .nutrition-container strong {
-    color: var(--white);
+    @include var(color, white);
   }
   .recipe-content li {
-    color: var(--white);
+    @include var(color, white);
   }
   .recipe-content li.toggled {
-    color: var(--darkgrey);
+    @include var(color, darkgrey);
   }
   ol.instruction-list li:before {
-    color: var(--aqua);
+    @include var(color, aqua);
   }
 }

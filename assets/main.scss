@@ -15,14 +15,14 @@
 // Global Styles
 //
 ::-webkit-scrollbar {
-  background: var(--white);
-  border-left: 1px solid var(--black);
+  @include var(background, white);
+  @include border(border-left, 1px, solid, black);
 
   @include transition(background 150ms ease-in-out);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--red);
-  border-left: 1px solid var(--black);
+  @include var(background, primary);
+  @include border(border-left, 1px, solid, black);
 
   @include transition(background 150ms ease-in-out);
 }
@@ -34,7 +34,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--white);
+  @include var(background, white);
   height: 100%;
   position: relative;
   padding-top: 45px;
@@ -74,7 +74,7 @@ input {
   }
 }
 .button {
-  background: var(--red);
+  @include var(background, primary);
   padding: 12px;
   border-radius: 3px;
   display: block;
@@ -82,16 +82,8 @@ input {
   @include transition(all 125ms ease-in-out);
 }
 .button:hover {
-  background: var(--red);
-  color: var(--white);
-}
-.line-button {
-  background: var(--clear);
-  border: 1px solid var(--yellow);
-}
-.line-button:hover {
-  background: var(--yellow);
-  border: 1px solid var(--yellow);
+  @include var(background, primary);
+  @include var(color, white);
 }
 
 //
@@ -100,7 +92,7 @@ input {
 header.site-header {
   height: 45px;
   width: 100%;
-  background: var(--clear);
+  @include var(background, clear);
   padding: 0;
 
   display: flex;
@@ -112,8 +104,8 @@ header.site-header {
   top: 0;
   z-index: 2000;
   box-sizing: border-box;
-  background: var(--white);
-  border-bottom: 1px solid var(--black);
+  @include var(background, white);
+  @include border(border-bottom, 1px, solid, black);
 
   @include transition(all 150ms ease-in-out);
 
@@ -138,7 +130,7 @@ header.site-header {
 .search-toggle {
   height: 44px;
   width: 65px;
-  background: var(--black);
+  @include var(background, black);
   margin: 0px;
 
   display: flex;
@@ -157,7 +149,7 @@ header.site-header {
   }
 }
 .settings-toggle:hover {
-  background: var(--ultrablack);
+  @include var(background, ultrablack);
 }
 .searching .settings-toggle {
   width: 0px;
@@ -176,7 +168,7 @@ header.site-header {
 }
 .settings-toggle span {
   display: block;
-  background: var(--white);
+  @include var(background, white);
   height: 3px;
   width: 22px;
   margin: 2px 0;
@@ -244,7 +236,7 @@ nav.site-nav {
   }
 }
 .site-title:hover {
-  background: var(--red);
+  @include var(background, primary);
 }
 .brand-name {
   display: flex;
@@ -261,8 +253,8 @@ nav.site-nav {
   padding: 20px;
   margin: auto;
   box-sizing: border-box;
-  background: var(--white);
-  border-left: 1px solid var(--black);
+  @include var(background, white);
+  @include border(border-left, 1px, solid, black);
   pointer-events: none;
 
   position: fixed;
@@ -276,7 +268,7 @@ nav.site-nav {
   align-items: center;
 
   @include transition(all 125ms ease-in-out);
-  // @include box-shadow(0px 2px 5px var(--black-op-25));
+  // @include box-shadow(0px 2px 5px var(--black-op-25, $black-op-25));
 
   @media (min-width: 720px) {
     padding: 20px 20px 0px 30px;
@@ -316,7 +308,7 @@ nav.site-nav {
     }
   }
   &#nm-trigger {
-    background: var(--black);
+    @include var(background, black);
 
     .night-copy {
       display: block;
@@ -328,10 +320,10 @@ nav.site-nav {
     }
 
     &:hover {
-      background: var(--ultrablack);
+      @include var(background, ultrablack);
     }
     span {
-      color: var(--white);
+      @include var(color, white);
     }
   }
 }
@@ -341,7 +333,7 @@ nav.site-nav {
   position: relative;
 }
 #nm-trigger .icon svg {
-  fill: var(--white);
+  @include var(fill, white);
 
   &.moon {
     position: absolute;
@@ -365,7 +357,7 @@ nav.site-nav {
 .toggle-container {
   height: 20px;
   width: 40px;
-  background: var(--medgrey);
+  @include var(background, medgrey);
   border-radius: 40px;
   position: relative;
 
@@ -377,20 +369,20 @@ nav.site-nav {
   @include transition(all 125ms ease-in-out);
 }
 .setting:hover .toggle-container {
-  background: var(--darkgrey);
+  @include var(color, darkgrey);
 }
 .toggle-container span {
   height: 14px;
   width: 14px;
   display: block;
-  background: var(--white);
+  @include var(background, white);
   border-radius: 20px;
 
   position: absolute;
   left: 4px;
 
   @include transition(all 125ms ease-in-out);
-  @include box-shadow(0px 2px 5px var(--black-op-25));
+  @include box-shadow(0px 2px 5px var(--black-op-25, $black-op-25));
 }
 
 
@@ -404,8 +396,8 @@ nav.site-nav {
   padding: 0px 20px;
   margin: auto;
   box-sizing: border-box;
-  background: var(--white);
-  border-bottom: 0px solid var(--clear);
+  @include var(background, white);
+  @include border(border-bottom, 0px, solid, clear);
 
   position: fixed;
   top: 45px;
@@ -420,28 +412,28 @@ nav.site-nav {
   align-items: center;
 
   @include transition(all 125ms ease-in-out);
-  // @include box-shadow(0px 2px 5px var(--black-op-25));
+  // @include box-shadow(0px 2px 5px var(--black-op-25, $black-op-25));
 
   @media (min-width: 720px) {
     padding: 0px 20px 0px 30px;
   }
 
   ::-webkit-scrollbar {
-    background: var(--white);
-    border: 1px solid var(--black);
+    @include var(background, white);
+    @include border(border, 1px, solid, black);
 
     @include transition(background 150ms ease-in-out);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--red);
-    border: 1px solid var(--black);
+    @include var(background, primary);
+    @include border(border, 1px, solid, black);
 
     @include transition(background 150ms ease-in-out);
   }
 }
 .typing .search-modal {
   padding: 10px 20px 10px 30px;
-  border-bottom: 1px solid var(--black);
+  @include border(border-bottom, 1px, solid, black);
   height: auto;
 }
 .searching .search-modal {
@@ -451,7 +443,7 @@ nav.site-nav {
 }
 .search-input {
   border: none;
-  background: var(--clear);
+  @include var(background, clear);
   height: 45px;
   width: 0;
   overflow: hidden;
@@ -461,13 +453,13 @@ nav.site-nav {
   z-index: 500;
   opacity: 0;
   pointer-events: none;
-  border-left: 1px solid var(--clear);
+  @include border(border-left, 1px, solid, clear);
 
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
   text-transform: lowercase;
-  color: var(--black);
+  @include var(color, black);
 
   @include transition(all 125ms ease-in-out);
 
@@ -488,7 +480,7 @@ nav.site-nav {
   margin: 0;
   padding: 10px 20px;
   box-sizing: border-box;
-  border-left: 1px solid var(--black);
+  @include border(border-left, 1px, solid, black);
 
   @media (min-width: 720px) {
     padding: 10px 15px;
@@ -496,13 +488,13 @@ nav.site-nav {
 }
 .site-title .tldr0,
 .site-title  .tldr0 {
-  fill: var(--red);
+  @include var(fill, primary);
 
   @include transition(all 150ms ease-in-out);
 }
 .site-title .tldr1,
 .site-title  .tldr1 {
-  fill: var(--black);
+  @include var(fill, black);
 
   @include transition(all 150ms ease-in-out);
 }
@@ -510,12 +502,12 @@ nav.site-nav {
 .site-title:hover  .tldr0,
 .site-title:hover .tldr1,
 .site-title:hover  .tldr1 {
-  fill: var(--white);
+  @include var(fill, white);
 
 }
 
 .site-header ::placeholder {
-  color: var(--black);
+  @include var(color, black);
 }
 .site-header input:focus {
   outline: none;
@@ -531,7 +523,7 @@ nav.site-nav {
   font-size: 20px;
   line-height: initial;
   padding-top: 0;
-  color: var(--grey);
+  @include var(color, grey);
 
   @media (min-width: 720px) {
     font-size: 32px;
@@ -550,7 +542,7 @@ nav.site-nav {
 }
 
 .search-results.post-list li:last-child {
-  border-bottom: 0px solid var(--clear);
+  @include border(border-bottom, 0px, solid, clear);
 }
 .search-results.post-list a {
   padding: 15px 0;
@@ -567,7 +559,7 @@ nav.site-nav {
 }
 .search-results.post-list a:focus {
   padding-left: 5px;
-  border-bottom: 1px solid var(--red);
+  @include border(border-bottom, 1px, solid, primary);
   outline: none;
   width: 100%;
   margin-left: 0;
@@ -576,13 +568,13 @@ nav.site-nav {
 
 // Search Toggle
 .search-toggle {
-  background: var(--red);
+  @include var(background, primary);
   flex-direction: row;
   // justify-content: flex-end;
   margin: 0px;
 
   // @include rotate(0deg);
-  // @include box-shadow(0px 2px 5px var(--black-op-25));
+  // @include box-shadow(0px 2px 5px var(--black-op-25, $black-op-25));
   @include transition(all 150ms ease-in-out);
 
   @media (min-width: 720px) {
@@ -591,7 +583,7 @@ nav.site-nav {
   }
 }
 .search-toggle:hover {
-  background: var(--red-hover);
+  @include var(background, primary-hover);
 }
 .search-toggle .icon-container {
   height: 26px;
@@ -604,7 +596,7 @@ nav.site-nav {
 .search-toggle .icon-container span {
   height: 3px;
   width: 26px;
-  background: var(--white);
+  @include var(background, white);
   display: block;
 
   position: relative;
@@ -636,8 +628,8 @@ nav.site-nav {
 .searching .search-toggle .icon-container span {
   height: 3px;
   width: 26px;
-  background: var(--white);
-  border: 0px solid var(--clear);
+  @include var(background, white);
+  @include border(border, 0px, solid, clear);
   display: block;
 
   position: relative;
@@ -662,7 +654,7 @@ nav.site-nav {
 // General Styles
 //
 main {
-  background: var(--white);
+  @include var(background, white);
 
   @include transition(all 300ms ease-in-out);
 }
@@ -731,7 +723,7 @@ section {
 // Master List
 //
 .master-list {
-  background: var(--white);
+  @include var(background, white);
   min-height: calc(100% - 90px);
 
   @include transition(background 150ms ease-in-out);
@@ -775,22 +767,22 @@ section {
     @include transition(all 150ms ease-in-out);
 
     &#custom-trigger {
-      background: var(--black);
+      @include var(background, black);
 
       &:hover {
-        background: var(--ultrablack);
+        @include var(background, ultrablack);
       }
     }
     &#random-trigger {
       &:hover {
-        background: var(--red-hover);
+        @include var(background, primary-hover);
       }
     }
     span {
-      color: var(--white);
+      @include var(color, white);
     }
     svg {
-      fill: var(--white);
+      @include var(fill, white);
     }
   }
 
@@ -829,7 +821,7 @@ section {
 }
 .toggles h5 {
   text-transform: lowercase;
-  color: var(--black);
+  @include var(color, black);
 
   margin-left: 10px;
 
@@ -843,27 +835,27 @@ section {
   box-sizing: border-box;
 }
 .toggle-holster:first-child {
-  border-top: 1px solid var(--medgrey);
+  @include border(border-top, 1px, solid, medgrey);
   padding: 5px 0px 40px;
 
   @media (min-width: 720px) {
     width: 30%;
     padding: 5px 15px 10px 0;
-    border-bottom: 1px solid var(--medgrey);
+    @include border(border-bottom, 1px, solid, medgrey);
   }
   @media (min-width: 1080px) {
     width: 20%;
   }
 }
 .toggle-holster:last-child {
-  border-top: 1px solid var(--medgrey);
-  border-bottom: 1px solid var(--medgrey);
+  @include border(border-top, 1px, solid, medgrey);
+  @include border(border-bottom, 1px, solid, medgrey);
   padding: 5px 0px 10px;
 
   @media (min-width: 720px) {
     width: calc(70% - 1px);
     padding: 5px 0 10px 15px;
-    border-left: 1px solid var(--medgrey);
+    @include border(border-left, 1px, solid, medgrey);
   }
   @media (min-width: 1080px) {
     width: calc(80% - 1px);
@@ -897,7 +889,7 @@ section {
 }
 .highlight {
   height: 5px;
-  background: var(--red);
+  @include var(background, primary);
   position: absolute;
   z-index: 900;
 
@@ -923,7 +915,7 @@ section {
   display: flex;
 }
 .post-list li {
-  border-bottom: 1px solid var(--grey);
+  @include border(border-bottom, 1px, solid, grey);
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -941,7 +933,7 @@ section {
 }
 .post-list li:hover {
   padding-left: 5px;
-  border-bottom: 1px solid var(--black);
+  @include border(border-bottom, 1px, solid, black);
   outline: none;
 }
 .favorite-flag {
@@ -961,18 +953,19 @@ section {
 .favorite-flag svg {
   height: 100%;
   width: 100%;
-  fill: var(--grey);
+  @include var(fill, grey);
 
   @include transition(all 125ms ease-in-out);
 }
 .favorite-flag:hover svg {
-  fill: var(--medgrey);
+  @include var(fill, medgrey);
+
 }
 .favorite .favorite-flag svg {
-  fill: var(--gold);
+  @include var(fill, gold);
 }
 .favorite .favorite-flag:hover svg {
-  fill: var(--gold-hover);
+  @include var(fill, gold-hover);
 }
 .post-time {
   display: block;
@@ -992,14 +985,14 @@ section {
   bottom: 20px;
 }
 .double-arrow svg {
-  fill: var(--white);
+  @include var(fill, white);
   height: 25px;
   width: 35px;
 
   @include transition(all 175ms ease-in-out);
 }
 a.post-link:hover .double-arrow svg {
-  fill: var(--red);
+  @include var(fill, primary);
 }
 
 
@@ -1014,7 +1007,7 @@ a.post-link:hover .double-arrow svg {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  background: var(--ultrablack-op-75);
+  @include var(background, ultrablack-op-75);
   height: 100%;
   width: 100%;
 
@@ -1041,7 +1034,7 @@ a.post-link:hover .double-arrow svg {
   opacity: 0;
   box-sizing: border-box;
   border-radius: 5px;
-  background: var(--white);
+  @include var(background, white);
   pointer-events: none;
 
   display: flex;
@@ -1051,7 +1044,7 @@ a.post-link:hover .double-arrow svg {
 
 
   @include transition(all 150ms ease-in-out);
-  @include box-shadow(0px 2px 5px var(--black-op-25));
+  @include box-shadow(0px 2px 5px var(--black-op-25, $black-op-25));
 
   @media (min-width: 480px) {
     justify-content: flex-start;
@@ -1067,7 +1060,7 @@ a.post-link:hover .double-arrow svg {
   position: absolute;
   height: 100%;
   width: 45px;
-  background: var(--clear);
+  @include var(background, clear);
   right: 0;
   top: 0;
   cursor: pointer;
@@ -1091,7 +1084,7 @@ a.post-link:hover .double-arrow svg {
   left: 3px;
   height: 2px;
   width: 14px;
-  background: var(--black);
+  @include var(background, black);
 }
 .close-button span:last-child {
   @include rotate(90deg);
@@ -1138,13 +1131,13 @@ a.post-link:hover .double-arrow svg {
   position: fixed;
   height: 40px;
   width: 40px;
-  background: var(--white);
+  @include var(background, white);
   top: 20px;
   right: 20px;
   z-index: 1000;
   border-radius: 30px;
 
-  @include box-shadow(0px 2px 4px var(--black-op-25));
+  @include box-shadow(0px 2px 4px var(--black-op-25, $black-op-25));
   @include transition(all 125ms ease-in-out);
 }
 .open-book .show-nav {
@@ -1255,7 +1248,7 @@ a.post-link:hover .double-arrow svg {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  background: var(--grey);
+  @include var(background, grey);
   padding: 30px 0 20px;
 
   @include transition(background 150ms ease-in-out);
@@ -1329,7 +1322,7 @@ a.post-link:hover .double-arrow svg {
 
   height: 14px;
   width: 14px;
-  border: 2px solid var(--black);
+  @include border(border, 2px, solid, black);
   border-radius: 40px;
   position: relative;
 
@@ -1344,7 +1337,7 @@ a.post-link:hover .double-arrow svg {
 
   > span {
     font-weight: 500;
-    color: var(--black);
+    @include var(color, black);
     font-size: 10px;
 
     @include transition(all 150ms ease-in-out);
@@ -1358,20 +1351,20 @@ a.post-link:hover .double-arrow svg {
   }
 
   &:hover {
-    border: 2px solid var(--red);
+    @include border(border, 2px, solid, primary);
 
     > span {
-      color: var(--red);
+      @include var(color, primary);
     }
   }
 }
 
 .info-message {
   width: 100%;
-  background: var(--white);
+  @include var(background, white);
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0px 0px 5px var(--black-op-25);
+  @include box(box-shadow, 0px, 0px, 5px, black-op-25);
   display: inline-block;
   cursor: auto;
   z-index: 1100;
@@ -1384,7 +1377,7 @@ a.post-link:hover .double-arrow svg {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  color: var(--black);
+  @include var(color, black);
 
   opacity: 0;
   pointer-events: none;
@@ -1415,7 +1408,7 @@ a.post-link:hover .double-arrow svg {
   align-items: center;
 }
 .portion-container {
-  border-top: 8px solid var(--black);
+  @include border(border-top, 8px, solid, black);
 
   @include transition(all 150ms ease-in-out);
 }
@@ -1425,7 +1418,7 @@ a.post-link:hover .double-arrow svg {
 .portion-container,
 .cal-container {
   padding: 10px 2px;
-  border-bottom: 1px solid var(--medgrey);
+  @include border(border-bottom, 1px, solid, medgrey);
 
   @include transition(all 150ms ease-in-out);
 }
@@ -1444,17 +1437,17 @@ a.post-link:hover .double-arrow svg {
   align-items: center;
 
   padding: 10px 2px;
-  border-bottom: 1px solid var(--medgrey);
+  @include border(border-bottom, 1px, solid, medgrey);
   box-sizing: border-box;
 
   @include transition(all 150ms ease-in-out);
 }
 .macro:nth-child(odd){
-  border-right: 1px solid var(--medgrey);
+  @include border(border-right, 1px, solid, medgrey);
   padding-right: 10px;
 }
 .macro:nth-child(even){
-  border-right: 0px solid var(--clear);
+  @include border(border-right, 0px, solid, clear);
   padding-left: 10px;
 }
 .prep-time,
@@ -1469,7 +1462,7 @@ a.post-link:hover .double-arrow svg {
   padding: 8px 0;
 }
 .prep-time {
-  border-bottom: 1px solid var(--medgrey);
+  @include border(border-bottom, 1px, solid, medgrey);
 
   @include transition(all 150ms ease-in-out);
 }
@@ -1491,7 +1484,7 @@ a.post-link:hover .double-arrow svg {
 }
 .recipe-content {
   // height: 100%;
-  // background: var(--white);
+  // @include var(background, white);
   padding: 10px 0 40px;
 
   @include transition(background 150ms ease-in-out);
@@ -1501,21 +1494,6 @@ a.post-link:hover .double-arrow svg {
   }
   @media (min-width: 720px) {
     padding: 25px 0 40px;
-  }
-}
-.date-time {
-  background: var(--yellow);
-  display: flex;
-  flex-direction: column;
-  padding: 10px 25px;
-
-  @media (min-width: 450px) {
-    padding: 15px 50px;
-  }
-  @media (min-width: 720px) {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px 10px;
   }
 }
 
@@ -1565,7 +1543,7 @@ ol.instruction-list li:before {
   font-size: 17px;
   content: counter(item) ". ";
   counter-increment: item;
-  color: var(--red);
+  @include var(color, primary);
 
   position: absolute;
   left: -26px;
@@ -1581,7 +1559,7 @@ ol.instruction-list li.toggled:before {
   padding: 4px;
   box-sizing: border-box;
   display: inline-block;
-  background: var(--grey);
+  @include var(background, grey);
 
   @include transition(background 150ms ease-in-out);
 }
@@ -1593,7 +1571,7 @@ ol.instruction-list li.toggled:before {
 }
 .toggled .list-toggle span {
   opacity: 1;
-  background: var(--red);
+  @include var(background, primary);
 
   @include transition(opacity 125ms ease-in-out);
 }
@@ -1610,7 +1588,7 @@ ol.instruction-list li.toggled:before {
   margin-top: 40px;
 }
 .copy-button {
-  background: var(--red);
+  @include var(background, primary);
   padding: 20px 10px;
   text-align: center;
   cursor: pointer;
@@ -1621,14 +1599,14 @@ ol.instruction-list li.toggled:before {
   transform: translate3d(0px, 0px, 0px);
   -webkit-transform: translate3d(0px, 0px, 0px);
   @include transition(all 225ms ease-in-out);
-  @include box-shadow(0px 1px 4px var(--black-op-25));
+  @include box-shadow(0px 1px 4px var(--black-op-25, $black-op-25));
 
   @media (min-width: 720px) {
     // max-width: 110px;
   }
 }
 .copy-button:hover {
-  background: var(--red-hover);
+  @include var(background, primary-hover);
 }
 .copy-button.hide-it {
   transform: translate3d(0px, 75px, 0px);
@@ -1655,12 +1633,12 @@ ol.instruction-list li.toggled:before {
   padding: 20px 15px;
   border-radius: 50px;
   font-size: 10px;
-  color: var(--red);
+  @include var(color, primary);
   cursor: pointer;
   height: 30px;
   width: 30px;
 
-  // @include box-shadow(0px 1px 3px var(--black-op-25));
+  // @include box-shadow(0px 1px 3px var(--black-op-25, $black-op-25));
 }
 .ios-controls .video-btn {
   height: 45px;
@@ -1685,14 +1663,14 @@ ol.instruction-list li.toggled:before {
   align-items: center;
 }
 .video-btn svg {
-  fill: var(--red);
+  @include var(fill, primary);
   height: 100%;
   width: 100%;
 
   @include transition(all 150ms ease-in-out);
 }
 .video-btn:hover svg {
-  fill: var(--black);
+  fill: var(--black, $black);
 }
 .back-btn,
 .fwd-btn {
@@ -1712,7 +1690,7 @@ ol.instruction-list li.toggled:before {
 #play-btn {
   width: 30px;
   height: 30px;
-  // background: var(--white);
+  // @include var(background, white);
   padding: 20px;
 
   // @include rotate(180deg);
@@ -1733,12 +1711,12 @@ ol.instruction-list li.toggled:before {
   display: block;
   height: 0;
   width: 0;
-  background: var(--red);
+  @include var(background, primary);
 
   @include transition(all 125ms ease-in-out);
 }
 #play-btn:hover span {
-  background: var(--black);
+  @include var(background, black);
 }
 #play-btn span:first-child {
   border: 0px solid transparent;
@@ -1757,37 +1735,37 @@ ol.instruction-list li.toggled:before {
   // @include rotate(0deg);
 }
 .play-video #play-btn span {
-  background: var(--clear);
+  @include var(background, clear);
   height: 0;
   width: 0;
 }
 .play-video #play-btn span:first-child {
-  border-top: 15px solid transparent;
-  border-left: 30px solid var(--red);
-  border-bottom: 15px solid transparent;
+  @include border(border-top, 15px, solid, clear);
+  @include border(border-left, 30px, solid, primary);
+  @include border(border-bottom, 15px, solid, clear);
 }
 .ios-controls #play-btn {
   padding: 20px 16px 20px 24px;
 }
 .ios-controls #play-btn span {
-  background: var(--clear);
+  @include var(background, clear);
   height: 0;
   width: 0;
 }
 .ios-controls #play-btn span:first-child {
-  border-top: 15px solid transparent;
-  border-left: 30px solid var(--red);
-  border-bottom: 15px solid transparent;
+  @include border(border-top, 15px, solid, clear);
+  @include border(border-left, 30px, solid, primary);
+  @include border(border-bottom, 15px, solid, clear);
 }
 .play-video #play-btn:hover span:first-child {
-  border-top: 15px solid transparent;
-  border-left: 30px solid var(--black);
-  border-bottom: 15px solid transparent;
+  @include border(border-top, 15px, solid, clear);
+  @include border(border-left, 30px, solid, black);
+  @include border(border-bottom, 15px, solid, clear);
 }
 .ios-controls #play-btn:hover span:first-child {
-  border-top: 15px solid transparent;
-  border-left: 30px solid var(--black);
-  border-bottom: 15px solid transparent;
+  @include border(border-top, 15px, solid, clear);
+  @include border(border-left, 30px, solid, black);
+  @include border(border-bottom, 15px, solid, clear);
 }
 .play-video #play-btn span:last-child {
   width: 0;
@@ -1806,7 +1784,7 @@ form {
 // Footer Styles
 //
 footer {
-  background: var(--black);
+  @include var(background, black);
   margin: 0;
   padding: 20px;
 }
@@ -1834,7 +1812,5 @@ footer {
 
 
 
-@import
-  "imports/night-mode"
-;
+@import "imports/night-mode";
 //

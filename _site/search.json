@@ -11,7 +11,7 @@
 
     {
         "title"    : "Stuffed Peppers",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "lunch, dinner, meal prep, mustard, mexicana, poultry",
         "url"      : "/recipes/stuffed-peppers",
@@ -20,7 +20,7 @@
 
     {
         "title"    : "Lasagna",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "dinner, meal prep",
         "url"      : "/recipes/lasagna",
@@ -29,7 +29,7 @@
 
     {
         "title"    : "Zuppa Toscana",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "hot, keto, dinner, meal prep",
         "url"      : "/recipes/zuppa",
@@ -38,7 +38,7 @@
 
     {
         "title"    : "Slow Cooker Steak &amp; Peppers",
-        "desc"     : "http://www.tldrecipe.co",
+        "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "red meat, dinner, meal prep",
         "url"      : "/recipes/pepper-steak",

@@ -3,17 +3,17 @@
 //
 * {
   font-family: "Fira Sans", sans-serif;
-  color: var(--black);
+  @include var(color, black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 *::-moz-selection {
-  background: var(--black);
-  color: var(--white);
+  @include var(background, black);
+  @include var(color, white);
 }
 *::selection {
-  background: var(--black);
-  color: var(--white);
+  @include var(background, black);
+  @include var(color, white);
 }
 p,
 p b,
@@ -40,7 +40,7 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 54px;
   font-weight: 900;
-  color: var(--red);
+  @include var(color, primary);
   display: inline;
 
   box-decoration-break: clone;
@@ -98,19 +98,19 @@ h4 {
 }
 a {
   // text-decoration: none;
-  // color: var(--black);
+  // @include var(color, black);
 
   @include transition(all 175ms ease-in-out);
 }
 a:hover {
-  color: var(--red);
+  @include var(color, primary);
 }
 li {
   list-style: none;
   font-family: "Fira Sans", sans-serif;
   font-weight: 100;
   font-size: 14px;
-  color: var(--black);
+  @include var(color, black);
 
   @include transition(color 150ms ease-in-out);
 }
@@ -120,7 +120,7 @@ section p,
   margin: 20px 0;
 }
 .button {
-  color: var(--black);
+  @include var(color, black);
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
@@ -130,13 +130,7 @@ section p,
   letter-spacing: 0.5px;
 }
 .button:hover {
-  color: var(--black);
-}
-.line-button {
-  color: var(--yellow);
-}
-.line-button:hover {
-  color: var(--black);
+  @include var(color, black);
 }
 
 
@@ -148,7 +142,6 @@ section p,
 }
 .site-title span {
   font-weight: 800;
-  color: var(--yellow);
   text-transform: uppercase;
   font-size: 22.75px;
   line-height: 21px;
@@ -162,31 +155,8 @@ section p,
   font-weight: 600;
 }
 .open-settings .site-nav a {
-  color: var(--black);
+  @include var(color, black);
   padding: 10px 0;
-}
-.site-nav a.events-link {
-  text-decoration: none;
-  margin: 0;
-  background: var(--yellow);
-  color: var(--black);
-  padding: 7px 14px;
-  border-radius: 3px;
-
-  @media (min-width: 720px) {
-    margin: 0 0 0 20px;
-  }
-}
-.open-settings .site-nav a.events-link {
-  padding: 10px 0;
-}
-.site-nav a.events-link:hover {
-  background: var(--red);
-  color: var(--white);
-}
-.open-settings .site-nav a.events-link:hover {
-  background: var(--yellow);
-  color: var(--black);
 }
 
 
@@ -204,7 +174,6 @@ section p,
   padding: 2px 13px;
   font-weight: 700;
   font-size: 14px;
-  background: var(--yellow);
   box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
 
   @media (min-width: 520px) {
@@ -245,13 +214,13 @@ section p,
 .filter-container span {
   font-size: 22px;
   font-weight: 600;
-  color: var(--darkgrey);
+  @include var(color, darkgrey);
 
   @include transition(color 150ms ease-in-out);
 }
 .filter-container span:hover,
 .filter-container span.active-filter {
-  color: var(--black);
+  @include var(color, black);
 }
 .post-list a {
   text-decoration: none;
@@ -266,21 +235,21 @@ section p,
   }
 }
 .post-list a:focus {
-  color: var(--black);
+  @include var(color, black);
   // border: none;
   // width: 102%;
   // margin-left: -3%;
-  // box-shadow: 0px 2px 10px var(--black-op-25);
+  // @include box(box-shadow, 0px, 2px, 10px, black-op-25);
   // outline: none;
 }
 .post-list li:hover a {
-  color: var(--black);
+  @include var(color, black);
 }
 .post-list li {
   list-style: none;
 }
 .post-link {
-  color: var(--black);
+  @include var(color, black);
   @include transition(color 175ms ease-in-out);
 }
 .post-link p {
@@ -300,10 +269,9 @@ section p,
 }
 .post-list h4,
 .post-list h5 {
-  background: var(--yellow);
   display: inline-block;
   padding: 10px 20px;
-  color: var(--black);
+  @include var(color, black);
   font-weight: 900;
   text-transform: uppercase;
 
@@ -343,7 +311,7 @@ a.post-link:hover h3,
   font-family: "Fira Sans", sans-serif;
   font-weight: bold;
   text-transform: unset;
-  color: var(--red);
+  @include var(color, primary);
 }
 .recipe-page h4 {
   font-size: 24px;
@@ -354,7 +322,7 @@ a.post-link:hover h3,
 }
 .recipe-page h5 {
   margin: 5px 0 0;
-  color: var(--red);
+  @include var(color, primary);
   font-weight: 600;
 
   @include transition(all 150ms ease-in-out);
@@ -371,7 +339,7 @@ a.post-link:hover h3,
 .nutrition-container strong {
   font-weight: 300;
   font-size: 12px;
-  color: var(--black);
+  @include var(color, black);
 
   @include transition(color 150ms ease-in-out);
 
@@ -384,22 +352,22 @@ a.post-link:hover h3,
 }
 .nutrition-container .disabled span,
 .nutrition-container .disabled strong {
-  color: var(--medgrey);
+  @include var(color, medgrey);
 }
 .copy-button {
-  color: var(--white);
+  @include var(color, white);
 }
 .recipe-content li {
   // font-size: 500;
-  text-decoration-color: var(--clear);
+  @include var(text-decoration-color, clear);
 }
 .recipe-content li.toggled {
-  color: var(--darkgrey);
+  @include var(color, darkgrey);
   text-decoration: line-through;
-  text-decoration-color: var(--darkgrey);
+  @include var(text-decoration-color, darkgrey);
 }
 .date-time * {
-  color: var(--black);
+  @include var(color, black);
 }
 .date-time h3 {
   margin: 0;
@@ -421,7 +389,7 @@ a.post-link:hover h3,
 // Footer Styles
 //
 footer * {
-  color: var(--black);
+  @include var(color, black);
 }
 .social-container p {
   margin: 20px auto;
