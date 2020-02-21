@@ -99,7 +99,7 @@ body.night-mode {
     }
   }
   .toggles h5 {
-    @include var(color, medblack);
+    @include var(color, white);
   }
   .search-toggle {
     @include var(background, aqua);
