@@ -236,11 +236,6 @@ section p,
 }
 .post-list a:focus {
   @include var(color, black);
-  // border: none;
-  // width: 102%;
-  // margin-left: -3%;
-  // @include box(box-shadow, 0px, 2px, 10px, black-op-25);
-  // outline: none;
 }
 .post-list li:hover a {
   @include var(color, black);

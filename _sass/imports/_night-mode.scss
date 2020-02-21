@@ -323,6 +323,9 @@ body.night-mode {
   .post-list li:hover a {
     @include var(color, aqua);
   }
+  .post-list a:focus {
+    @include var(color, aqua);
+  }
   .fav-descrition {
     @include var(color, white);
   }
