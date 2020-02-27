@@ -20,6 +20,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [x] SEO / Meta details
 - [x] Hover interactions for Search / Menu Buttons
 - [x] Add Minify / Uglify JS Functionality
+- [ ] Donation Links / Addresses
 
 ### v2 Todo Items:
 - [ ] Clean up JS
@@ -31,6 +32,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [ ] A working HTML 5 Video Player (across all devices / platforms)
 - [ ] Cookie/Setting turn off notifications (copy)
 - [ ] Add custom color picker with `cookies.js` and `var(color)`
+- [ ] Cookie Policy + Notification about Cookie use
 
 ### v3 Todo Items:
 - [ ] All images are cinemagraphs / custom photography
