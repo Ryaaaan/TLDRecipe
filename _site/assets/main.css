@@ -2025,9 +2025,6 @@ a.post-link:hover .double-arrow svg {
 
 .recipe-container {
   width: 100%; }
-  @media (min-width: 720px) {
-    .recipe-container {
-      width: 50%; } }
 
 .nutrition-header {
   display: flex;

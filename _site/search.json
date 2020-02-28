@@ -21,6 +21,15 @@
       } ,
 
     {
+        "title"    : "Red Chili",
+        "desc"     : "http://0.0.0.0:4000",
+        "category" : "",
+        "tags"     : "dinner, meal prep",
+        "url"      : "/recipes/red-chili",
+        "date"     : "2018-10-22 13:46:59 -0500"
+      } ,
+
+    {
         "title"    : "Lasagna",
         "desc"     : "http://0.0.0.0:4000",
         "category" : "",

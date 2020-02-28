@@ -31,6 +31,36 @@ Assign Start / End Dates / Time Variables
 {% endcomment %}
 
 
+{% comment %} Macro Totals Logic {% endcomment %}
+
+{%- assign ingredients = page.ingredientList -%}
+{%- assign totalCals = 0 -%}
+{%- assign totalFats = 0 -%}
+{%- assign totalChole = 0 -%}
+{%- assign totalSodium = 0 -%}
+{%- assign totalSugar = 0 -%}
+{%- assign totalProtein = 0 -%}
+{%- assign totalFiber = 0 -%}
+{%- assign totalTHC = 0 -%}
+
+{%- for ingredient in ingredients -%}
+
+  {% assign totalCals = totalCals | plus: ingredient.cals %}
+  {% assign totalCarbs = totalCarbs | plus: ingredient.carbs %}
+  {% assign totalFats = totalFats | plus: ingredient.fats %}
+  {% assign totalChole = totalChole | plus: ingredient.chole %}
+  {% assign totalSodium = totalSodium | plus: ingredient.sodium %}
+  {% assign totalSugar = totalSugar | plus: ingredient.sugar %}
+  {% assign totalProtein = totalProtein | plus: ingredient.protein %}
+  {% assign totalFiber = totalFiber | plus: ingredient.fiber %}
+  {% assign totalTHC = totalTHC | plus: ingredient.thc %}
+
+{%- endfor -%}
+
+{%- assign serving = page.servingsCount -%}
+{%- assign prepTime = page.prepTime -%}
+{%- assign cookTime = page.cookTime -%}
+
 
 <div class="notification-banner">
   <div class="close-button-trigger">
@@ -44,12 +74,8 @@ Assign Start / End Dates / Time Variables
 </div>
 
 
-<article class="recipe-page">
+<article class="recipe-page {{ totalCarbs }}">
 
-  {%- assign cals = page.calCount -%}
-  {%- assign serving = page.servingsCount -%}
-  {%- assign prepTime = page.prepTime -%}
-  {%- assign cookTime = page.cookTime -%}
 
   <div class="recipe-media">
     {%- if page.image or page.video -%}
@@ -169,25 +195,42 @@ Assign Start / End Dates / Time Variables
 
           <div class="cal-container">
             <span>Calories </span>
-            <span><strong>{{ cals }}</strong></span>
+            <span><strong>{{ totalCals | divided_by: serving }}</strong></span>
           </div>
 
           <div class="macro-container">
-            {%- assign macros = page.macroList -%}
-            {%- for macro in macros -%}
-
-            {%- if macro.amount contains 'n/a' -%}
-              <div class="macro disabled">
-                <span>{{macro.name}}</span>
-                <span><strong>{{ macro.amount }}</strong></span>
-              </div>
-            {% else %}
-              <div class="macro">
-                <span>{{macro.name}}</span>
-                <span><strong>{{ macro.amount }}</strong></span>
-              </div>
-            {%- endif -%}
-            {%- endfor -%}
+            <div class="macro">
+              <span>Carbs</span>
+              <span><strong>{{ totalCarbs | divided_by: serving }}g</strong></span>
+            </div>
+            <div class="macro">
+              <span>Fat</span>
+              <span><strong>{{ totalFats | divided_by: serving }}g</strong></span>
+            </div>
+            <div class="macro">
+              <span>Cholesterol</span>
+              <span><strong>{{ totalChole | divided_by: serving }}mg</strong></span>
+            </div>
+            <div class="macro">
+              <span>Sodium</span>
+              <span><strong>{{ totalSodium | divided_by: serving }}mg</strong></span>
+            </div>
+            <div class="macro">
+              <span>Sugar</span>
+              <span><strong>{{ totalSugar | divided_by: serving }}g</strong></span>
+            </div>
+            <div class="macro">
+              <span>Protein</span>
+              <span><strong>{{ totalProtein | divided_by: serving }}g</strong></span>
+            </div>
+            <div class="macro">
+              <span>Fiber</span>
+              <span><strong>{{ totalFiber | divided_by: serving }}g</strong></span>
+            </div>
+            <div class="macro">
+              <span>THC</span>
+              <span><strong>{{ totalTHC | divided_by: serving }}mg</strong></span>
+            </div>
           </div>
         </div>
 
@@ -271,13 +314,10 @@ Assign Start / End Dates / Time Variables
     </div>
 
 
-
-
     <div class="recipe-content">
       <div class="wrapper">
 
         {{ content }}
-
 
         <h2>Grocery List:</h2>
 
@@ -285,7 +325,6 @@ Assign Start / End Dates / Time Variables
           <div class="recipe-container">
             <h3>Ingredients:</h3>
             <ul class="ingredient-list list">
-              {%- assign ingredients = page.ingredientList -%}
               {%- for ingredient in ingredients -%}
                 <li>
                   <span class="list-toggle">
