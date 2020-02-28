@@ -656,7 +656,7 @@ section p,
   margin: 0;
   font-size: 14px;
   padding-right: 30px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: "Fira Sans", sans-serif;
   text-transform: none; }
 
@@ -2057,7 +2057,7 @@ a.post-link:hover .double-arrow svg {
   -ms-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out; }
   .more-info > span {
-    font-weight: 500;
+    font-weight: 600;
     color: #263238;
     color: var(--black);
     font-size: 10px;
@@ -2093,7 +2093,7 @@ a.post-link:hover .double-arrow svg {
   left: -9px;
   top: 35px;
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 12px;
   line-height: 15px;
   color: #263238;
