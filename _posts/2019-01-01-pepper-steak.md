@@ -23,44 +23,87 @@ prepTime: 20min.
 cookTime: 4hr.
 
 # Nutrition
-calCount: 450
-servingsCount: 20
-
-# Macros
-macroList:
-  - name: Carbs
-    amount: 4g
-  - name: Fat
-    amount: 12g
-  - name: Cholesterol
-    amount: 4g
-  - name: Sodium
-    amount: 4g
-  - name: Sugar
-    amount: 1g
-  - name: Protein
-    amount: 20g
-  - name: Fiber
-    amount: 1g
-  - name: THC
-    amount: n/a
+servingsCount: 8
 
 # Ingredients
 ingredientList:
   - name: Beef Sirloin (cut into 1/4"x2" strips)
     amount: 2 lbs.
-  - name: Large Green Bell Pepper (roughly chopped)
-    amount: 1
-  - name: Large Red Bell Pepper (roughly chopped)
-    amount: 1
+    cals: 1700
+    carbs: 0
+    fats: 100
+    chole: 648
+    sodium: 480
+    sugar: 0
+    protein: 180
+    fiber: 0
+    thc: 0
+  - name: Green Bell Pepper (roughly chopped)
+    amount: 1 Large
+    cals: 25
+    carbs: 6
+    fats: 0
+    chole: 0
+    sodium: 40
+    sugar: 2
+    protein: 1
+    fiber: 2
+    thc: 0
+  - name: Red Bell Pepper (roughly chopped)
+    amount: 1 Large
+    cals: 25
+    carbs: 6
+    fats: 0
+    chole: 0
+    sodium: 40
+    sugar: 2
+    protein: 1
+    fiber: 2
+    thc: 0
   - name: Large Sweet Onion (roughly chopped)
     amount: 1
+    cals: 152
+    carbs: 32
+    fats: 0
+    chole: 0
+    sodium: 16
+    sugar: 16
+    protein: 0
+    fiber: 0
+    thc: 0
   - name: Stewed Tomatoes (with liquid)
     amount: 14.5oz Can
-  - name: Garlic Clove (finely chopped / pressed)
+    cals: 240
+    carbs: 56
+    fats: 0
+    chole: 0
+    sodium: 1600
+    sugar: 30
+    protein: 6
+    fiber: 6
+    thc: 0
+  - name: Garlic Cloves (crushed)
     amount: 3
+    cals: 15
+    carbs: 3
+    fats: 0
+    chole: 0
+    sodium: 0
+    sugar: 0
+    protein: 0
+    fiber: 0
+    thc: 0
   - name: Water
     amount: 1/4 Cup
+    cals: 0
+    carbs: 0
+    fats: 0
+    chole: 0
+    sodium: 0
+    sugar: 0
+    protein: 0
+    fiber: 0
+    thc: 0
 
 # Seasoning
 seasoningList:

@@ -23,51 +23,120 @@ prepTime: 20min.
 cookTime: 45min.
 
 # Nutrition
-calCount: 454
-servingsCount: 10 (1/2 pepper)
-
-# Macros
-macroList:
-  - name: Carbs
-    amount: 41g
-  - name: Fat
-    amount: 13g
-  - name: Cholesterol
-    amount: 62mg
-  - name: Sodium
-    amount: 427mg
-  - name: Sugar
-    amount: 27g
-  - name: Protein
-    amount: 20g
-  - name: Fiber
-    amount: 2g
-  - name: THC
-    amount: n/a
-
+servingsCount: 10
 
 # Ingredients
 ingredientList:
-  - name: lean ground turkey
+  - name: ground turkey (90%)
     amount: 1.5 lbs.
-  - name: bell peppers (large)
-    amount: 6
+    cals: 1200
+    carbs: 0
+    fats: 66
+    chole: 450
+    sodium: 450
+    sugar: 0
+    protein: 132
+    fiber: 0
+    thc: 0
+  - name: bell peppers
+    amount: 6 Large
+    cals: 25
+    carbs: 6
+    fats: 0
+    chole: 0
+    sodium: 40
+    sugar: 2
+    protein: 1
+    fiber: 2
+    thc: 0
   - name: sweet onion (chopped)
     amount: 1/2
+    cals: 152
+    carbs: 32
+    fats: 0
+    chole: 0
+    sodium: 16
+    sugar: 16
+    protein: 0
+    fiber: 0
+    thc: 0
   - name: red onion (chopped)
     amount: 1/4
-  - name: garlic cloves (minced)
+    cals: 16
+    carbs: 4
+    fats: 0
+    chole: 0
+    sodium: 2
+    sugar: 2
+    protein: 0
+    fiber: 0
+    thc: 0
+  - name: garlic cloves (crushed)
     amount: 3
-  - name: rotel with chili’s
+    cals: 15
+    carbs: 3
+    fats: 0
+    chole: 0
+    sodium: 0
+    sugar: 0
+    protein: 0
+    fiber: 0
+    thc: 0
+  - name: Mild Rotel w/ Green Chilies
     amount: 1 can (10oz.)
+    cals: 62
+    carbs: 12
+    fats: 0
+    chole: 0
+    sodium: 1050
+    sugar: 7
+    protein: 2
+    fiber: 2
+    thc: 0
   - name: jalapeño (chopped)
-    amount: 2 cups
+    amount: 2
+    cals: 8
+    carbs: 2
+    fats: 0
+    chole: 0
+    sodium: 0
+    sugar: 0
+    protein: 0
+    fiber: 0
+    thc: 0
   - name: quinoa (cooked)
     amount: 2 cups
+    cals: 444
+    carbs: 78
+    fats: 8
+    chole: 0
+    sodium: 26
+    sugar: 0
+    protein: 16
+    fiber: 10
+    thc: 0
   - name: sharp cheddar (freshly grated)
     amount: 2 cups
+    cals: 1100
+    carbs: 0
+    fats: 100
+    chole: 300
+    sodium: 1800
+    sugar: 0
+    protein: 60
+    fiber: 0
+    thc: 0
   - name: chives (chopped)
     amount: 3 Tbsp.
+    cals: 0
+    carbs: 0
+    fats: 0
+    chole: 0
+    sodium: 0
+    sugar: 0
+    protein: 0
+    fiber: 0
+    thc: 0
 
 # Seasoning
 seasoningList:

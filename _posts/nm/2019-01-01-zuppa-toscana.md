@@ -10,7 +10,7 @@ permalink: nm/recipes/zuppa
 favorite: zuppa
 # link constructed from categories (when applied + and not overridden by permalink)
 # categories: calendar
-image: 
+image:
 imageAltText: this is the image alt text for ADA compliance
 
 video:
@@ -23,46 +23,99 @@ prepTime: 20min.
 cookTime: 1hr.
 
 # Nutrition
-calCount: 450
-servingsCount: 20
+servingsCount: 12
 
-# Macros
-macroList:
-  - name: Carbs
-    amount: 4g
-  - name: Fat
-    amount: 12g
-  - name: Cholesterol
-    amount: 4g
-  - name: Sodium
-    amount: 4g
-  - name: Sugar
-    amount: 1g
-  - name: Protein
-    amount: 20g
-  - name: Fiber
-    amount: 1g
-  - name: THC
-    amount: n/a
 
 # Ingredients
 ingredientList:
   - name: Sweet Onion (diced)
     amount: 1 large
+    cals: 300
+    carbs: 60
+    fats: 0
+    chole: 0
+    sodium: 32
+    sugar: 32
+    protein: 0
+    fiber: 0
+    thc: 0
   - name: Sweet Potato (cubed)
     amount: 1 large
+    cals: 1680
+    carbs: 328
+    fats: 8
+    chole: 0
+    sodium: 0
+    sugar: 16
+    protein: 80
+    fiber: 16
+    thc: 0
   - name: Turkey Sausage (Sweet + Spicy)
     amount: 1.5lbs.
+    cals: 1100
+    carbs: 0
+    fats: 55
+    chole: 350
+    sodium: 4000
+    sugar: 0
+    protein: 120
+    fiber: 0
+    thc: 0
   - name: Garlic Clove (crushed)
     amount: 3
+    cals: 15
+    carbs: 3
+    fats: 0
+    chole: 0
+    sodium: 0
+    sugar: 0
+    protein: 0
+    fiber: 0
+    thc: 0
   - name: Chicken Stock
     amount: 6 cups
+    cals: 420
+    carbs: 6
+    fats: 42
+    chole: 0
+    sodium: 0
+    sugar: 0
+    protein: 48
+    fiber: 0
+    thc: 0
   - name: Almond Milk
     amount: 1.5 cups
+    cals: 45
+    carbs: 2
+    fats: 4
+    chole: 0
+    sodium: 250
+    sugar: 0
+    protein: 0
+    fiber: 2
+    thc: 0
   - name: Kale (roughly chopped)
-    amount: 1 bush
+    amount: 4 Cups
+    cals: 128
+    carbs: 20
+    fats: 0
+    chole: 0
+    sodium: 100
+    sugar: 4
+    protein: 8
+    fiber: 8
+    thc: 0
   - name: Spinach
-    amount: large handful
+    amount: 2 Cups
+    cals: 46
+    carbs: 6
+    fats: 0
+    chole: 0
+    sodium: 140
+    sugar: 1
+    protein: 6
+    fiber: 4
+    thc: 0
 
 # Seasoning
 seasoningList:
