@@ -15,55 +15,55 @@
 
   {
       "title"    : "Stuffed Peppers",
-      "desc"     : "http://www.tldrecipe.co",
+      "desc"     : "http://0.0.0.0:4000",
       "category" : "",
       "tags"     : "lunch, dinner, meal prep, mustard, mexicana, poultry",
       "url"      : "/nm/recipes/stuffed-peppers",
-      "date"     : "2018-10-22 13:46:59 -0500"
+      "date"     : "2018-10-22 14:46:59 -0400"
     } ,
 
   {
       "title"    : "Red Chili",
-      "desc"     : "http://www.tldrecipe.co",
+      "desc"     : "http://0.0.0.0:4000",
       "category" : "",
       "tags"     : "dinner, meal prep",
       "url"      : "/nm/recipes/red-chili",
-      "date"     : "2018-10-22 13:46:59 -0500"
+      "date"     : "2018-10-22 14:46:59 -0400"
     } ,
 
   {
       "title"    : "Lasagna",
-      "desc"     : "http://www.tldrecipe.co",
+      "desc"     : "http://0.0.0.0:4000",
       "category" : "",
       "tags"     : "dinner, meal prep",
       "url"      : "/nm/recipes/lasagna",
-      "date"     : "2018-10-22 13:46:59 -0500"
+      "date"     : "2018-10-22 14:46:59 -0400"
     } ,
 
   {
       "title"    : "Baked Mac n Cheese",
-      "desc"     : "http://www.tldrecipe.co",
+      "desc"     : "http://0.0.0.0:4000",
       "category" : "",
       "tags"     : "dinner, meal prep",
       "url"      : "/nm/recipes/baked-mac",
-      "date"     : "2018-10-22 13:46:59 -0500"
+      "date"     : "2018-10-22 14:46:59 -0400"
     } ,
 
   {
       "title"    : "Zuppa Toscana",
-      "desc"     : "http://www.tldrecipe.co",
+      "desc"     : "http://0.0.0.0:4000",
       "category" : "",
       "tags"     : "hot, keto, dinner, meal prep",
       "url"      : "/nm/recipes/zuppa",
-      "date"     : "2018-10-22 13:46:59 -0500"
+      "date"     : "2018-10-22 14:46:59 -0400"
     } ,
 
   {
       "title"    : "Slow Cooker Steak &amp; Peppers",
-      "desc"     : "http://www.tldrecipe.co",
+      "desc"     : "http://0.0.0.0:4000",
       "category" : "",
       "tags"     : "red meat, dinner, meal prep",
       "url"      : "/nm/recipes/pepper-steak",
-      "date"     : "2018-10-22 13:46:59 -0500"
+      "date"     : "2018-10-22 14:46:59 -0400"
     } 
 ]

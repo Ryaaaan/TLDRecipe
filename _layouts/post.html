@@ -61,6 +61,16 @@ Assign Start / End Dates / Time Variables
 {%- assign prepTime = page.prepTime -%}
 {%- assign cookTime = page.cookTime -%}
 
+{% assign perServingCals  = totalCals| divided_by: serving %}
+{% assign perServingCarbs = totalCarbs | divided_by: serving %}
+{% assign perServingFats = totalFats | divided_by: serving %}
+{% assign perServingChole = totalChole | divided_by: serving %}
+{% assign perServingSodium = totalSodium | divided_by: serving %}
+{% assign perServingSugar = totalSugar | divided_by: serving %}
+{% assign perServingProtein = totalProtein | divided_by: serving %}
+{% assign perServingFiber = totalFiber | divided_by: serving %}
+{% assign perServingTHC = totalTHC | divided_by: serving %}
+
 
 <div class="notification-banner">
   <div class="close-button-trigger">
@@ -199,37 +209,76 @@ Assign Start / End Dates / Time Variables
           </div>
 
           <div class="macro-container">
-            <div class="macro">
+            {%- if perServingCarbs == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>Carbs</span>
-              <span><strong>{{ totalCarbs | divided_by: serving }}g</strong></span>
+              <span><strong>{{ perServingCarbs }}g</strong></span>
             </div>
-            <div class="macro">
+
+            {%- if perServingFats == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>Fat</span>
-              <span><strong>{{ totalFats | divided_by: serving }}g</strong></span>
+              <span><strong>{{ perServingFats }}g</strong></span>
             </div>
-            <div class="macro">
+
+            {%- if perServingChole == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>Cholesterol</span>
-              <span><strong>{{ totalChole | divided_by: serving }}mg</strong></span>
+              <span><strong>{{ perServingChole }}mg</strong></span>
             </div>
-            <div class="macro">
+
+            {%- if perServingSodium == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>Sodium</span>
-              <span><strong>{{ totalSodium | divided_by: serving }}mg</strong></span>
+              <span><strong>{{ perServingSodium }}mg</strong></span>
             </div>
-            <div class="macro">
+
+            {%- if perServingSugar == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>Sugar</span>
-              <span><strong>{{ totalSugar | divided_by: serving }}g</strong></span>
+              <span><strong>{{ perServingSugar }}g</strong></span>
             </div>
-            <div class="macro">
+
+            {%- if perServingProtein == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>Protein</span>
-              <span><strong>{{ totalProtein | divided_by: serving }}g</strong></span>
+              <span><strong>{{ perServingProtein }}g</strong></span>
             </div>
-            <div class="macro">
+
+            {%- if perServingFiber == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>Fiber</span>
-              <span><strong>{{ totalFiber | divided_by: serving }}g</strong></span>
+              <span><strong>{{ perServingFiber }}g</strong></span>
             </div>
-            <div class="macro">
+
+            {%- if perServingTHC == 0 -%}
+              <div class="macro disabled">
+            {% else %}
+              <div class="macro">
+            {%- endif -%}
               <span>THC</span>
-              <span><strong>{{ totalTHC | divided_by: serving }}mg</strong></span>
+              <span><strong>{{ perServingTHC }}mg</strong></span>
             </div>
           </div>
         </div>
