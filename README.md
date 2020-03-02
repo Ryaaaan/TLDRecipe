@@ -21,6 +21,7 @@ Site built using [Jekyll RB](https://jekyllrb.com/) + [GitHub Pages](https://pag
 - [x] Hover interactions for Search / Menu Buttons
 - [x] Add Minify / Uglify JS Functionality
 - [ ] Donation Links / Addresses
+- [ ] About Section / How Favorites Work
 
 ### v2 Todo Items:
 - [ ] Clean up JS

@@ -356,6 +356,7 @@ a.post-link:hover h3,
 }
 .copy-button {
   @include var(color, white);
+  font-weight: 600;
 }
 .recipe-content li {
   // font-size: 500;

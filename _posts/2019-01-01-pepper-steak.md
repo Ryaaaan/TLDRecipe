@@ -3,7 +3,7 @@ layout: post
 date:   2018-10-22 14:46:59 -0400
 
 # Event / Post Information
-title:  "Slow Cooker Steak & Peppers"
+title:  "Steak & Peppers"
 description: Literally the easiest thing to make and it tastes wonderful.
 author: TLDRecipe
 permalink: recipes/pepper-steak

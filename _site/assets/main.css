@@ -247,7 +247,7 @@ section p, .modal p { line-height: 30px; margin: 20px 0; }
 
 .nutrition-container .disabled span, .nutrition-container .disabled strong { color: #e0e0e0; color: var(--medgrey); }
 
-.copy-button { color: #ffffff; color: var(--white); }
+.copy-button { color: #ffffff; color: var(--white); font-weight: 600; }
 
 .recipe-content li { text-decoration-color: transparent; text-decoration-color: var(--clear); }
 

@@ -14,6 +14,15 @@
     
 
     {
+        "title"    : "White Chili",
+        "desc"     : "http://0.0.0.0:4000",
+        "category" : "",
+        "tags"     : "lunch, dinner, meal prep, poultry",
+        "url"      : "/recipes/white-chili",
+        "date"     : "2018-10-22 14:46:59 -0400"
+      } ,
+
+    {
         "title"    : "Stuffed Peppers",
         "desc"     : "http://0.0.0.0:4000",
         "category" : "",
@@ -59,7 +68,7 @@
       } ,
 
     {
-        "title"    : "Slow Cooker Steak &amp; Peppers",
+        "title"    : "Steak &amp; Peppers",
         "desc"     : "http://0.0.0.0:4000",
         "category" : "",
         "tags"     : "red meat, dinner, meal prep",
